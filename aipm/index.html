@@ -228,7 +228,7 @@ Counterpoint: Technical Talent Leading the Way
 <li>Need to bridge both technical and product domains</li>
 </ul></li>
 </ol>
-<p>This gap suggests that while Product Management’s strategic value may increase, the transition period could be challenging as the profession adapts to AI’s technical demands. Successfully navigating this transition will require a new breed of PMs who can bridge the gap between AI/technical and product domains.</p>
+<p>This gap suggests that while Product Management’s strategic value may increase, the transition period could be challenging as the profession adapts to AI’s technical demands. Successfully navigating this transition will require a new breed of PMs who can bridge the gap between AI and product domains.</p>
 </section>
 <section id="anthropomorphic-ai" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="anthropomorphic-ai">2. Anthropomorphic AI</h2>
@@ -294,7 +294,7 @@ Claude 3.5 Sonnet: Human Preference Alignment
 </blockquote>
 </div>
 </div>
-<p>Suddenly, AI’s capabilities are no longer something far away from the user, hard to grasp. Instead, AI’s potential can be leveraged by anyone through a simple interface. Arguably, the user experience enabled by aligned models provides the much needed bridge between AI’s powerful capabilities and layman’s users.</p>
+<p>Suddenly, AI’s capabilities are no longer something far away from the user, hard to grasp. Instead, AI’s potential can be leveraged by anyone through a simple “chat” interface. Arguably, this enhanced user experience provides the much needed bridge between AI’s powerful capabilities and layman’s users.</p>
 <p>As AI interfaces become more natural and human-like, users increasingly anthropomorphize these systems - attributing human characteristics, emotions, and mental states to them. This tendency has profound implications for product development and user experience:</p>
 <ol type="1">
 <li><strong>Shifting interaction paradigms</strong> - Users expect more conversational, natural, human-like interfaces.</li>
@@ -323,7 +323,8 @@ Askell, Amanda, Jan Brauner, Adrian Colyer, Benjamin Cullen, David Duvenaud, Ric
 <h3 class="anchored" data-anchor-id="traditional-vs.-ai-software-products">Traditional vs.&nbsp;AI Software Products</h3>
 <p>In order to understand what new skills are needed for AI PMs, first we need to assess how traditional Software Product Development differs from how we will build and manage the next generation of GenAI Software Products:</p>
 <ul>
-<li><p><strong>Capability Assessment vs Functional Testing</strong>: Traditional software testing validates specific functionality against predefined requirements. GenAI Product evaluation, on the other hand, must assess not necessarily pre-defined behavior but also “emergent properties” like reasoning, creativity, and language understanding that extend beyond explicit programming.</p></li>
+<li><p><strong>AI vs.&nbsp;User Experience as IP</strong>: Traditional software products often relied on proprietary AI capabilities as their key differentiator. With the democratization of AI through foundation models and APIs, unique AI capabilities are becoming less defensible as IP. This shifts the competitive advantage toward superior user experience design - how intuitively and effectively the AI capabilities are integrated into the product workflow becomes the true differentiator.</p></li>
+<li><p><strong>Capability Assessment vs.&nbsp;Functional Testing</strong>: Traditional software testing validates specific functionality against predefined requirements. GenAI Product evaluation, on the other hand, must assess not necessarily pre-defined behavior but also “emergent properties” like reasoning, creativity, and language understanding that extend beyond explicit programming.</p></li>
 <li><p><strong>Metrics and Measurement Challenges</strong>: While traditional software metrics can usually be precisely defined and measured, GenAI Product evaluation often involves subjective qualities like “helpfulness” or “naturalness” that resist straightforward quantification. Even when we try to break these down into numeric scores, the underlying judgment often remains inherently human and context-dependent.</p></li>
 <li><p><strong>Dataset Contamination</strong> <span class="citation" data-cites="xu2024benchmarkdatacontaminationlarge">(<a href="#ref-xu2024benchmarkdatacontaminationlarge" role="doc-biblioref">Xu et al. 2024</a>)</span>: Traditional software testing uses carefully crafted test cases with known inputs and expected outputs (e.g., unit tests). In contrast, products leveraging models trained on massive internet-scale datasets risk having already seen and memorized evaluation examples during training, which can lead to artificially inflated performance scores. This requires careful dataset curation to ensure test sets are truly unseen by the model and rigorous cross-validation approaches.</p></li>
 <li><p><strong>Benchmark Evolution</strong>: Traditional software maintains relatively stable test suites over time. GenAI models benchmarks continuously evolve as capabilities advance, making longitudinal performance comparisons difficult and potentially obsoleting older evaluation methods.</p></li>
@@ -334,8 +335,8 @@ Xu, Cheng, Shuhao Guan, Derek Greene, and M-Tahar Kechadi. 2024. <span>“Benchm
 </div><div id="fn3"><p><sup>3</sup>&nbsp;In fact, human evaluation/annotation has become a growing business! See scale.ai, snorkel.ai and more.</p></div></div><table class="caption-top table">
 <colgroup>
 <col style="width: 22%">
-<col style="width: 45%">
-<col style="width: 32%">
+<col style="width: 40%">
+<col style="width: 37%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -346,26 +347,31 @@ Xu, Cheng, Shuhao Guan, Derek Greene, and M-Tahar Kechadi. 2024. <span>“Benchm
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">IP &amp; Differentiation</td>
+<td>Proprietary AI capabilities as key differentiator</td>
+<td>Superior user experience design and workflow integration</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Capability Assessment</td>
 <td>Validates specific functionality against requirements</td>
 <td>May assess emergent properties like reasoning and creativity</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Metrics and Measurement</td>
 <td>Precisely defined and measurable metrics</td>
 <td>Subjective qualities that resist straightforward quantification</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Dataset Contamination</td>
 <td>Uses carefully crafted test cases</td>
 <td>Risk of memorized evaluation examples from training</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Benchmark Evolution</td>
 <td>Maintains stable test suites</td>
 <td>Continuously evolving benchmarks as capabilities advance</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Human Evaluation</td>
 <td>Mostly automated validation</td>
 <td>May require significant human oversight</td>
@@ -384,10 +390,16 @@ Figure&nbsp;3: Conceptual overview of Multiple LLM-based applications evaluation
 </figure>
 </div>
 </section>
-<section id="ai-pm-skills" class="level3">
+<section id="ai-pm-skills" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="ai-pm-skills">AI PM Skills</h3>
 <p>AI Product Management requires a distinct skill set that reflects the unique challenges of developing AI products compared to traditional software. Key competencies include:</p>
-<p><strong>Capability Assessment and Evaluation</strong></p>
+<p><strong>User Behavior Analysis</strong></p>
+<ul>
+<li>Expertise in analyzing and understanding how users adapt their workflows around emerging AI capabilities</li>
+<li>Skills in measuring and optimizing user adoption, engagement, and retention with AI functionalities</li>
+<li>Ability to create User Experiences powered by AI, however seamless to AI<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;“Seamless AI” is a term I use to describe the idea that AI should be so integrated into the product that users don’t even realize they are interacting with AI, i.e.&nbsp;users get the value of AI without the need to think about it.</p></div></div><p><strong>Capability Assessment and Evaluation</strong></p>
 <ul>
 <li>Understanding how to evaluate emergent AI capabilities such as reasoning and creativity that go beyond explicit requirements</li>
 <li>Ability to design meaningful evaluation frameworks for subjective qualities that resist simple quantification</li>
@@ -426,8 +438,8 @@ Figure&nbsp;3: Conceptual overview of Multiple LLM-based applications evaluation
 <h2 class="anchored" data-anchor-id="roles">Roles</h2>
 <section id="ai-pm-roles" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="ai-pm-roles">AI PM Roles</h3>
-<p>Brief high-level definition<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> of AI PM roles:</p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Based on Aman Khan’s, Director of Product at Arize AI.</p></div></div><ol type="1">
+<p>Brief high-level definition<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> of AI PM roles:</p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Based on Aman Khan’s, Director of Product at Arize AI.</p></div></div><ol type="1">
 <li><p><strong>AI Platform PM</strong>: Builds foundational AI technology and infrastructure that enables other AI products. Examples include developing APIs for foundation models like Gemini, creating model serving platforms, or building AI development tools.</p></li>
 <li><p><strong>AI PM</strong>: Manages products where AI is the core value proposition to the extent that the product cannot exist without such AI capabilities. Examples include AI-powered image generation, language translation services, or autonomous driving systems.</p></li>
 <li><p><strong>AI-powered PM</strong>: Oversees products where AI enhances and improves existing functionality but is not essential to the core product. The product can function without AI. Examples include AI-enhanced search recommendations, smart email composition, or automated customer support routing.</p></li>
@@ -474,13 +486,13 @@ Note
 <p><strong>View 2: Enhanced Functional Excellence</strong></p>
 <p>An alternative perspective emphasizes the risks of role collapse and argues for maintaining functional excellence:</p>
 <ul>
-<li>While AI enables faster prototyping and reduces handoffs, core functional expertise remains valuable</li>
+<li>While AI enables cross-functional results, faster prototyping and reduces handoffs, core functional expertise remains valuable</li>
 <li>Product managers risk alienating specialists by attempting to do everything:
 <ul>
 <li>Engineers still deliver superior engineering outcomes</li>
 <li>Designers still create superior product experiences</li>
 </ul></li>
-<li>Rather than collapsing roles, AI empowers each function to work more effectively, in turn role’s deep expertise makes AI more effective.</li>
+<li>Rather than collapsing roles, AI empowers each function to work more effectively, in turn role’s deep expertise makes AI more effective[^deep-expertise].</li>
 </ul>
 <p><strong>A Hybrid Approach</strong></p>
 <p>I’d argue that the future of cross-functional GenAI-powered roles likely lies between these extremes:</p>
@@ -495,6 +507,7 @@ Note
 <ul>
 <li>Deep functional knowledge remains a value-add</li>
 <li>Specialists drive excellence in their domains</li>
+<li>The more expert you are, the more effective you will be in leveraging AI in your domain</li>
 </ul></li>
 <li><strong>Evolved Collaboration</strong>
 <ul>
@@ -517,8 +530,8 @@ Note
 </section>
 <section id="deliverables" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
-<p>Traditional product management has relied heavily on comprehensive documentation like PRDs and test plans to validate functionality and guide implementation. While AI-powered tools now make it faster and easier than ever to create these artifacts, there’s an important caveat: generating documentation should not come at the expense of proper product discovery<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;In Appendix A, we provide a brief discussion on how GenAI is changing the nature of product discovery, and the product manager’s role in product discovery.</p></div></div><p>Here’s a an overly simplistic view of how the production of some of key deliverables will change, I have seen shared by some PM Leaders:</p>
+<p>Traditional product management has relied heavily on comprehensive documentation like PRDs and test plans to validate functionality and guide implementation. While AI-powered tools now make it faster and easier than ever to create these artifacts, there’s an important caveat: generating documentation should not come at the expense of proper product discovery<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;In Appendix A, we provide a brief discussion on how GenAI is changing the nature of product discovery.</p></div></div><p>Here’s a an overly simplistic view of how the production of some of key deliverables will change, I have seen shared by some PM Leaders:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -549,24 +562,25 @@ Note
 </tr>
 </tbody>
 </table>
-<p>While AI tools may accelerate the creation of documentation and deliverables, this view dangerously oversimplifies the complex reality of product management. The most time-consuming and valuable activities - conducting thorough market research, developing deep user understanding through interviews and observation, performing competitive analysis, building stakeholder relationships, and mapping user journeys - cannot be fully automated and remain critical. These core responsibilities require human judgment, emotional intelligence, and sustained effort to gather genuine insights that drive product success. The time saved on artifact creation should be reinvested in these critical activities rather than viewed as a wholesale reduction in product management effort.</p>
+<p>While AI tools may accelerate the creation of documentation and deliverables, this view dangerously oversimplifies the complex reality of product management. The most time-consuming and valuable activities - conducting thorough market research, developing deep user understanding, building stakeholder relationships etc - cannot be fully automated and remain critical. These core responsibilities require human judgment, emotional intelligence, and sustained effort to gather genuine insights that drive product success. The time saved on artifact creation should be reinvested in these critical activities rather than viewed as a wholesale reduction in product management effort.</p>
 <p>Documentation created without thorough discovery work risks being based on assumptions rather than evidence. The artifacts themselves are not the goal - they should reflect insights gained through rigorous research and validation.</p>
-<p>As AI transforms product development, it’s driving several fundamental changes to how we approach these deliverables:</p>
+<p>As AI transforms product development, it’s driving several fundamental changes to how we approach these deliverables. I list three key changes likely to happen:</p>
 <ol type="1">
 <li><strong>The End of Product Specification Reviews</strong>
 <ul>
 <li>Traditional product spec reviews will end, at least as we know it</li>
 <li>Teams can quickly create working prototypes to validate ideas iteratively instead of debating specifications</li>
-<li>Interactive prototypes provide better context and feedback than static documents</li>
+<li>Interactive prototypes provide better context and feedback than quasi-static documents</li>
 <li>AI tools like v0.dev and Cursor allow PMs to prototype features in hours instead of days</li>
 <li>Real working prototypes lead to more meaningful discussions about product direction</li>
 </ul></li>
 <li><strong>From PRDs to Evaluation Frameworks</strong>
 <ul>
-<li>Traditional PRDs focus on deterministic features and fixed requirements</li>
+<li>Traditional PRDs focus on deterministic features</li>
 <li>AI products require robust evaluation frameworks to assess non-deterministic behaviors</li>
+<li>Traditional PRDs are requirements-based, AI product requirements are codified by data and evals</li>
 <li>Evaluation frameworks define success criteria, testing protocols, and quality thresholds</li>
-<li>The new PRD might be reshaped as a combination of evaluation frameworks and interactive prototypes</li>
+<li>The new PRD will be reshaped as a combination of evaluation frameworks and interactive prototypes</li>
 </ul></li>
 <li><strong>The End of Documentation as we know it</strong>
 <ul>
@@ -579,7 +593,7 @@ Note
 <li>Real-time feedback and learning opportunities</li>
 <li>Problems/asks/pain points are surfaced by the user through the product itself</li>
 </ul></li>
-<li>For AIs: LLMs.txt Specification<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>
+<li>For AIs: LLMs.txt Specification<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>
 <ul>
 <li>Machine-readable documentation for AI systems</li>
 <li>Standardizes communication between AI and your product</li>
@@ -589,7 +603,7 @@ Note
 </ul></li>
 </ul></li>
 </ol>
-<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;“The <a href="https://github.com/AnswerDotAI/llms-txt">/llms.txt</a> file, helping language models use your website”.</p></div></div><p><strong>A note on “playground” concept</strong></p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;“The <a href="https://github.com/AnswerDotAI/llms-txt">/llms.txt</a> file, helping language models use your website”.</p></div></div><p><strong>A note on “playground” concept</strong></p>
 <blockquote class="blockquote">
 <p>“Input-optional products”</p>
 <p>Don’t ask your users for input. Coming up with input is hard, and a barrier to use. Think of users as wanting to play. We have AI - predict the input! Design products into autonomous environments. Allow users to play by steering a bit.</p>
@@ -616,7 +630,7 @@ Note
 </ul>
 <p><strong>User Experience is Everything</strong></p>
 <ul>
-<li>User interaction flows with AI features</li>
+<li>User interaction flows</li>
 <li>Prompt design and conversation guidelines</li>
 <li>Error handling and recovery patterns</li>
 <li>User feedback collection frameworks</li>
@@ -706,8 +720,8 @@ Figure&nbsp;5: The GenAI PM Stack. Products included are based solely on my pers
 <li>MidJourney: Image Generation</li>
 <li>Sora: Video Generation</li>
 </ul>
-<p><strong>Layer 5: IDEs &amp; Development Tools</strong> This layer focuses on tools that enhance the development experience through AI assistance, from code completion to full application generation<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.</p>
-<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;The Pragmatic Engineer newsletter has a great list of IDEs with GenAI features: https://newsletter.pragmaticengineer.com/p/ide-that-software-engineers-love</p></div></div><p>My current favorites:</p>
+<p><strong>Layer 5: IDEs &amp; Development Tools</strong> This layer focuses on tools that enhance the development experience through AI assistance, from code completion to full application generation<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn8"><p><sup>8</sup>&nbsp;The Pragmatic Engineer newsletter has a great list of IDEs with GenAI features: https://newsletter.pragmaticengineer.com/p/ide-that-software-engineers-love</p></div></div><p>My current favorites:</p>
 <ol type="A">
 <li>IDEs &amp; Code Editors</li>
 </ol>
@@ -739,7 +753,7 @@ Figure&nbsp;5: The GenAI PM Stack. Products included are based solely on my pers
 </section>
 <section id="pitfalls" class="level2">
 <h2 class="anchored" data-anchor-id="pitfalls">Pitfalls</h2>
-<p>As GenAI technologies advance coupled with the pervasive belief that AI will solve all challenges, there is a risk of over-reliance on AI systems. This risk is exacerbated as boundaries of what’s human versus AI responsibility becomes increasingly unclear, leading to oftentimes excessive delegation of critical thinking and decision-making to machines. Key pitfalls include but not limited to the following:</p>
+<p>As GenAI technologies advance coupled with the pervasive belief that AI will solve all challenges, there is a risk of over-reliance on AI systems. This risk is exacerbated as boundaries of what’s human versus AI responsibility becomes increasingly unclear, leading to oftentimes excessive delegation of critical thinking and decision-making to machines. Key pitfalls include but are not limited to the following:</p>
 <ol type="1">
 <li><strong>Over-relying on AI-Generated Content</strong>
 <ul>
@@ -793,7 +807,7 @@ The role of the AI product manager in this context is becoming more focused on j
 <p>How will generative AI change the nature of product discovery? We don’t know yet. But there is a recent study by MIT researcher Aidan Toner-Rodgers <span class="citation" data-cites="tonerrodgers2024aidiscovery">(<a href="#ref-tonerrodgers2024aidiscovery" role="doc-biblioref">Toner-Rodgers 2024</a>)</span> that might provide insights into how GenAI will affect discovery for knowledge works.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-tonerrodgers2024aidiscovery" class="csl-entry" role="listitem">
 Toner-Rodgers, Aidan. 2024. <span>“Artificial Intelligence, Scientific Discovery, and Product Innovation.”</span> <a href="https://aidantr.github.io/files/AI_innovation.pdf">https://aidantr.github.io/files/AI_innovation.pdf</a>.
-</div><div id="fn8"><p><sup>8</sup>&nbsp;The AI tool works by generating “recipes” for novel compounds based on specified properties, i.e.&nbsp;“Inverse Material Design”, the researchers input desired proprieties and through Graph Neural Networks the AI tool generates candidate materials. Scientists then evaluate and synthesize the most promising candidates. The AI automates a significant portion of the “idea-generation” tasks (57%), reallocating researchers to evaluating model-produced candidate materials</p></div></div><p>This work examines the effects of a new AI-powered materials discovery tool on the productivity, creativity, and job satisfaction of 1,018 scientists<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. Findings are striking:</p>
+</div><div id="fn9"><p><sup>9</sup>&nbsp;The AI tool works by generating “recipes” for novel compounds based on specified properties, i.e.&nbsp;“Inverse Material Design”, the researchers input desired proprieties and through Graph Neural Networks the AI tool generates candidate materials. Scientists then evaluate and synthesize the most promising candidates. The AI automates a significant portion of the “idea-generation” tasks (57%), reallocating researchers to evaluating model-produced candidate materials</p></div></div><p>This work examines the effects of a new AI-powered materials discovery tool on the productivity, creativity, and job satisfaction of 1,018 scientists<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. Findings are striking:</p>
 <ul>
 <li><p><strong>AI-Driven Productivity Gains</strong>: The introduction of the AI tool led to a significant increase in research output. AI-assisted scientists discovered 44% more materials, resulting in a 39% increase in patent filings, and a 17% rise in downstream product innovation. These compounds also possessed more novel chemical structures and led to more radical inventions</p></li>
 <li><p><strong>The Importance of Human Judgement</strong>: The paper investigates the reasons for the disparate impact of AI, highlighting the importance of human judgement. The study shows that scientists with strong judgement skills are better able to prioritise promising AI suggestions, whereas others waste significant resources testing false positives. This indicates that AI does not diminish the need for human expertise, but rather changes the type of expertise that is valuable</p></li>

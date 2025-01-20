@@ -7,6 +7,10 @@ author:
   - name: Thársis Souza 
 citation:
   url: https://www.souzatharsis.com/writing/aipm
+website:
+  repo-url: https://github.com/souzatharsis/writing/
+  repo-actions: [source, issue]
+repo-actions: true
 reference-location: margin
 citation-location: margin
 highlight-style: pygments
@@ -95,7 +99,7 @@ The technical nature of AI creates an asymmetry in adoption rates:
    - Limited direct exposure to AI implementation
    - Need to bridge both technical and product domains
 
-This gap suggests that while Product Management's strategic value may increase, the transition period could be challenging as the profession adapts to AI's technical demands. Successfully navigating this transition will require a new breed of PMs who can bridge the gap between AI/technical and product domains.
+This gap suggests that while Product Management's strategic value may increase, the transition period could be challenging as the profession adapts to AI's technical demands. Successfully navigating this transition will require a new breed of PMs who can bridge the gap between AI and product domains.
 
 
 ## 2. Anthropomorphic AI
@@ -141,7 +145,7 @@ Prompt: "Explain the moon landing to a 6 year old in a short sentence"
 > "A brave group of astronauts flew a special spaceship all the way to the moon, stepped out onto its dusty surface, and planted a flag there to show they made it!"
 :::
 
-Suddenly, AI's capabilities are no longer something far away from the user, hard to grasp. Instead, AI's potential can be leveraged by anyone through a simple interface. Arguably, the user experience enabled by aligned models provides the much needed bridge between AI's powerful capabilities and layman's users.
+Suddenly, AI's capabilities are no longer something far away from the user, hard to grasp. Instead, AI's potential can be leveraged by anyone through a simple "chat" interface. Arguably, this enhanced user experience provides the much needed bridge between AI's powerful capabilities and layman's users.
 
 As AI interfaces become more natural and human-like, users increasingly anthropomorphize these systems - attributing human characteristics, emotions, and mental states to them. This tendency has profound implications for product development and user experience:
 
@@ -175,7 +179,9 @@ These factors are reshaping the role of Product Management in the age of AI. Wha
 
 In order to understand what new skills are needed for AI PMs, first we need to assess how traditional Software Product Development differs from how we will build and manage the next generation of GenAI Software Products:
 
-- **Capability Assessment vs Functional Testing**: Traditional software testing validates specific functionality against predefined requirements. GenAI Product evaluation, on the other hand, must assess not necessarily pre-defined behavior but also "emergent properties" like reasoning, creativity, and language understanding that extend beyond explicit programming.
+- **AI vs. User Experience as IP**: Traditional software products often relied on proprietary AI capabilities as their key differentiator. With the democratization of AI through foundation models and APIs, unique AI capabilities are becoming less defensible as IP. This shifts the competitive advantage toward superior user experience design - how intuitively and effectively the AI capabilities are integrated into the product workflow becomes the true differentiator.
+
+- **Capability Assessment vs. Functional Testing**: Traditional software testing validates specific functionality against predefined requirements. GenAI Product evaluation, on the other hand, must assess not necessarily pre-defined behavior but also "emergent properties" like reasoning, creativity, and language understanding that extend beyond explicit programming.
 
 - **Metrics and Measurement Challenges**: While traditional software metrics can usually be precisely defined and measured, GenAI Product evaluation often involves subjective qualities like "helpfulness" or "naturalness" that resist straightforward quantification. Even when we try to break these down into numeric scores, the underlying judgment often remains inherently human and context-dependent.
 
@@ -188,7 +194,8 @@ In order to understand what new skills are needed for AI PMs, first we need to a
 [^human-annotation]: In fact, human evaluation/annotation has become a growing business! See scale.ai, snorkel.ai and more.
 
 | Aspect | Traditional Software Products | GenAI Software Products |
-|:--------|------------------|-------------|
+|:--------|----------------|---------------|
+| IP & Differentiation | Proprietary AI capabilities as key differentiator | Superior user experience design and workflow integration |
 | Capability Assessment | Validates specific functionality against requirements | May assess emergent properties like reasoning and creativity |
 | Metrics and Measurement | Precisely defined and measurable metrics | Subjective qualities that resist straightforward quantification |
 | Dataset Contamination | Uses carefully crafted test cases | Risk of memorized evaluation examples from training |
@@ -203,6 +210,16 @@ Another important implication is that GenAI product evaluation becomes increasin
 ### AI PM Skills
 
 AI Product Management requires a distinct skill set that reflects the unique challenges of developing AI products compared to traditional software. Key competencies include:
+
+**User Behavior Analysis**
+
+- Expertise in analyzing and understanding how users adapt their workflows around emerging AI capabilities
+- Skills in measuring and optimizing user adoption, engagement, and retention with AI functionalities
+- Ability to create User Experiences powered by AI, however seamless to AI[^seamless-ai]
+
+[^seamless-ai]: "Seamless AI" is a term I use to describe the idea that AI should be so integrated into the product that users don't even realize they are interacting with AI, i.e. users get the value of AI without the need to think about it.
+
+
 
 **Capability Assessment and Evaluation**
 
@@ -280,11 +297,11 @@ Under this view, in the limit, we would see the first one-person billion dollar 
 
 An alternative perspective emphasizes the risks of role collapse and argues for maintaining functional excellence:
 
-- While AI enables faster prototyping and reduces handoffs, core functional expertise remains valuable
+- While AI enables cross-functional results, faster prototyping and reduces handoffs, core functional expertise remains valuable
 - Product managers risk alienating specialists by attempting to do everything:
    - Engineers still deliver superior engineering outcomes
    - Designers still create superior product experiences
-- Rather than collapsing roles, AI empowers each function to work more effectively, in turn role's deep expertise makes AI more effective.
+- Rather than collapsing roles, AI empowers each function to work more effectively, in turn role's deep expertise makes AI more effective[^deep-expertise].
 
 **A Hybrid Approach**
 
@@ -298,6 +315,7 @@ I'd argue that the future of cross-functional GenAI-powered roles likely lies be
 2. **Preserved Expertise**
    - Deep functional knowledge remains a value-add
    - Specialists drive excellence in their domains
+   - The more expert you are, the more effective you will be in leveraging AI in your domain
 
 3. **Evolved Collaboration**
    - Reduced handoffs through prototypes
@@ -325,7 +343,7 @@ Some companies are already experimenting with this approach. For instance, Eleve
 
 Traditional product management has relied heavily on comprehensive documentation like PRDs and test plans to validate functionality and guide implementation. While AI-powered tools now make it faster and easier than ever to create these artifacts, there's an important caveat: generating documentation should not come at the expense of proper product discovery[^discovery].
 
-[^discovery]: In Appendix A, we provide a brief discussion on how GenAI is changing the nature of product discovery, and the product manager's role in product discovery.
+[^discovery]: In Appendix A, we provide a brief discussion on how GenAI is changing the nature of product discovery.
 
 Here's a an overly simplistic view of how the production of some of key deliverables will change, I have seen shared by some PM Leaders:
 
@@ -336,24 +354,25 @@ Here's a an overly simplistic view of how the production of some of key delivera
 | Draw quick wireframes on paper or wait for design to work on UX | Share fully functional prototypes with team + customers in minutes |
 | Manually pour through customer feedback to ideas + priorities | Automate insight generation with no code tools |
 
-While AI tools may accelerate the creation of documentation and deliverables, this view dangerously oversimplifies the complex reality of product management. The most time-consuming and valuable activities - conducting thorough market research, developing deep user understanding through interviews and observation, performing competitive analysis, building stakeholder relationships, and mapping user journeys - cannot be fully automated and remain critical. These core responsibilities require human judgment, emotional intelligence, and sustained effort to gather genuine insights that drive product success. The time saved on artifact creation should be reinvested in these critical activities rather than viewed as a wholesale reduction in product management effort.
+While AI tools may accelerate the creation of documentation and deliverables, this view dangerously oversimplifies the complex reality of product management. The most time-consuming and valuable activities - conducting thorough market research, developing deep user understanding, building stakeholder relationships etc - cannot be fully automated and remain critical. These core responsibilities require human judgment, emotional intelligence, and sustained effort to gather genuine insights that drive product success. The time saved on artifact creation should be reinvested in these critical activities rather than viewed as a wholesale reduction in product management effort.
 
 Documentation created without thorough discovery work risks being based on assumptions rather than evidence. The artifacts themselves are not the goal - they should reflect insights gained through rigorous research and validation.
 
-As AI transforms product development, it's driving several fundamental changes to how we approach these deliverables:
+As AI transforms product development, it's driving several fundamental changes to how we approach these deliverables. I list three key changes likely to happen:
 
 1. **The End of Product Specification Reviews**
    - Traditional product spec reviews will end, at least as we know it
    - Teams can quickly create working prototypes to validate ideas iteratively instead of debating specifications
-   - Interactive prototypes provide better context and feedback than static documents
+   - Interactive prototypes provide better context and feedback than quasi-static documents
    - AI tools like v0.dev and Cursor allow PMs to prototype features in hours instead of days
    - Real working prototypes lead to more meaningful discussions about product direction
 
 2. **From PRDs to Evaluation Frameworks**
-   - Traditional PRDs focus on deterministic features and fixed requirements
+   - Traditional PRDs focus on deterministic features
    - AI products require robust evaluation frameworks to assess non-deterministic behaviors
+   - Traditional PRDs are requirements-based, AI product requirements are codified by data and evals
    - Evaluation frameworks define success criteria, testing protocols, and quality thresholds
-   - The new PRD might be reshaped as a combination of evaluation frameworks and interactive prototypes
+   - The new PRD will be reshaped as a combination of evaluation frameworks and interactive prototypes
 
 3. **The End of Documentation as we know it**
    - Arguably, nobody reads documentation anymore.
@@ -402,7 +421,7 @@ Having said that, there is a set of product deliverables that will become more r
 
 **User Experience is Everything**
 
-- User interaction flows with AI features
+- User interaction flows
 - Prompt design and conversation guidelines
 - Error handling and recovery patterns
 - User feedback collection frameworks
@@ -513,7 +532,7 @@ My current favorites:
 
 ## Pitfalls
 
-As GenAI technologies advance coupled with the pervasive belief that AI will solve all challenges, there is a risk of over-reliance on AI systems. This risk is exacerbated as boundaries of what's human versus AI responsibility becomes increasingly unclear, leading to oftentimes excessive delegation of critical thinking and decision-making to machines. Key pitfalls include but not limited to the following:
+As GenAI technologies advance coupled with the pervasive belief that AI will solve all challenges, there is a risk of over-reliance on AI systems. This risk is exacerbated as boundaries of what's human versus AI responsibility becomes increasingly unclear, leading to oftentimes excessive delegation of critical thinking and decision-making to machines. Key pitfalls include but are not limited to the following:
 
 1. **Over-relying on AI-Generated Content**
    - One of the most seductive traps in AI Product Management is excessive reliance on AI tools for generating product artifacts without sufficient human validation and discovery work. While AI can accelerate documentation creation, using it as a substitute for genuine user research and thoughtful product strategy leads to superficial solutions that fail to address core user needs.

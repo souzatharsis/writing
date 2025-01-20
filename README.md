@@ -1,0 +1,1 @@
+This repository contains public essays and presentations, written in Quarto.

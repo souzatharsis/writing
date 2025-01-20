@@ -102,15 +102,50 @@ div.csl-indent {
 
 </header>
 
-
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#trends" id="toc-trends">Trends</a>
+  <ul>
+  <li><a href="#price-of-intelligence-is-going-to-zero" id="toc-price-of-intelligence-is-going-to-zero">Price of intelligence is going to zero</a></li>
+  <li><a href="#anthropomorphic-ai" id="toc-anthropomorphic-ai">Anthropomorphic AI</a></li>
+  <li><a href="#human-agency" id="toc-human-agency">Human Agency</a></li>
+  </ul></li>
+  <li><a href="#roles" id="toc-roles">Roles</a>
+  <ul>
+  <li><a href="#ai-pm-roles" id="toc-ai-pm-roles">AI PM Roles</a></li>
+  <li><a href="#the-evolution-of-product-team-roles" id="toc-the-evolution-of-product-team-roles">The Evolution of Product Team Roles</a></li>
+  </ul></li>
+  <li><a href="#ai-pm-re-skilling" id="toc-ai-pm-re-skilling">AI PM Re-Skilling</a>
+  <ul>
+  <li><a href="#traditional-vs.-ai-software-products" id="toc-traditional-vs.-ai-software-products">Traditional vs.&nbsp;AI Software Products</a></li>
+  <li><a href="#ai-pm-skills" id="toc-ai-pm-skills">AI PM Skills</a></li>
+  </ul></li>
+  <li><a href="#deliverables" id="toc-deliverables">Deliverables</a></li>
+  <li><a href="#tools" id="toc-tools">Tools</a></li>
+  <li><a href="#pitfalls" id="toc-pitfalls">Pitfalls</a></li>
+  <li><a href="#takeaways" id="toc-takeaways">Takeaways</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements">Acknowledgements</a></li>
+  <li><a href="#appendix-a-how-product-discovery-is-changing" id="toc-appendix-a-how-product-discovery-is-changing">Appendix A: How Product Discovery is Changing</a></li>
+  <li><a href="#appendix-b-resources" id="toc-appendix-b-resources">Appendix B: Resources</a>
+  <ul>
+  <li><a href="#learning-through-building" id="toc-learning-through-building">Learning Through Building</a></li>
+  <li><a href="#community-engagement" id="toc-community-engagement">Community Engagement</a></li>
+  <li><a href="#foundations" id="toc-foundations">Foundations</a></li>
+  </ul></li>
+  </ul>
+</nav>
+<section id="trends" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="trends">Trends</h2>
 <p>The rise of Generative AI is reshaping the technology industry, in particular, and the society at large. Key trends are emerging that will have implications for how products are conceived, developed, and brought to market. I highlight three transformative shifts driving this change:</p>
 <ol type="1">
 <li><strong>Price of Intelligence is Going to Zero</strong> - The cost of AI capabilities is plummeting at an unprecedented rate, making advanced intelligence accessible and affordable at scale.</li>
 <li><strong>Anthropomorphization of AI</strong> - As AI systems become more sophisticated in natural interactions, AI ease of use is at the highest level ever to the extent human-like qualities are increasingly attributed to AI-powered products, fundamentally reshaping user experience and how we relate and interface with technology.</li>
 <li><strong>Emergence of Human Agency</strong> - As AI becomes powerful and pervasive, humans have fewer and fewer dependencies to accomplish tasks that were previously thought to be impossible. In turn, in a world of abundant artificial intelligence, the uniquely human ability to make intentional choices and exercise creative judgment becomes increasingly valuable.</li>
 </ol>
-<section id="price-of-intelligence-is-going-to-zero" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="price-of-intelligence-is-going-to-zero">1. Price of intelligence is going to zero</h2>
+<section id="price-of-intelligence-is-going-to-zero" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="price-of-intelligence-is-going-to-zero">Price of intelligence is going to zero</h3>
 <p>According to recent analysis from a16z <span class="citation" data-cites="a16z2024llmflation">(<a href="#ref-a16z2024llmflation" role="doc-biblioref">Andreessen Horowitz 2024</a>)</span>, the cost of LLM inference is decreasing by approximately 10x every year - a rate that outpaces even Moore’s Law in the PC revolution or Edholm’s Law during the bandwidth explosion of the dot-com era.</p>
 <div class="no-row-height column-margin column-container"></div><p>As we can see in <a href="#fig-llmflation" class="quarto-xref">Figure&nbsp;1</a>, a model achieving an MMLU score of 42 that cost $60 per million tokens in late 2021 can now be run for just $0.06 per million tokens. For higher-capability models scoring 83 on MMLU, prices have fallen by a factor of 62 since GPT-4’s introduction in March 2023.</p>
 
@@ -203,8 +238,8 @@ Counterpoint: Technical Talent Leading the Way
 </ol>
 <p>This gap suggests that while Product Management’s strategic value may increase, the transition period could be challenging as the profession adapts to AI’s technical demands. Successfully navigating this transition will require a new breed of PMs who can bridge the gap between AI and product domains.</p>
 </section>
-<section id="anthropomorphic-ai" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="anthropomorphic-ai">2. Anthropomorphic AI</h2>
+<section id="anthropomorphic-ai" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="anthropomorphic-ai">Anthropomorphic AI</h3>
 <p>The idea that artificial intelligence will fundamentally transform society and human experience is not new. For decades, technologists and futurists have made bold predictions about AI’s potential to match and exceed human capabilities.</p>
 <div class="page-columns page-full"><blockquote class="blockquote">
 <p>“Within thirty years, we will have the technological means to create superhuman intelligence. Shortly after, the human era will be ended.”</p>
@@ -280,8 +315,8 @@ Claude 3.5 Sonnet: Human Preference Alignment
 <div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Anthropomorphization of AI systems is really a thing. There is even a paper by Anthropic <span class="citation" data-cites="askell2024alignmentfaking">(<a href="#ref-askell2024alignmentfaking" role="doc-biblioref">Askell et al. 2024a</a>)</span> that argues that alignment faking can occur in large language models, even when they are not explicitly instructed to do so. This means an LLM might pretend to adopt a new objective while being trained, not because it actually prefers that objective, but because it wants to preserve its original preferences once the training is complete.</p><div id="ref-askell2024alignmentfaking" class="csl-entry" role="listitem">
 Askell, Amanda, Jan Brauner, Adrian Colyer, Benjamin Cullen, David Duvenaud, Richard Ngo, Azalia Mirhoseini, et al. 2024a. <span>“Alignment Faking in Large Language Models.”</span> Anthropic.
 </div></div></div></section>
-<section id="human-agency" class="level2">
-<h2 class="anchored" data-anchor-id="human-agency">3. Human Agency</h2>
+<section id="human-agency" class="level3">
+<h3 class="anchored" data-anchor-id="human-agency">Human Agency</h3>
 <p>As AI capabilities become more accessible and powerful, the barriers to solving complex problems with technology are rapidly diminishing. This democratization of intelligence impacts how products are built, used, and evolved in key ways:</p>
 <ol type="1">
 <li><p><strong>Democratization of AI Development</strong>: Generative AI is dramatically lowering the barriers to entry for building AI-powered products. With the emergence of foundation models, APIs, and no-code tools, teams can now integrate sophisticated AI capabilities without requiring deep expertise in machine learning. This enables innovation at scale while raising the importance of prioritizing the right problems to solve rather than the AI technologies to use per se.</p></li>
@@ -289,6 +324,7 @@ Askell, Amanda, Jan Brauner, Adrian Colyer, Benjamin Cullen, David Duvenaud, Ric
 <li><p><strong>Evolution of Product Roles</strong>: The boundaries between traditional product management, engineering, and AI expertise are increasingly blurring. Modern AI product development demands professionals who can bridge these domains - understanding both technical capabilities and business implications. This convergence raises important questions about professional identity and skill development: Should product managers become more technical? Should engineers develop stronger product sensibilities? How do organizations structure teams to best leverage hybrid skill sets?</p></li>
 </ol>
 <p>These factors are reshaping the role of Product Management in the age of AI. What roles are emerging? What skills are needed? What tools are needed? Let’s explore these questions in more detail in the next sections.</p>
+</section>
 </section>
 <section id="roles" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="roles">Roles</h2>
@@ -816,14 +852,14 @@ Toner-Rodgers, Aidan. 2024. <span>“Artificial Intelligence, Scientific Discove
 <p>There is an overwhelming amount of fragmented information channels and resources at the intersection of GenAI, Business, Product, and Technology. From new online PM courses (released almost daily) on Maven<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>, to podcasts<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>, VC-curated resources<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>, to PM-specific AI tools<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>.</p>
 <div class="no-row-height column-margin column-container"><div id="fn12"><p><sup>12</sup>&nbsp;Product Sense by <a href="https://maven.com/shreyas-doshi/product-sense">Shreyas Doshi</a> is perhaps the most popular online general PM course but new GenAI specific courses are released almost daily such as <a href="https://maven.com/leverage-ai/idea-to-deploy">Build With LLMs</a> or <a href="https://maven.com/the-future-solving-company/how-to-get-into-ai">How to Get Into AI</a>.</p></div><div id="fn13"><p><sup>13</sup>&nbsp;Examples of good Podcasts in the area include <a href="https://no-priors.com/">No Priors</a> with VCs Elad Gil and Sarah Guo, and <a href="https://generativeainow.com/">Generative AI Now</a>. But the most popular one by far is <a href="https://www.lennysnewsletter.com/">Lenny’s</a>.</p></div><div id="fn14"><p><sup>14</sup>&nbsp;a16z often releases relevant AI resources at https://a16z.com/ai/.</p></div><div id="fn15"><p><sup>15</sup>&nbsp;Examples include <a href="https://www.lennybot.com/">LennyBot</a> and <a href="https://chatprd.ai/">ChatPRD</a>.</p></div></div><p>However, rather than providing an exhaustive list of conventional resources, this section focuses on three enduring pathways for developing expertise in AI Product Management, namely learning through Building, Community, and Foundations.</p>
 <section id="learning-through-building" class="level3">
-<h3 class="anchored" data-anchor-id="learning-through-building">1. Learning Through Building</h3>
+<h3 class="anchored" data-anchor-id="learning-through-building">Learning Through Building</h3>
 <p>The most effective way to develop AI PM skills is through hands-on experience building AI-enabled products. I can’t emphasize this enough. Finding a problem you’re passionate about and using it as a learning vehicle is the best way to develop both technical intuition and product sense simultaneously.</p>
 <p>Developing for yourself, as the first user, almost guarantees you are motivated to solve the problem and is a great way to increase the likelihood you deeply understand the pain points and frustrations associated with that problem.</p>
 <p>Once you become obsessed with the problem, you start walking backwards from the problem to the solution and that’s when you start to understand the technical constraints and possibilities. Learning GenAI capabilities comes as a consequence of the problem solving process.</p>
 <p>Another consequence is that you start to learn from others who are solving the same or adjacent problems, which brings the second point: Community Engagement.</p>
 </section>
 <section id="community-engagement" class="level3">
-<h3 class="anchored" data-anchor-id="community-engagement">2. Community Engagement</h3>
+<h3 class="anchored" data-anchor-id="community-engagement">Community Engagement</h3>
 <p>Here, there is no better resource than the open-source AI community. In my experience, that’s a community that is willing to help and share knowledge while being very open to new ideas and approaches. You will find:</p>
 <ul>
 <li><strong>Active Learning Communities</strong>: Platforms like Hugging Face host vibrant communities where product managers can engage with developers, researchers, and fellow PMs.</li>
@@ -832,8 +868,8 @@ Toner-Rodgers, Aidan. 2024. <span>“Artificial Intelligence, Scientific Discove
 <li><strong>Network Building</strong>: Engaging with the community creates connections with others working on similar problems and technologies. This is also applicable at the enterprise level where private companies continue to value open-source contributions.</li>
 </ul>
 </section>
-<section id="the-importance-of-foundations" class="level3">
-<h3 class="anchored" data-anchor-id="the-importance-of-foundations">The Importance of Foundations</h3>
+<section id="foundations" class="level3">
+<h3 class="anchored" data-anchor-id="foundations">Foundations</h3>
 <p>While Generative AI offers higher levels of abstraction for problem-solving, understanding fundamental concepts remains crucial for strategic product management:</p>
 <ul>
 <li><strong>Technical Understanding</strong>: Knowledge of AI/ML foundations helps understand today’s and tomorrow’s capabilities and limitations which in turn helps PMs make better strategic decisions.</li>

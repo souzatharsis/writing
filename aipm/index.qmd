@@ -22,10 +22,12 @@ editor:
 format: 
   html:
     #theme: darkly #lux #quartz
-    toc: false
+    toc: true
     toc-expand: 2
     toc-location: body
 ---
+
+## Trends
 
 The rise of Generative AI is reshaping the technology industry, in particular, and the society at large. Key trends are emerging that will have implications for how products are conceived, developed, and brought to market. I highlight three transformative shifts driving this change:
 
@@ -34,7 +36,7 @@ The rise of Generative AI is reshaping the technology industry, in particular, a
 3. **Emergence of Human Agency** - As AI becomes powerful and pervasive, humans have fewer and fewer dependencies to accomplish tasks that were previously thought to be impossible. In turn, in a world of abundant artificial intelligence, the uniquely human ability to make intentional choices and exercise creative judgment becomes increasingly valuable.
 
 
-## 1. Price of intelligence is going to zero
+### Price of intelligence is going to zero
 
 According to recent analysis from a16z [@a16z2024llmflation], the cost of LLM inference is decreasing by approximately 10x every year - a rate that outpaces even Moore's Law in the PC revolution or Edholm's Law during the bandwidth explosion of the dot-com era.
 
@@ -100,7 +102,7 @@ The technical nature of AI creates an asymmetry in adoption rates:
 This gap suggests that while Product Management's strategic value may increase, the transition period could be challenging as the profession adapts to AI's technical demands. Successfully navigating this transition will require a new breed of PMs who can bridge the gap between AI and product domains.
 
 
-## 2. Anthropomorphic AI
+### Anthropomorphic AI
 
 The idea that artificial intelligence will fundamentally transform society and human experience is not new. For decades, technologists and futurists have made bold predictions about AI's potential to match and exceed human capabilities.
 
@@ -158,7 +160,7 @@ This anthropomorphization[^anthropomorphization] creates both opportunities and 
 [^anthropomorphization]: Anthropomorphization of AI systems is really a thing. There is even a paper by Anthropic [@askell2024alignmentfaking] that argues that alignment faking can occur in large language models, even when they are not explicitly instructed to do so. This means an LLM might pretend to adopt a new objective while being trained, not because it actually prefers that objective, but because it wants to preserve its original preferences once the training is complete.
 
 
-## 3. Human Agency
+### Human Agency
 
 As AI capabilities become more accessible and powerful, the barriers to solving complex problems with technology are rapidly diminishing. This democratization of intelligence impacts how products are built, used, and evolved in key ways:
 
@@ -627,7 +629,7 @@ There is an overwhelming amount of fragmented information channels and resources
 
 However, rather than providing an exhaustive list of conventional resources, this section focuses on three enduring pathways for developing expertise in AI Product Management, namely learning through Building, Community, and Foundations.
 
-### 1. Learning Through Building
+### Learning Through Building
 
 The most effective way to develop AI PM skills is through hands-on experience building AI-enabled products. I can't emphasize this enough. Finding a problem you're passionate about and using it as a learning vehicle is the best way to develop both technical intuition and product sense simultaneously. 
 
@@ -637,7 +639,7 @@ Once you become obsessed with the problem, you start walking backwards from the 
 
 Another consequence is that you start to learn from others who are solving the same or adjacent problems, which brings the second point: Community Engagement.
 
-### 2. Community Engagement
+### Community Engagement
 
 Here, there is no better resource than the open-source AI community. In my experience, that's a community that is willing to help and share knowledge while being very open to new ideas and approaches. You will find:
 
@@ -646,7 +648,7 @@ Here, there is no better resource than the open-source AI community. In my exper
 - **Collaborative Problem-solving**: Working in public allows for feedback and knowledge sharing with others facing similar challenges.
 - **Network Building**: Engaging with the community creates connections with others working on similar problems and technologies. This is also applicable at the enterprise level where private companies continue to value open-source contributions.
 
-### The Importance of Foundations
+### Foundations
 
 While Generative AI offers higher levels of abstraction for problem-solving, understanding fundamental concepts remains crucial for strategic product management:
 

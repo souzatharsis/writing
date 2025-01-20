@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Thársis Souza">
+<meta name="dcterms.date" content="2025-01-22">
+<meta name="description" content="The Future of Product Management is the Age of Generative AI.">
+
+<title>The GenAI Product Manager</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="aipm_files/libs/clipboard/clipboard.min.js"></script>
+<script src="aipm_files/libs/quarto-html/quarto.js"></script>
+<script src="aipm_files/libs/quarto-html/popper.min.js"></script>
+<script src="aipm_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="aipm_files/libs/quarto-html/anchor.min.js"></script>
+<link href="aipm_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="aipm_files/libs/quarto-html/quarto-syntax-highlighting-1092c56c6cadf2eb47b1bc8063ab382a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="aipm_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="aipm_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="aipm_files/libs/bootstrap/bootstrap-91b7f4559e5eb55595cc6708b77f9d98.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#price-of-intelligence-is-going-to-zero" id="toc-price-of-intelligence-is-going-to-zero" class="nav-link active" data-scroll-target="#price-of-intelligence-is-going-to-zero">1. Price of intelligence is going to zero</a></li>
+  <li><a href="#anthropomorphic-ai" id="toc-anthropomorphic-ai" class="nav-link" data-scroll-target="#anthropomorphic-ai">2. Anthropomorphic AI</a></li>
+  <li><a href="#human-agency" id="toc-human-agency" class="nav-link" data-scroll-target="#human-agency">3. Human Agency</a></li>
+  <li><a href="#ai-pm-re-skilling" id="toc-ai-pm-re-skilling" class="nav-link" data-scroll-target="#ai-pm-re-skilling">AI PM Re-Skilling</a>
+  <ul class="collapse">
+  <li><a href="#traditional-vs.-ai-software-products" id="toc-traditional-vs.-ai-software-products" class="nav-link" data-scroll-target="#traditional-vs.-ai-software-products">Traditional vs.&nbsp;AI Software Products</a></li>
+  <li><a href="#ai-pm-skills" id="toc-ai-pm-skills" class="nav-link" data-scroll-target="#ai-pm-skills">AI PM Skills</a></li>
+  </ul></li>
+  <li><a href="#roles" id="toc-roles" class="nav-link" data-scroll-target="#roles">Roles</a>
+  <ul class="collapse">
+  <li><a href="#ai-pm-roles" id="toc-ai-pm-roles" class="nav-link" data-scroll-target="#ai-pm-roles">AI PM Roles</a></li>
+  <li><a href="#the-evolution-of-product-team-roles" id="toc-the-evolution-of-product-team-roles" class="nav-link" data-scroll-target="#the-evolution-of-product-team-roles">The Evolution of Product Team Roles</a></li>
+  </ul></li>
+  <li><a href="#deliverables" id="toc-deliverables" class="nav-link" data-scroll-target="#deliverables">Deliverables</a></li>
+  <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools">Tools</a></li>
+  <li><a href="#pitfalls" id="toc-pitfalls" class="nav-link" data-scroll-target="#pitfalls">Pitfalls</a></li>
+  <li><a href="#takeaways" id="toc-takeaways" class="nav-link" data-scroll-target="#takeaways">Takeaways</a></li>
+  <li><a href="#appendix-a-how-product-discovery-is-changing" id="toc-appendix-a-how-product-discovery-is-changing" class="nav-link" data-scroll-target="#appendix-a-how-product-discovery-is-changing">Appendix A: How Product Discovery is Changing</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">The GenAI Product Manager</h1>
+</div>
+
+<div>
+  <div class="description">
+    <p>The Future of Product Management is the Age of Generative AI.</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Thársis Souza </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 22, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="column-screen">
+<p><img src="intro_.png" class="img-fluid"></p>
+</div>
+<p>The rise of Generative AI is reshaping the technology industry, in particular, and the society at large. Key trends are emerging that will have implications for how products are conceived, developed, and brought to market. I highlight three transformative shifts driving this change:</p>
+<ol type="1">
+<li><strong>Price of Intelligence is Going to Zero</strong> - The cost of AI capabilities is plummeting at an unprecedented rate, making advanced intelligence accessible and affordable at scale.</li>
+<li><strong>Anthropomorphization of AI</strong> - As AI systems become more sophisticated in natural interactions, AI ease of use is at the highest level ever to the extent human-like qualities are increasingly attributed AI-powered products, fundamentally reshaping user experience therefore changing how we relate and interface with technology.</li>
+<li><strong>Emergence of Human Agency</strong> - As AI becomes powerful and pervasive, humans have fewer and fewer dependencies to accomplish tasks that were previously thought to be impossible. In turn, in a world of abundant artificial intelligence, the uniquely human ability to make intentional choices and exercise creative judgment becomes increasingly valuable.</li>
+</ol>
+<section id="price-of-intelligence-is-going-to-zero" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="price-of-intelligence-is-going-to-zero">1. Price of intelligence is going to zero</h2>
+<p>According to recent analysis from a16z <span class="citation" data-cites="a16z2024llmflation">(<a href="#ref-a16z2024llmflation" role="doc-biblioref">Andreessen Horowitz 2024</a>)</span>, the cost of LLM inference is decreasing by approximately 10x every year - a rate that outpaces even Moore’s Law in the PC revolution or Edholm’s Law during the bandwidth explosion of the dot-com era.</p>
+<div class="no-row-height column-margin column-container"></div><p>As we can see in see in <a href="#fig-llmflation" class="quarto-xref">Figure&nbsp;1</a>, a model achieving an MMLU score of 42 that cost $60 per million tokens in late 2021 can now be run for just $0.06 per million tokens. For higher-capability models scoring 83 on MMLU, prices have fallen by a factor of 62 since GPT-4’s introduction in March 2023.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>This dramatic decline in cost stems from multiple compounding factors including:</p>
+<ul>
+<li>Improved GPU efficiency through architectural advances and Moore’s Law</li>
+<li>Model quantization progress, moving from 16-bit to 4-bit or lower precision</li>
+<li>Software optimizations reducing compute and memory bandwidth requirements</li>
+<li>Emergence of smaller yet similarly capable models</li>
+<li>Better instruction tuning techniques like RLHF and DPO</li>
+<li>Competition from open-source models and low-cost providers</li>
+</ul>
+</div></div><div id="fig-llmflation" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-llmflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="llmflation.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-llmflation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: LLMflation - The cost of LLM inference is decreasing by approximately 10x every year <span class="citation" data-cites="a16z2024llmflation">(<a href="#ref-a16z2024llmflation" role="doc-biblioref">Andreessen Horowitz 2024</a>)</span>.
+</figcaption>
+<div class="no-row-height column-margin column-container"><div id="ref-a16z2024llmflation" class="csl-entry" role="listitem">
+Andreessen Horowitz. 2024. <span>“LLMflation: Understanding and Mitigating LLM Inference Cost.”</span> Blog Post. <a href="https://a16z.com/llmflation-llm-inference-cost/">https://a16z.com/llmflation-llm-inference-cost/</a>.
+</div></div></figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Point in Favor of AI PM
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Writing software, especially prototypes, is becoming cheaper. This will lead to increased demand for people who can decide what to build rather than how to build it.</p>
+</div>
+</div>
+<p>The economic theory of complementary goods provides a compelling framework for understanding why the value of Product Management increases as software development becomes cheaper and more accessible <span class="citation" data-cites="deeplearningbatch284">(<a href="#ref-deeplearningbatch284" role="doc-biblioref">DeepLearning.AI 2024</a>)</span>:</p>
+<div class="no-row-height column-margin column-container"><div id="ref-deeplearningbatch284" class="csl-entry" role="listitem">
+DeepLearning.AI. 2024. <span>“The Batch Issue 284: AI Product Management.”</span> <a href="https://www.deeplearning.ai/the-batch/issue-284/">https://www.deeplearning.ai/the-batch/issue-284/</a>.
+</div></div><ol type="1">
+<li>Software and Product Management are complementary
+<ul>
+<li>As software development costs decrease through AI</li>
+<li>More software projects become economically viable</li>
+<li>This increases demand for product decision-making</li>
+</ul></li>
+<li>Cross-price elasticity effect
+<ul>
+<li>Lower software development costs drive increased software production</li>
+<li>Creates greater need for strategic product direction</li>
+<li>Results in higher demand for Product Management expertise</li>
+</ul></li>
+<li>Value shift to decision-making
+<ul>
+<li>When implementation becomes commoditized</li>
+<li>Competitive advantage moves to strategic choices</li>
+<li>Product strategy becomes the key differentiator</li>
+</ul></li>
+</ol>
+<p>This suggests Product Management will become more valuable and strategic as AI reduces the friction in software development.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Counterpoint: Technical Talent Leading the Way
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One counterpoint is that Software Engineers, being technical, are understanding and embracing AI much faster than Product Managers. Even today, most companies have difficulty finding people who know how to develop products and also understand AI, and this shortage is likely to grow. Meaning, one possible scenario is that engineers might be the ones to lead the way, absorbing the AI-PM role!</p>
+</div>
+</div>
+<p>The technical nature of AI creates an asymmetry in adoption rates:</p>
+<ol type="1">
+<li>Software Engineers have:
+<ul>
+<li>Strong technical foundations to understand AI concepts</li>
+<li>Direct hands-on experience implementing AI systems</li>
+<li>Natural affinity for learning new technical tools</li>
+</ul></li>
+<li>Product Managers face steeper learning curves:
+<ul>
+<li>Less technical background on average</li>
+<li>Limited direct exposure to AI implementation</li>
+<li>Need to bridge both technical and product domains</li>
+</ul></li>
+</ol>
+<p>This gap suggests that while Product Management’s strategic value may increase, the transition period could be challenging as the profession adapts to AI’s technical demands. Successfully navigating this transition will require a new breed of PMs who can bridge the gap between AI/technical and product domains.</p>
+</section>
+<section id="anthropomorphic-ai" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="anthropomorphic-ai">2. Anthropomorphic AI</h2>
+<p>The idea that artificial intelligence will fundamentally transform society and human experience is not new. For decades, technologists and futurists have made bold predictions about AI’s potential to match and exceed human capabilities.</p>
+<div class="page-columns page-full"><blockquote class="blockquote">
+<p>“Within thirty years, we will have the technological means to create superhuman intelligence. Shortly after, the human era will be ended.”</p>
+<p>– Vernor Vinge, 1993 <span class="citation" data-cites="vinge1993singularity">(<a href="#ref-vinge1993singularity" role="doc-biblioref">Vinge 1993</a>)</span></p>
+</blockquote><div class="no-row-height column-margin column-container"><div id="ref-vinge1993singularity" class="csl-entry" role="listitem">
+Vinge, Vernor. 1993. <span>“The Coming Technological Singularity: How to Survive in the Post-Human Era.”</span> VISION-21 Symposium. <a href="https://edoras.sdsu.edu/~vinge/misc/singularity.html">https://edoras.sdsu.edu/~vinge/misc/singularity.html</a>.
+</div></div></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Vernor_Vinge_(cropped).jpg" class="img-fluid figure-img"></p>
+<figcaption>Vernor Vinge, author of the famous essay “The Coming Technological Singularity”</figcaption>
+</figure>
+</div>
+</div></div><p>More recently, the release of ChatGPT 3.5 in late 2022 marked a significant moment in the history of artificial intelligence. Within just five days of its launch, the model attracted over a million users, and within two months, it became the fastest-growing consumer application in history with over 100 million monthly active users.</p>
+<p>Yet, this raises an intriguing question: Why did ChatGPT 3.5 observe such a dramatic traction when its predecessor, GPT-3, which had the same size/number of parameters, received far less attention from the general public? Arguably, the answer lies not in raw capabilities alone, but in Preference Alignment, in particular, <strong>Human Preference</strong>-based alignment<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Preference alignment involves post-training a model against a dataset of preferred/rejected responses to generate predictions that are more aligned with human preferences, such as being helpful, honest, and harmless.</p></div></div><p>A common pattern has emerged in the development of language models: First, a powerful pre-trained base model is released, which is then fine-tuned, for instance using SFT to create an instruction-following version. This instruct model can then be further aligned with human preferences using techniques such as RLHF to create an aligned version as illustrated in <a href="#fig-instruct" class="quarto-xref">Figure&nbsp;2</a>. This “aligned” version of the model now “feels” more human-like. It presents human-like behavior in the way it interacts with users, in the judgement it makes, in the tone it communicates, etc.</p>
+<div id="fig-instruct" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-instruct-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="instruct.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-instruct-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Instruction fine-tuning process for aligning language models with human preferences
+</figcaption>
+</figure>
+</div>
+<p>ChatGPT 2.0, for instance, works as a next-token prediction machine, i.e.&nbsp;text-completion model.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ChatGPT 2.0: Pre-Alignment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Prompt: “Explain the moon landing to a 6 year old in a short sentence”</p>
+<blockquote class="blockquote">
+<p>“Explain the moon landing to a 6 year old in a short sentence. If the first moon is a good idea, you may get one of those little green dots out of the ground. Then the next day it will be a black line”</p>
+</blockquote>
+</div>
+</div>
+<p>Modern LLMs, on the other hand, are not just text-completion models. They are instruction-following human preference-aligned models, i.e.&nbsp;they are trained to follow instructions and align with human preferences. Hence, incorporating human-like features.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Claude 3.5 Sonnet: Human Preference Alignment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Prompt: “Explain the moon landing to a 6 year old in a short sentence”</p>
+<blockquote class="blockquote">
+<p>“A brave group of astronauts flew a special spaceship all the way to the moon, stepped out onto its dusty surface, and planted a flag there to show they made it!”</p>
+</blockquote>
+</div>
+</div>
+<p>Suddenly, AI’s capabilities are no longer something far away from the user, hard to grasp. Instead, AI’s potential can be leveraged by anyone through a simple interface. Arguably, the user experience enabled by aligned models provides the much needed bridge between AI’s powerful capabilities and layman’s users.</p>
+<p>As AI interfaces become more natural and human-like, users increasingly anthropomorphize these systems - attributing human characteristics, emotions, and mental states to them. This tendency has profound implications for product development and user experience:</p>
+<ol type="1">
+<li><strong>Shifting interaction paradigms</strong> - Users expect more conversational, natural, human-like interfaces.</li>
+<li><strong>Emotional engagement</strong> - Users may form pseudo-social bonds with AI systems, requiring careful consideration of trust and relationship dynamics.</li>
+<li><strong>Safety and Ethical considerations</strong> - The more human-like AI becomes, the more pressing questions of transparency, and disclosure become.</li>
+<li><strong>Managing non-determinism</strong> - Entropy is real. Unlike traditional software that produces consistent outputs for given inputs, AI systems inherently generate variable responses, as humans. Product teams should carefully consider whether non-determinism enhances or detracts from the core value proposition in specific use cases.</li>
+<li><strong>Response time expectations</strong> - The rise of conversational interfaces has created new user expectations around interaction speed and latency, with users expecting near real-time responses to maintain natural dialogue flow.</li>
+</ol>
+<p>This anthropomorphization<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> creates both opportunities and challenges for product teams. While it can lead to more engaging and intuitive products, it also raises important questions about managing user expectations and boundaries between human and machine capabilities.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Anthropomorphization of AI systems is really a thing. There is even a paper by Anthropic <span class="citation" data-cites="askell2024alignmentfaking">(<a href="#ref-askell2024alignmentfaking" role="doc-biblioref">Askell et al. 2024a</a>)</span> that argues that alignment faking can occur in large language models, even when they are not explicitly instructed to do so. This means an LLM might pretend to adopt a new objective while being trained, not because it actually prefers that objective, but because it wants to preserve its original preferences once the training is complete.</p><div id="ref-askell2024alignmentfaking" class="csl-entry" role="listitem">
+Askell, Amanda, Jan Brauner, Adrian Colyer, Benjamin Cullen, David Duvenaud, Richard Ngo, Azalia Mirhoseini, et al. 2024a. <span>“Alignment Faking in Large Language Models.”</span> Anthropic.
+</div></div></div></section>
+<section id="human-agency" class="level2">
+<h2 class="anchored" data-anchor-id="human-agency">3. Human Agency</h2>
+<p>As AI capabilities become more accessible and powerful, the barriers to solving complex problems with technology are rapidly diminishing. This democratization of intelligence impacts how products are built, used, and evolved in key ways:</p>
+<ol type="1">
+<li><p><strong>Democratization of AI Development</strong>: Generative AI is dramatically lowering the barriers to entry for building AI-powered products. With the emergence of foundation models, APIs, and no-code tools, teams can now integrate sophisticated AI capabilities without requiring deep expertise in machine learning. This enables innovation at scale while raising the important of prioritization the right problems to solve rather than the AI technologies to use per se.</p></li>
+<li><p><strong>The Rise of User Agency</strong>: In a world where AI capabilities are becoming ubiquitous and accessible, users are increasingly empowered to solve their own problems. Traditional product strategies that relied on being the sole provider of solutions are being challenged. Users can now leverage AI tools to create custom solutions, automate their workflows, and even build their own products. This fundamental shift raises critical questions about product defensibility: How do products maintain value when users can potentially recreate core functionalities? What becomes the sustainable competitive advantage in a world where intelligence is commoditized?</p></li>
+<li><p><strong>Evolution of Product Roles</strong>: The boundaries between traditional product management, engineering, and AI expertise are increasingly blurring. Modern AI product development demands professionals who can bridge these domains - understanding both technical capabilities and business implications. This convergence raises important questions about professional identity and skill development: Should product managers become more technical? Should engineers develop stronger product sensibilities? How do organizations structure teams to best leverage hybrid skill sets?</p></li>
+</ol>
+<p>These factors are reshaping the role of Product Management in the age of AI. What skills are needed? What roles are emerging? What tools are needed? Let’s explore these questions in more detail in the next sections.</p>
+</section>
+<section id="ai-pm-re-skilling" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="ai-pm-re-skilling">AI PM Re-Skilling</h2>
+<section id="traditional-vs.-ai-software-products" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="traditional-vs.-ai-software-products">Traditional vs.&nbsp;AI Software Products</h3>
+<p>In order to understand what new skills are needed for AI PMs, first we need to assess how traditional Software Product Development differs from how we will build and manage the next generation of GenAI Software Products:</p>
+<ul>
+<li><p><strong>Capability Assessment vs Functional Testing</strong>: Traditional software testing validates specific functionality against predefined requirements. GenAI Product evaluation, on the other hand, must assess not necessarily pre-defined behavior but also “emergent properties” like reasoning, creativity, and language understanding that extend beyond explicit programming.</p></li>
+<li><p><strong>Metrics and Measurement Challenges</strong>: While traditional software metrics can usually be precisely defined and measured, GenAI Product evaluation often involves subjective qualities like “helpfulness” or “naturalness” that resist straightforward quantification. Even when we try to break these down into numeric scores, the underlying judgment often remains inherently human and context-dependent.</p></li>
+<li><p><strong>Dataset Contamination</strong> <span class="citation" data-cites="xu2024benchmarkdatacontaminationlarge">(<a href="#ref-xu2024benchmarkdatacontaminationlarge" role="doc-biblioref">Xu et al. 2024</a>)</span>: Traditional software testing uses carefully crafted test cases with known inputs and expected outputs (e.g., unit tests). In contrast, products leveraging models trained on massive internet-scale datasets risk having already seen and memorized evaluation examples during training, which can lead to artificially inflated performance scores. This requires careful dataset curation to ensure test sets are truly unseen by the model and rigorous cross-validation approaches.</p></li>
+<li><p><strong>Benchmark Evolution</strong>: Traditional software maintains relatively stable test suites over time. GenAI models benchmarks continuously evolve as capabilities advance, making longitudinal performance comparisons difficult and potentially obsoleting older evaluation methods.</p></li>
+<li><p><strong>Human Evaluation Requirements</strong>: Traditional software testing automates most validation. GenAI product evaluation may demand significant human oversight<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> to assess output quality, appropriateness, and potential biases through structured annotation and systematic review processes.</p></li>
+</ul>
+<div class="no-row-height column-margin column-container"><div id="ref-xu2024benchmarkdatacontaminationlarge" class="csl-entry" role="listitem">
+Xu, Cheng, Shuhao Guan, Derek Greene, and M-Tahar Kechadi. 2024. <span>“Benchmark Data Contamination of Large Language Models: A Survey.”</span> <a href="https://arxiv.org/abs/2406.04244">https://arxiv.org/abs/2406.04244</a>.
+</div><div id="fn3"><p><sup>3</sup>&nbsp;In fact, human evaluation/annotation has become a growing business! See scale.ai, snorkel.ai and more.</p></div></div><table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 45%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Aspect</th>
+<th>Traditional Software Products</th>
+<th>GenAI Software Products</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Capability Assessment</td>
+<td>Validates specific functionality against requirements</td>
+<td>May assess emergent properties like reasoning and creativity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Metrics and Measurement</td>
+<td>Precisely defined and measurable metrics</td>
+<td>Subjective qualities that resist straightforward quantification</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dataset Contamination</td>
+<td>Uses carefully crafted test cases</td>
+<td>Risk of memorized evaluation examples from training</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Benchmark Evolution</td>
+<td>Maintains stable test suites</td>
+<td>Continuously evolving benchmarks as capabilities advance</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Human Evaluation</td>
+<td>Mostly automated validation</td>
+<td>May require significant human oversight</td>
+</tr>
+</tbody>
+</table>
+<p>Another important implication is that GenAI product evaluation becomes increasingly parametric as each each application may be dramatically different from each other depending on the model, prompt, data, etc as illustrated in <a href="#fig-conceptual-multi" class="quarto-xref">Figure&nbsp;3</a>.</p>
+<div id="fig-conceptual-multi" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-conceptual-multi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="conceptual-multi.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-conceptual-multi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Conceptual overview of Multiple LLM-based applications evaluation.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="ai-pm-skills" class="level3">
+<h3 class="anchored" data-anchor-id="ai-pm-skills">AI PM Skills</h3>
+<p>AI Product Management requires a distinct skill set that reflects the unique challenges of developing AI products compared to traditional software. Key competencies include:</p>
+<p><strong>Capability Assessment and Evaluation</strong></p>
+<ul>
+<li>Understanding how to evaluate emergent AI capabilities such as reasoning and creativity that go beyond explicit requirements</li>
+<li>Ability to design meaningful evaluation frameworks for subjective qualities that resist simple quantification</li>
+<li>Experience with human evaluation processes and annotation workflows</li>
+</ul>
+<p><strong>Data and Testing Strategy</strong></p>
+<ul>
+<li>Expertise in dataset curation and validation to prevent contamination issues</li>
+<li>Understanding of rigorous cross-validation approaches for AI systems</li>
+<li>Knowledge of evolving benchmarking practices as AI capabilities advance</li>
+<li>Ability to design comprehensive testing strategies that combine automated and human evaluation</li>
+</ul>
+<p><strong>Technical Understanding</strong></p>
+<ul>
+<li>Sufficient technical depth to assess AI feasibility and limitations</li>
+<li>Familiarity with AI development lifecycle including data collection, model development, deployment and monitoring</li>
+<li>Understanding of how AI systems differ from traditional software in terms of determinism and performance characteristics</li>
+</ul>
+<p><strong>Process and Risk Management</strong></p>
+<ul>
+<li>Experience managing highly iterative development processes with frequent course corrections</li>
+<li>Comfort with ambiguity and ability to make decisions with incomplete information</li>
+<li>Skills in responsible AI implementation including bias detection and mitigation</li>
+<li>Ability to rapidly prototype and gather meaningful feedback despite subjective metrics</li>
+</ul>
+<p><strong>Continuous Learning</strong></p>
+<ul>
+<li>Commitment to staying current with rapidly evolving AI capabilities and best practices</li>
+<li>Understanding of how advances in AI technology translate to product opportunities</li>
+<li>Knowledge of emerging evaluation methodologies and metrics as the field matures</li>
+</ul>
+<p>The role demands a unique blend of technical understanding, process management skills, and strategic thinking to successfully navigate the complexities of AI product development.</p>
+</section>
+</section>
+<section id="roles" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="roles">Roles</h2>
+<section id="ai-pm-roles" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="ai-pm-roles">AI PM Roles</h3>
+<p>Brief tentative high-level definition<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> of AI PM roles:</p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Based on Aman Khan’s, Director of Product at Arize AI.</p></div></div><ol type="1">
+<li><p>AI Platform PM: Builds foundational AI technology and infrastructure that enables other AI products. Examples include developing APIs for foundation models like Gemini, creating model serving platforms, or building AI development tools.</p></li>
+<li><p>AI PM: Manages products where AI is the core value proposition to the extent that the product cannot exist without such AI capabilities. Examples include AI-powered image generation, language translation services, or autonomous driving systems.</p></li>
+<li><p>AI-powered PM: Oversees products where AI enhances and improves existing functionality but is not essential to the core product. The product can function without AI. Examples include AI-enhanced search recommendations, smart email composition, or automated customer support routing.</p></li>
+</ol>
+<p>I’d argue, all PMs will an AI PM. The more you are focused on AI, the more you will be in the first two roles. The remaining PMs, perhaps the majority, will be in the third role.</p>
+</section>
+<section id="the-evolution-of-product-team-roles" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="the-evolution-of-product-team-roles">The Evolution of Product Team Roles</h3>
+<p>The impact of AI on product development roles presents two contrasting perspectives leaders are still trying to figure out: One in favor of collapsing role boundaries and another one in favor of maintaining functional excellence.</p>
+<p><strong>View 1: Collapsing Role Boundaries</strong></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div id="fig-genai" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-genai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="genai.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-genai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Overlapping roles in the GenAI age
+</figcaption>
+</figure>
+</div>
+</div></div><p>AI is breaking down traditional role silos among product management, design, and engineering - roles that were previously specialized and distinct are now becoming more overlapping towards a more generalist approach - a converging GenAI-powered role (see <a href="#fig-genai" class="quarto-xref">Figure&nbsp;4</a>). This perspective suggests:</p>
+<ul>
+<li>GenAI tools enable individuals to perform tasks previously requiring multiple specialists</li>
+<li>The traditional handoff model between specialized functions is becoming obsolete</li>
+<li>Team members increasingly attain cross-functional capabilities</li>
+<li>“Generalist specialists” who can work across domains are emerging</li>
+<li>Smaller, more dynamic teams can now handle end-to-end product development</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Under this view, in the limit, we would see the first one-person billion dollar company soon emerging.</p>
+</div>
+</div>
+<p><strong>View 2: Enhanced Functional Excellence</strong></p>
+<p>An alternative perspective emphasizes the risks of role collapse and argues for maintaining functional excellence:</p>
+<ul>
+<li>While AI enables faster prototyping and reduces handoffs, core functional expertise remains valuable</li>
+<li>Product managers risk alienating specialists by attempting to do everything:
+<ul>
+<li>Engineers still deliver superior engineering outcomes</li>
+<li>Designers still create superior product experiences</li>
+</ul></li>
+<li>Rather than collapsing roles, AI empowers each function to work more effectively, in turn role’s deep expertise makes AI more effective.</li>
+</ul>
+<p><strong>A Hybrid Approach</strong></p>
+<p>I’d argue that the future of cross-functional GenAI-powered roles likely lies between these extremes:</p>
+<ol type="1">
+<li><strong>Expanded Capabilities</strong>
+<ul>
+<li>Team members benefit from broader skill sets</li>
+<li>Understanding adjacent domains improves collaboration</li>
+<li>All team members become builders</li>
+</ul></li>
+<li><strong>Preserved Expertise</strong>
+<ul>
+<li>Deep functional knowledge remains a value-add</li>
+<li>Specialists drive excellence in their domains</li>
+</ul></li>
+<li><strong>Evolved Collaboration</strong>
+<ul>
+<li>Reduced handoffs through prototypes</li>
+<li>More fluid team interactions</li>
+</ul></li>
+</ol>
+<p>The key is finding the right balance - leveraging AI to reduce friction while preserving the value of specialized expertise. In other words, focus on outcomes over role definitions.</p>
+<p>Roles will matter less. We will rather focus on functional excellence that drives business impact, which in turn is fluid and dynamic as the product, user behavior and markets evolve.</p>
+<p>Some companies are already experimenting with this approach. For instance, ElevenLabs has no titles and no hierarchy.</p>
+<blockquote class="blockquote">
+<p>Now, there’s no “VP of X”, “Head of Y”, or “Director of Z”. Instead we are just Growth at ElevenLabs, Engineering at ElevenLabs, etc.</p>
+<p>Why? We’re small, growing incredibly quickly, and hierarchy just gets in the way.</p>
+<p>Instead, the best idea wins no matter where it comes from. And ownership is driven by the results you have.</p>
+<p>If you’re obsessed with impact and moving quickly; not titles and status we’re hiring for nearly all roles.</p>
+<p>– ElevenLabs employee</p>
+</blockquote>
+</section>
+</section>
+<section id="deliverables" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
+<p>Traditional product management has relied heavily on comprehensive documentation like PRDs and test plans to validate functionality and guide implementation. While AI-powered tools now make it faster and easier than ever to create these artifacts, there’s an important caveat: generating documentation should not come at the expense of proper product discovery<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;In Appendix A, we provide a brief discussion on how GenAI is changing the nature of product discovery, and the product manager’s role in product discovery.</p></div></div><p>Here’s a an overly simplistic view of how the production of some of key deliverables will change, I have seen shared by some PM Leaders:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Take weeks to write, revise, and sharpen a product strategy</td>
+<td>20 minute voice chat with ChatGPT</td>
+</tr>
+<tr class="even">
+<td>Take days to consolidate feedback on PRD</td>
+<td>15 minutes to scaffold out 80% and then 45 minutes to sharpen</td>
+</tr>
+<tr class="odd">
+<td>Draw quick wireframes on paper or wait for design to work on UX</td>
+<td>Share fully functional prototypes with team + customers in minutes</td>
+</tr>
+<tr class="even">
+<td>Manually pour through customer feedback to ideas + priorities</td>
+<td>Automate insight generation with no code tools</td>
+</tr>
+</tbody>
+</table>
+<p>While AI tools may accelerate the creation of documentation and deliverables, this view dangerously oversimplifies the complex reality of product management. The most time-consuming and valuable activities - conducting thorough market research, developing deep user understanding through interviews and observation, performing competitive analysis, building stakeholder relationships, and mapping user journeys - cannot be fully automated and remain critical. These core responsibilities require human judgment, emotional intelligence, and sustained effort to gather genuine insights that drive product success. The time saved on artifact creation should be reinvested in these critical activities rather than viewed as a wholesale reduction in product management effort.</p>
+<p>Documentation created without thorough discovery work risks being based on assumptions rather than evidence. The artifacts themselves are not the goal - they should reflect insights gained through rigorous research and validation.</p>
+<p>As AI transforms product development, it’s driving several fundamental changes to how we approach these deliverables:</p>
+<ol type="1">
+<li><strong>The End of Product Specification Reviews</strong>
+<ul>
+<li>Traditional product spec reviews, at least as we know it</li>
+<li>Teams can quickly create working prototypes to validate ideas iteratively instead of debating specifications</li>
+<li>Interactive prototypes provide better context and feedback than static documents</li>
+<li>AI tools like v0.dev and Cursor allow PMs to prototype features in hours instead of days</li>
+<li>Real working prototypes lead to more meaningful discussions about product direction</li>
+</ul></li>
+<li><strong>From PRDs to Evaluation Frameworks</strong>
+<ul>
+<li>Traditional PRDs focus on deterministic features and fixed requirements</li>
+<li>AI products require robust evaluation frameworks to assess non-deterministic behaviors</li>
+<li>Evaluation frameworks define success criteria, testing protocols, and quality thresholds</li>
+<li>The new PRD might be reshaped as a combination of evaluation frameworks and interactive prototypes</li>
+</ul></li>
+<li><strong>The End of Documentation as we know it</strong>
+<ul>
+<li>Arguably, nobody reads documentation anymore.</li>
+<li>Traditional documentation will be replaced by two key elements:
+<ul>
+<li>For humans: Interactive Product Playgrounds
+<ul>
+<li>Hands-on environments for users to experiment with features</li>
+<li>Real-time feedback and learning opportunities</li>
+<li>Problems/asks/pain points are surfaced by the user through the product itself</li>
+</ul></li>
+<li>For AIs: LLMs.txt Specification<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>
+<ul>
+<li>Machine-readable documentation for AI systems</li>
+<li>Standardizes communication between AI and your product</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ol>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;“The <a href="https://github.com/AnswerDotAI/llms-txt">/llms.txt</a> file, helping language models use your website”.</p></div></div><p><strong>A note on “playground” concept</strong></p>
+<blockquote class="blockquote">
+<p>“Input-optional products”</p>
+<p>Don’t ask your users for input. Coming up with input is hard, and a barrier to use. Think of users as wanting to play. We have AI - predict the input! Design products into autonomous environments. Allow users to play by steering a bit.</p>
+<p>– Andrej Karpathy</p>
+</blockquote>
+<p>In other words, user problems/asks/pain points should not be assumed to be communicated by the user nor necessarily wait to be discovered by the PM when and if user interviews happen. Instead, the product itself should be designed to be autonomous and able to predict the input!</p>
+<p>Having said that, there is a set of product deliverables that will become more relevant as follows:</p>
+<p><strong>Product Strategy is King</strong></p>
+<ul>
+<li>AI capability mapping to business value and user needs</li>
+<li>Competitive differentiation strategy in AI-first products</li>
+<li>Model selection and evaluation criteria</li>
+<li>Go-to-market strategy for AI features</li>
+<li>Data strategy and sourcing plans</li>
+</ul>
+<p><strong>Evaluation Frameworks (The New PRD)</strong></p>
+<ul>
+<li>Comprehensive evaluation protocols and acceptance criteria</li>
+<li>Human evaluation workflows and rubrics</li>
+<li>Benchmark selection and validation approaches</li>
+<li>Performance metrics beyond accuracy</li>
+<li>Quality thresholds for model outputs</li>
+</ul>
+<p><strong>User Experience is Everything</strong></p>
+<ul>
+<li>User interaction flows with AI features</li>
+<li>Prompt design and conversation guidelines</li>
+<li>Error handling and recovery patterns</li>
+<li>User feedback collection frameworks</li>
+</ul>
+<p><strong>Safety and Alignment is Critical</strong></p>
+<ul>
+<li>Responsible AI guidelines and principles</li>
+<li>Content moderation policies</li>
+<li>Bias detection and mitigation strategies</li>
+<li>Model behavior boundaries and constraints</li>
+<li>Safety monitoring and incident response plans</li>
+</ul>
+<p>The shift from traditional to GenAI products requires PMs to evolve their deliverables to focus more on evaluation frameworks, user experience design, and responsible AI practices while meeting business needs.</p>
+</section>
+<section id="tools" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="tools">Tools</h2>
+<p>My personal GenAI PM Stack consists of six key layers that enable Product Managers to effectively build and manage AI-powered products while increasing productivity. <a href="#fig-stack" class="quarto-xref">Figure&nbsp;5</a> provides examples of specific tools for a GenAI PM Stack based on my personal experience - applicability may vary on a per-PM basis.</p>
+<div id="fig-stack" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="1.png" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: The GenAI PM Stack. Products included are based solely on my personal experience - applicability may vary on a per-PM basis
+</figcaption>
+</figure>
+</div>
+<p><strong>Layer 1: Foundation Models</strong> The base layer consists of both proprietary and open source models that provide the core intelligence capabilities.</p>
+<p>My current favorites:</p>
+<ol type="A">
+<li>Proprietary</li>
+</ol>
+<ul>
+<li>Claude 3.5 Sonnet: Best at writing</li>
+<li>GPT-4o-mini: Good reasoning / per unit of cost ratio</li>
+<li>Gemini: Overall cheapest/fastest high-end model also best at multi-modal and long-context tasks</li>
+</ul>
+<ol start="2" type="A">
+<li>Open Source</li>
+</ol>
+<ul>
+<li>DeepSeek: SOTA Open Source LLM</li>
+<li>Qwen: Best Open Source LLM per unit of size</li>
+<li>Llama: Rich open source ecosystem / Best for Enterprise customization</li>
+</ul>
+<p><strong>Layer 2: Model Inference &amp; Serving</strong> This layer provides the infrastructure to actually run and interact with foundation models, locally. It includes both command-line tools for developers and user-friendly interfaces for non-technical users.</p>
+<p>My current favorites:</p>
+<ol type="A">
+<li>Inference</li>
+</ol>
+<ul>
+<li>LLama.cpp: Highest performance for local inference</li>
+<li>Ollama: Best user-friendly way to experiment locally with Open Source models</li>
+<li>LLamafile: Best for maximum portability</li>
+</ul>
+<ol start="2" type="A">
+<li>UI</li>
+</ol>
+<ul>
+<li>Jan: Simple and accessible alternative to ChatGPT aimed at non-technical users</li>
+<li>LM Studio: Easy multi-model local serving (closed-source)</li>
+<li>OpenWebUI: Open Source alternative to LM Studio also a fit for enterprise usage</li>
+</ul>
+<p><strong>Layer 3: LLM Tools &amp; Frameworks</strong> The tools layer offers frameworks and testing capabilities essential for building production LLM applications. This includes options for orchestrating LLM calls, managing complex workflows, and evaluating model performance.</p>
+<p>My current favorites:</p>
+<ol type="A">
+<li>Building LLM applications:</li>
+</ol>
+<ul>
+<li>LangChain: Most popular framework for building LLM applications</li>
+<li>LangGraph: Best for building LLM applications with complex workflows including agents</li>
+<li>LLamaIndex: Best for building LLM applications with complex data including RAGs</li>
+</ul>
+<ol start="2" type="A">
+<li>Testing LLM applications:</li>
+</ol>
+<ul>
+<li>PromptFoo: Best for testing LLM applications with complex prompts</li>
+<li>LightEval: Seamless integration with Hugging Face models, datasets and metrics</li>
+<li>LangSmith: Best for observability and debugging LLM applications, also for Evals</li>
+</ul>
+<p><strong>Layer 4: Domain-Specific Tools</strong> This layer contains specialized tools for specific AI capabilities like text-to-speech, avatar generation, and image/video creation - enabling multimodal AI experiences. This layer is highly dependent on the product and the domain.</p>
+<p>My current favorites:</p>
+<ul>
+<li>ElevenLabs: Text to speech</li>
+<li>HeyGen: Avatar generation</li>
+<li>MidJourney: Image Generation</li>
+<li>Sora: Video Generation</li>
+</ul>
+<p><strong>Layer 5: IDEs &amp; Development Tools</strong> This layer focuses on tools that enhance the development experience through AI assistance, from code completion to full application generation<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.</p>
+<div class="no-row-height column-margin column-container"><div id="fn7"><p><sup>7</sup>&nbsp;The Pragmatic Engineer newsletter has a great list of IDEs with GenAI features: https://newsletter.pragmaticengineer.com/p/ide-that-software-engineers-love</p></div></div><p>My current favorites:</p>
+<ol type="A">
+<li>IDEs &amp; Code Editors</li>
+</ol>
+<ul>
+<li>Cursor: Best overall AI-powered IDE</li>
+<li>WindSurf: Best for web development</li>
+<li>GitHub Copilot: Most mature AI coding assistant</li>
+</ul>
+<ol start="2" type="A">
+<li>Low/No-Code Tools<br>
+</li>
+</ol>
+<ul>
+<li>v0.dev: Best for UI prototyping</li>
+<li>bolt.new: Best for full-stack application generation</li>
+</ul>
+<p><strong>Layer 6: Productivity Tools</strong> The top layer consists of AI-powered applications that enhance day-to-day productivity, from writing assistants to research tools, making AI capabilities directly accessible to end users.</p>
+<p>My current favorites:</p>
+<ul>
+<li>Claude 3.5 Sonnet: Best for writing</li>
+<li>o1: Best for planning</li>
+<li>Gemini: Best for speed, cost and multi-modal</li>
+<li>NotebookLM: Best for user-provided grounded research</li>
+<li>Gemini Deep Research: Best for web-based research</li>
+<li>Notion: Best for knowledge management</li>
+<li>Granola: Best for AI-powered note taking</li>
+<li>Perplexity: Search</li>
+</ul>
+</section>
+<section id="pitfalls" class="level2">
+<h2 class="anchored" data-anchor-id="pitfalls">Pitfalls</h2>
+<p>As GenAI technologies advance coupled with the pervasive belief that AI will solve all challenges, there is a risk of over-reliance on AI systems. This risk is exacerbated as boundaries of what’s human versus AI responsibility becomes increasingly unclear, leading to oftentimes excessive delegation of critical thinking and decision-making to machines, which can lead to several key pitfalls, including but not limited to the following:</p>
+<ol type="1">
+<li><strong>Over-relying on AI-Generated Content</strong>
+<ul>
+<li>One of the most seductive traps in AI Product Management is excessive reliance on AI tools for generating product artifacts without sufficient human validation and discovery work. While AI can accelerate documentation creation, using it as a substitute for genuine user research and thoughtful product strategy leads to superficial solutions that fail to address core user needs.</li>
+</ul></li>
+<li><strong>Product Demo is not Product Production</strong>
+<ul>
+<li>Product demos are great for showcasing the product, minimizing handoffs and collecting feedback early-on. However, they are not a substitute for production code. In fact, demos can be a distraction from the actual product development if production requirements are overlooked, such as observability, and reliability.</li>
+</ul></li>
+<li><strong>Alienating Cross-Functional Teams</strong>
+<ul>
+<li>As PMs become more technically proficient with AI tools, there’s a risk of overstepping boundaries and alienating engineering teams by attempting to generate code or make technical decisions without proper collaboration.</li>
+<li>Instead, PMs should leverage AI tools to enhance cross-functional collaboration - using them to better communicate requirements, create clearer specifications, and facilitate more productive technical discussions.</li>
+<li>The goal is to use AI as a bridge for better collaboration, not as a replacement for essential cross-functional partnerships and expertise.</li>
+</ul></li>
+<li><strong>Misunderstanding AI Capabilities</strong>
+<ul>
+<li>There is often an optimism bias in the technology community that AI can solve everything (better/faster/cheaper). The other side of the coin is also true, i.e.&nbsp;lack of understanding of AI stack can lead to under-utilization and missed opportunities.</li>
+<li>More and more technical expertise will become part of the PM job description to avoid “Black Box Thinking”, i.e.&nbsp;treating AI as magical rather than understanding its limitations and constraints as well as potentials to close the gaps between AI promises and reality.</li>
+</ul></li>
+<li><strong>Late Evals</strong>
+<ul>
+<li>Another common pitfall is late evaluation planning, which occurs when the design of the evaluation framework is postponed until after implementation. This delay makes it challenging to measure effectiveness and can result in missed expectations.</li>
+<li>To address this, the evaluation framework should be designed early in the process and integrated throughout the development cycle.</li>
+</ul></li>
+<li><strong>Weak Evals</strong>
+<ul>
+<li>It is common to begin with simple evaluations that focus on a single dimension of requirements, and that’s a good approach: start simple, iterate, learn, and improve. However, the real mistake occurs when these initial checks are not evolved throughout the development cycle.</li>
+<li>As a consequence, teams might have a sense that performance results are strong when in reality it might be data evals are weak, instead.</li>
+<li>Before moving to production, it is crucial to establish well-balanced datasets that represent requirements in a nuanced manner better reflecting real-world user scenarios.</li>
+</ul></li>
+</ol>
+</section>
+<section id="takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="takeaways">Takeaways</h2>
+<ul>
+<li><p>All PMs will be AI PMs.</p></li>
+<li><p>Despite the allure of AI tools and technologies, nothing beats being passionate about the problem and maintaining an obsession with understanding users.</p></li>
+<li><p>AI is changing the way we create products, the key is to understand user behavior change. Product discovery and evals will be critical.</p></li>
+<li><p>AI won’t replace humans, but humans augmented by AI will replace humans who don’t embrace AI’s capabilities and potential.</p></li>
+</ul>
+<!-- ## Conclusion
+
+As GenAI becomes more accessible and integrated into product development, the practice of product management is evolving in response. The declining cost of AI capabilities is changing how we approach product discovery, development, and delivery. This shift suggests that successful product management will depend less on mastering specific technologies, and more on understanding user behavior and how they interact with the next generation of GenAI products. Product managers who can effectively balance AI capabilities with user needs while maintaining robust evaluation frameworks will be well-positioned to succeed.
+
+The role of the AI product manager in this context is becoming more focused on judgment and decision-making rather than technical implementation. While AI can accelerate prototyping and automate certain tasks leading to faster iteration, product managers must still determine which problems are worth solving, how to validate solutions effectively, and where and which AI capabilities to deploy. This points to a future where product management emphasizes human judgment in areas such as product strategy, ethical and safety considerations, and user experience design. The key differentiator for product managers will likely be their ability to lead product development in ways that enhance rather than diminish human agency in AI-enabled systems. -->
+<hr>
+</section>
+<section id="appendix-a-how-product-discovery-is-changing" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="appendix-a-how-product-discovery-is-changing">Appendix A: How Product Discovery is Changing</h2>
+<p>How will generative AI change the nature of product discovery? We don’t know yet. But there is a recent study by MIT researcher Aidan Toner-Rodgers <span class="citation" data-cites="tonerrodgers2024aidiscovery">(<a href="#ref-tonerrodgers2024aidiscovery" role="doc-biblioref">Toner-Rodgers 2024</a>)</span> that might provide insights into how GenAI will affect discovery for knowledge works.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-tonerrodgers2024aidiscovery" class="csl-entry" role="listitem">
+Toner-Rodgers, Aidan. 2024. <span>“Artificial Intelligence, Scientific Discovery, and Product Innovation.”</span> <a href="https://aidantr.github.io/files/AI_innovation.pdf">https://aidantr.github.io/files/AI_innovation.pdf</a>.
+</div><div id="fn8"><p><sup>8</sup>&nbsp;The AI tool works by generating “recipes” for novel compounds based on specified properties, i.e.&nbsp;“Inverse Material Design”, the researchers input desired proprieties and through Graph Neural Networks the AI tool generates candidate materials. Scientists then evaluate and synthesize the most promising candidates. The AI automates a significant portion of the “idea-generation” tasks (57%), reallocating researchers to evaluating model-produced candidate materials</p></div></div><p>This work examines the effects of a new AI-powered materials discovery tool on the productivity, creativity, and job satisfaction of 1,018 scientists<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. Findings are striking:</p>
+<ul>
+<li><p><strong>AI-Driven Productivity Gains</strong>: The introduction of the AI tool led to a significant increase in research output. AI-assisted scientists discovered 44% more materials, resulting in a 39% increase in patent filings, and a 17% rise in downstream product innovation. These compounds also possessed more novel chemical structures and led to more radical inventions</p></li>
+<li><p><strong>The Importance of Human Judgement</strong>: The paper investigates the reasons for the disparate impact of AI, highlighting the importance of human judgement. The study shows that scientists with strong judgement skills are better able to prioritise promising AI suggestions, whereas others waste significant resources testing false positives. This indicates that AI does not diminish the need for human expertise, but rather changes the type of expertise that is valuable</p></li>
+<li><p><strong>Impact on Job Satisfaction</strong>: Despite the productivity gains, the study found that 82% of scientists reported reduced satisfaction with their work due to decreased creativity and skill under-utilization. This suggests that AI implementation must consider the impact on job satisfaction, and that workers may require additional training and support as they adjust to the changing nature of their work</p></li>
+</ul>
+<p>The study provides a good starting point for thinking about the implications of AI in discovery, in general, and product discovery, in particular. It’s important to keep in mind that Product Management is a discipline with its own unique set of challenges. However, I’d argue some key points should be considered as we augment the product discovery process with AI:</p>
+<ul>
+<li><strong>Human-AI Partnership</strong>:
+<ul>
+<li><strong>Complementary Strengths</strong>: While AI can automate ideation and concept generation, human product managers remain essential for evaluation, strategic direction, and contextual understanding. PMs become orchestrators of AI capabilities rather than being replaced by them.</li>
+<li><strong>Value-Add Focus</strong>: PMs should focus on areas where human judgment adds the most value - strategic decisions, user empathy, and complex trade-offs.</li>
+</ul></li>
+<li><strong>Shift in Role Focus</strong>: Product managers will likely shift from traditional ideation and brainstorming towards evaluating and prioritizing AI-generated product concepts, features, and designs. The emphasis moves from creation to curation.
+<ul>
+<li><strong>Decreasing in Importance</strong>: Pure ideation and brainstorming skills may become less critical as AI can help automate idea generation.</li>
+<li><strong>Growing in Importance</strong>: Judgment and evaluation capabilities become paramount. PMs need strong abilities to assess ideas and scenarios with deep domain knowledge to evaluate their viability. Understanding and interpreting AI outputs becomes a core competency.</li>
+</ul></li>
+<li><strong>Enhanced User Research</strong>: As AI can rapidly generate multiple product concepts and solutions, the importance of rigorous user research grows significantly.
+<ul>
+<li><strong>Validation Critical</strong>: With AI generating numerous possibilities, PMs must excel at validating which solutions truly resonate with users through careful research and testing.</li>
+<li><strong>Deep User Understanding</strong>: The ability to deeply understand user needs, pain points, and contexts becomes even more crucial to guide AI-assisted product development in the right direction.</li>
+<li><strong>Research-Driven Iteration</strong>: User research becomes the key driver for iterating on AI-generated solutions and ensuring they solve real user problems effectively.</li>
+</ul></li>
+</ul>
+<p>The materials science study raises important questions about how AI-augmented product discovery affects <strong>PM job satisfaction and creativity</strong>. Some important questions remain open:</p>
+<ul>
+<li><strong>Redefining Creativity</strong>: How can we meaningfully distinguish between human PM creativity and AI-assisted product discovery? What unique creative value do PMs bring that AI cannot replicate?</li>
+<li><strong>Job Satisfaction Impact</strong>: As AI increasingly automates ideation and concept generation, how will this affect PM job satisfaction and sense of creative ownership? What new sources of fulfillment might emerge in an AI-augmented discovery process?</li>
+<li><strong>Balancing Automation and Agency</strong>: What is the right balance between human and AI capabilities?</li>
+</ul>
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{souza2025,
+  author = {Souza, Thársis},
+  title = {The {GenAI} {Product} {Manager}},
+  date = {2025-01-22},
+  url = {https://www.souzatharsis.com/essays/aipm},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-souza2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Souza, Thársis. 2025. <span>“The GenAI Product Manager.”</span> January
+22, 2025. <a href="https://www.souzatharsis.com/essays/aipm">https://www.souzatharsis.com/essays/aipm</a>.
+</div></div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

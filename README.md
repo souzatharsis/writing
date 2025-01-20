@@ -1,1 +1,1 @@
-This repository contains public essays and presentations, written in Quarto.
+- [The GenAI Product Manager](https://www.souzatharsis.com/writing/aipm/), Jan 19, 2025

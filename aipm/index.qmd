@@ -2,7 +2,7 @@
 title: "The GenAI Product Manager"
 description: | 
   The Future of Product Management in the Age of Generative AI.
-date: 01/22/2025
+date: 01/20/2025
 author:
   - name: Thársis Souza 
 citation:
@@ -645,7 +645,6 @@ Here, there is no better resource than the open-source AI community. In my exper
 
 - **Active Learning Communities**: Platforms like Hugging Face host vibrant communities where product managers can engage with developers, researchers, and fellow PMs.
 - **Real-time Knowledge Exchange**: Open source projects provide visibility into cutting-edge developments and implementation approaches. You can simply make a contribution to a project and get feedback from the community.
-- **Collaborative Problem-solving**: Working in public allows for feedback and knowledge sharing with others facing similar challenges.
 - **Network Building**: Engaging with the community creates connections with others working on similar problems and technologies. This is also applicable at the enterprise level where private companies continue to value open-source contributions.
 
 ### Foundations

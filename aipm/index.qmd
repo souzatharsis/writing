@@ -27,10 +27,6 @@ format:
     toc-location: body
 ---
 
-::: {.column-screen}
-![](intro_.png)
-:::
-
 The rise of Generative AI is reshaping the technology industry, in particular, and the society at large. Key trends are emerging that will have implications for how products are conceived, developed, and brought to market. I highlight three transformative shifts driving this change:
 
 1. **Price of Intelligence is Going to Zero** - The cost of AI capabilities is plummeting at an unprecedented rate, making advanced intelligence accessible and affordable at scale.

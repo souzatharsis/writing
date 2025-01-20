@@ -6,7 +6,7 @@ date: 01/22/2025
 author:
   - name: Thársis Souza 
 citation:
-  url: https://www.souzatharsis.com/essays/aipm
+  url: https://www.souzatharsis.com/writing/aipm
 reference-location: margin
 citation-location: margin
 highlight-style: pygments
@@ -28,7 +28,7 @@ format:
 The rise of Generative AI is reshaping the technology industry, in particular, and the society at large. Key trends are emerging that will have implications for how products are conceived, developed, and brought to market. I highlight three transformative shifts driving this change:
 
 1. **Price of Intelligence is Going to Zero** - The cost of AI capabilities is plummeting at an unprecedented rate, making advanced intelligence accessible and affordable at scale.
-2. **Anthropomorphization of AI** - As AI systems become more sophisticated in natural interactions, AI ease of use is at the highest level ever to the extent human-like qualities are increasingly attributed AI-powered products, fundamentally reshaping user experience therefore changing how we relate and interface with technology.
+2. **Anthropomorphization of AI** - As AI systems become more sophisticated in natural interactions, AI ease of use is at the highest level ever to the extent human-like qualities are increasingly attributed to AI-powered products, fundamentally reshaping user experience and how we relate and interface with technology.
 3. **Emergence of Human Agency** - As AI becomes powerful and pervasive, humans have fewer and fewer dependencies to accomplish tasks that were previously thought to be impossible. In turn, in a world of abundant artificial intelligence, the uniquely human ability to make intentional choices and exercise creative judgment becomes increasingly valuable.
 
 
@@ -36,7 +36,7 @@ The rise of Generative AI is reshaping the technology industry, in particular, a
 
 According to recent analysis from a16z [@a16z2024llmflation], the cost of LLM inference is decreasing by approximately 10x every year - a rate that outpaces even Moore's Law in the PC revolution or Edholm's Law during the bandwidth explosion of the dot-com era.
 
-As we can see in see in @fig-llmflation, a model achieving an MMLU score of 42 that cost \$60 per million tokens in late 2021 can now be run for just \$0.06 per million tokens. For higher-capability models scoring 83 on MMLU, prices have fallen by a factor of 62 since GPT-4's introduction in March 2023. 
+As we can see in @fig-llmflation, a model achieving an MMLU score of 42 that cost \$60 per million tokens in late 2021 can now be run for just \$0.06 per million tokens. For higher-capability models scoring 83 on MMLU, prices have fallen by a factor of 62 since GPT-4's introduction in March 2023. 
 
 ::: {.column-margin}
 This dramatic decline in cost stems from multiple compounding factors including:
@@ -80,7 +80,7 @@ This suggests Product Management will become more valuable and strategic as AI r
 ::: {.callout-warning}
 ## Counterpoint: Technical Talent Leading the Way
 
-One counterpoint is that Software Engineers, being technical, are understanding and embracing AI much faster than Product Managers. Even today, most companies have difficulty finding people who know how to develop products and also understand AI, and this shortage is likely to grow. Meaning, one possible scenario is that engineers might be the ones to lead the way, absorbing the AI-PM role!
+Software Engineers, being technical, are understanding and embracing AI much faster than Product Managers. Even today, most companies have difficulty finding people who know how to develop products and also understand AI, and this shortage is likely to grow. Meaning, one possible scenario is that engineers might be the ones to lead the way, absorbing the AI-PM role!
 :::
 
 The technical nature of AI creates an asymmetry in adoption rates:
@@ -160,7 +160,7 @@ This anthropomorphization[^anthropomorphization] creates both opportunities and 
 
 As AI capabilities become more accessible and powerful, the barriers to solving complex problems with technology are rapidly diminishing. This democratization of intelligence impacts how products are built, used, and evolved in key ways:
 
-1. **Democratization of AI Development**: Generative AI is dramatically lowering the barriers to entry for building AI-powered products. With the emergence of foundation models, APIs, and no-code tools, teams can now integrate sophisticated AI capabilities without requiring deep expertise in machine learning. This enables innovation at scale while raising the important of prioritization the right problems to solve rather than the AI technologies to use per se.
+1. **Democratization of AI Development**: Generative AI is dramatically lowering the barriers to entry for building AI-powered products. With the emergence of foundation models, APIs, and no-code tools, teams can now integrate sophisticated AI capabilities without requiring deep expertise in machine learning. This enables innovation at scale while raising the importance of prioritizing the right problems to solve rather than the AI technologies to use per se.
 
 2. **The Rise of User Agency**: In a world where AI capabilities are becoming ubiquitous and accessible, users are increasingly empowered to solve their own problems. Traditional product strategies that relied on being the sole provider of solutions are being challenged. Users can now leverage AI tools to create custom solutions, automate their workflows, and even build their own products. This fundamental shift raises critical questions about product defensibility: How do products maintain value when users can potentially recreate core functionalities? What becomes the sustainable competitive advantage in a world where intelligence is commoditized?
 
@@ -246,13 +246,13 @@ Brief high-level definition[^aman] of AI PM roles:
 
 [^aman]: Based on Aman Khan's, Director of Product at Arize AI.
 
-1. AI Platform PM: Builds foundational AI technology and infrastructure that enables other AI products. Examples include developing APIs for foundation models like Gemini, creating model serving platforms, or building AI development tools.
+1. **AI Platform PM**: Builds foundational AI technology and infrastructure that enables other AI products. Examples include developing APIs for foundation models like Gemini, creating model serving platforms, or building AI development tools.
 
-2. AI PM: Manages products where AI is the core value proposition to the extent that the product cannot exist without such AI capabilities. Examples include AI-powered image generation, language translation services, or autonomous driving systems.
+2. **AI PM**: Manages products where AI is the core value proposition to the extent that the product cannot exist without such AI capabilities. Examples include AI-powered image generation, language translation services, or autonomous driving systems.
 
-3. AI-powered PM: Oversees products where AI enhances and improves existing functionality but is not essential to the core product. The product can function without AI. Examples include AI-enhanced search recommendations, smart email composition, or automated customer support routing.
+3. **AI-powered PM**: Oversees products where AI enhances and improves existing functionality but is not essential to the core product. The product can function without AI. Examples include AI-enhanced search recommendations, smart email composition, or automated customer support routing.
 
-I'd argue, all PMs will an AI PM. The more you are focused on AI, the more you will be in the first two roles. The remaining PMs, perhaps the majority, will be in the third role.
+I'd argue, all PMs will be AI PMs sooner or later. The more you are focused on AI, the more you will be in the first two roles. The remaining PMs, perhaps the majority, will be in the third role.
 
 ### The Evolution of Product Team Roles
 
@@ -302,6 +302,7 @@ I'd argue that the future of cross-functional GenAI-powered roles likely lies be
 3. **Evolved Collaboration**
    - Reduced handoffs through prototypes
    - More fluid team interactions
+   - The collective impact exceeds individual capabilities
 
 The key is finding the right balance - leveraging AI to reduce friction while preserving the value of specialized expertise. In other words, focus on outcomes over role definitions.
 
@@ -342,7 +343,7 @@ Documentation created without thorough discovery work risks being based on assum
 As AI transforms product development, it's driving several fundamental changes to how we approach these deliverables:
 
 1. **The End of Product Specification Reviews**
-   - Traditional product spec reviews, at least as we know it
+   - Traditional product spec reviews will end, at least as we know it
    - Teams can quickly create working prototypes to validate ideas iteratively instead of debating specifications
    - Interactive prototypes provide better context and feedback than static documents
    - AI tools like v0.dev and Cursor allow PMs to prototype features in hours instead of days
@@ -364,6 +365,8 @@ As AI transforms product development, it's driving several fundamental changes t
      - For AIs: LLMs.txt Specification[^llmstxt]
        - Machine-readable documentation for AI systems
        - Standardizes communication between AI and your product
+       - Other GenAI tools can automatically integrate with your product via a common LLM friendly specification. 
+       - This is a reality. See directory of LLM-friendly product documentation here: https://directory.llmstxt.cloud/
 
 [^llmstxt]: "The [/llms.txt](https://github.com/AnswerDotAI/llms-txt) file, helping language models use your website".
 
@@ -383,12 +386,13 @@ Having said that, there is a set of product deliverables that will become more r
 **Product Strategy is King**
 
 - AI capability mapping to business value and user needs
-- Competitive differentiation strategy in AI-first products
+- User segmentation and value proposition
+- Competitive differentiation strategy
 - Model selection and evaluation criteria
 - Go-to-market strategy for AI features
 - Data strategy and sourcing plans
 
-**Evaluation Frameworks (The New PRD)**
+**Evaluation Framework is the New PRD**
 
 - Comprehensive evaluation protocols and acceptance criteria
 - Human evaluation workflows and rubrics
@@ -501,7 +505,7 @@ My current favorites:
 - o1: Best for planning
 - Gemini: Best for speed, cost and multi-modal
 - NotebookLM: Best for user-provided grounded research
-- Gemini Deep Research: Best for web-based research
+- Gemini Deep Research: Best for web-based grounded research
 - Notion: Best for knowledge management
 - Granola: Best for AI-powered note taking
 - Perplexity: Search
@@ -509,7 +513,7 @@ My current favorites:
 
 ## Pitfalls
 
-As GenAI technologies advance coupled with the pervasive belief that AI will solve all challenges, there is a risk of over-reliance on AI systems. This risk is exacerbated as boundaries of what's human versus AI responsibility becomes increasingly unclear, leading to oftentimes excessive delegation of critical thinking and decision-making to machines, which can lead to several key pitfalls, including but not limited to the following:
+As GenAI technologies advance coupled with the pervasive belief that AI will solve all challenges, there is a risk of over-reliance on AI systems. This risk is exacerbated as boundaries of what's human versus AI responsibility becomes increasingly unclear, leading to oftentimes excessive delegation of critical thinking and decision-making to machines. Key pitfalls include but not limited to the following:
 
 1. **Over-relying on AI-Generated Content**
    - One of the most seductive traps in AI Product Management is excessive reliance on AI tools for generating product artifacts without sufficient human validation and discovery work. While AI can accelerate documentation creation, using it as a substitute for genuine user research and thoughtful product strategy leads to superficial solutions that fail to address core user needs.
@@ -524,7 +528,7 @@ As GenAI technologies advance coupled with the pervasive belief that AI will sol
 
 4. **Misunderstanding AI Capabilities**
    - There is often an optimism bias in the technology community that AI can solve everything (better/faster/cheaper). The other side of the coin is also true, i.e. lack of understanding of AI stack can lead to under-utilization and missed opportunities.
-   - More and more technical expertise will become part of the PM job description to avoid "Black Box Thinking", i.e. treating AI as magical rather than understanding its limitations and constraints as well as potentials to close the gaps between AI promises and reality.
+   - More and more technical expertise will become part of the PM job description to avoid "Black Box Thinking", i.e. treating AI as magical rather than understanding its limitations and constraints as well as potentials to close the gap between AI promise and reality.
 
 5. **Late Evals**
    - Another common pitfall is late evaluation planning, which occurs when the design of the evaluation framework is postponed until after implementation. This delay makes it challenging to measure effectiveness and can result in missed expectations.
@@ -544,7 +548,7 @@ As GenAI technologies advance coupled with the pervasive belief that AI will sol
 
 - AI is changing the way we create products, the key is to understand user behavior change. Product discovery and evals will be critical.
 
-- AI won't replace humans, but humans augmented by AI will replace humans who don't embrace AI's capabilities and potential.
+- AI won't replace humans, but humans augmented by AI will replace humans who ignore AI's evolution.
 
 <!-- ## Conclusion
 

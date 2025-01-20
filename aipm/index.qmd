@@ -22,9 +22,11 @@ editor:
 format: 
   html:
     #theme: darkly #lux #quartz
-    toc: true
-    code-fold: true
+    toc: false
+    toc-expand: 2
+    toc-location: body
 ---
+
 ::: {.column-screen}
 ![](intro_.png)
 :::
@@ -170,8 +172,93 @@ As AI capabilities become more accessible and powerful, the barriers to solving 
 
 3. **Evolution of Product Roles**: The boundaries between traditional product management, engineering, and AI expertise are increasingly blurring. Modern AI product development demands professionals who can bridge these domains - understanding both technical capabilities and business implications. This convergence raises important questions about professional identity and skill development: Should product managers become more technical? Should engineers develop stronger product sensibilities? How do organizations structure teams to best leverage hybrid skill sets?
 
-These factors are reshaping the role of Product Management in the age of AI. What skills are needed? What roles are emerging? What tools are needed? Let's explore these questions in more detail in the next sections.
+These factors are reshaping the role of Product Management in the age of AI. What roles are emerging? What skills are needed? What tools are needed? Let's explore these questions in more detail in the next sections.
 
+## Roles
+
+### AI PM Roles
+
+Brief high-level definition[^aman] of AI PM roles:
+
+[^aman]: Based on Aman Khan's, Director of Product at Arize AI.
+
+1. **AI Platform PM**: Builds foundational AI technology and infrastructure that enables other AI products. Examples include developing APIs for foundation models like Gemini, creating model serving platforms, or building AI development tools.
+
+2. **AI PM**: Manages products where AI is the core value proposition to the extent that the product cannot exist without such AI capabilities. Examples include AI-powered image generation, language translation services, or autonomous driving systems.
+
+3. **AI-powered PM**: Oversees products where AI enhances and improves existing functionality but is not essential to the core product. The product can function without AI. Examples include AI-enhanced search recommendations, smart email composition, or automated customer support routing.
+
+I'd argue, all PMs will be AI PMs sooner or later. The more you are focused on AI, the more you will be in the first two roles. The remaining PMs, perhaps the majority, will be in the third role.
+
+### The Evolution of Product Team Roles
+
+The impact of AI on product development roles presents two contrasting perspectives leaders are still trying to figure out: One in favor of collapsing role boundaries and another one in favor of maintaining functional excellence.
+
+**View 1: Collapsing Role Boundaries**
+
+::: {.column-margin}
+![Overlapping roles in the GenAI age](genai.png){#fig-genai}
+:::
+
+AI is breaking down traditional role silos among product management, design, and engineering [^datascience] - roles that were previously specialized and distinct are now becoming more overlapping towards a more generalist approach - a converging GenAI-powered role (see @fig-genai). This perspective suggests:
+
+- GenAI tools enable individuals to perform tasks previously requiring multiple specialists
+- The traditional handoff model between specialized functions is becoming obsolete
+- Team members increasingly attain cross-functional capabilities
+- "Generalist specialists" who can work across domains are emerging
+- Smaller, more dynamic teams can now handle end-to-end product development
+
+[^datascience]: You may have noticed that @fig-genai does not include the data science function. That's intentional. I am not sure whether the data science function will exist in the future versus everyone becoming a data scientist through GenAI.
+
+
+::: {.callout-note}
+Under this view, in the limit, we would see the first one-person billion dollar company soon emerging.
+:::
+
+**View 2: Enhanced Functional Excellence**
+
+An alternative perspective emphasizes the risks of role collapse and argues for maintaining functional excellence:
+
+- While AI enables cross-functional results, faster prototyping and reduces handoffs, core functional expertise remains valuable
+- Product managers risk alienating specialists by attempting to do everything:
+   - Engineers still deliver superior engineering outcomes
+   - Designers still create superior product experiences
+- Rather than collapsing roles, AI empowers each function to work more effectively, in turn role's deep expertise makes AI more effective[^deep-expertise].
+
+**A Hybrid Approach**
+
+I'd argue that the future of cross-functional GenAI-powered roles likely lies between these extremes:
+
+1. **Expanded Capabilities**
+   - Team members benefit from broader skill sets
+   - Understanding adjacent domains improves collaboration
+   - All team members become builders
+
+2. **Preserved Expertise**
+   - Deep functional knowledge remains a value-add
+   - Specialists drive excellence in their domains
+   - The more expert you are, the more effective you will be in leveraging AI in your domain
+
+3. **Evolved Collaboration**
+   - Reduced handoffs through prototypes
+   - More fluid team interactions
+   - The collective impact exceeds individual capabilities
+
+The key is finding the right balance - leveraging AI to reduce friction while preserving the value of specialized expertise. In other words, focus on outcomes over role definitions.
+
+Roles will matter less. We will rather focus on functional excellence that drives business impact, which in turn is fluid and dynamic as the product, user behavior and markets evolve.
+
+Some companies are already experimenting with this approach. For instance, ElevenLabs has no titles and no hierarchy.
+
+> Now, there's no "VP of X", "Head of Y", or "Director of Z". Instead we are just Growth at ElevenLabs, Engineering at ElevenLabs, etc.
+>
+> Why? We're small, growing incredibly quickly, and hierarchy just gets in the way.
+>
+> Instead, the best idea wins no matter where it comes from. And ownership is driven by the results you have.
+>
+> If you're obsessed with impact and moving quickly; not titles and status we're hiring for nearly all roles.
+>
+> -- ElevenLabs employee
 
 ## AI PM Re-Skilling
 
@@ -227,12 +314,14 @@ AI Product Management requires a distinct skill set that reflects the unique cha
 - Ability to design meaningful evaluation frameworks for subjective qualities that resist simple quantification
 - Experience with human evaluation processes and annotation workflows
 
-**Data and Testing Strategy**
+**Data and Testing Strategy**[^prompt-engineering]
 
 - Expertise in dataset curation and validation to prevent contamination issues
 - Understanding of rigorous cross-validation approaches for AI systems
 - Knowledge of evolving benchmarking practices as AI capabilities advance
 - Ability to design comprehensive testing strategies that combine automated and human evaluation
+
+[^prompt-engineering]: I emphasize the importance of Evals. You might ask, where is prompt engineering? Prompt engineering is a new discipline that focuses on how to design effective prompts for AI systems. One could argue it becomes an essential part of the PM job description. Nonetheless, while I agree people often undervalue Prompt Engineering. At the same time, I am not sure whether it will be the PM's responsibility versus everyone's job. Going one step further, I'd argue we might delegate prompt engineering to the machines, i.e. we are programming LLMs instead of prompting them. See Stanford's [DSPy](https://github.com/stanfordnlp/dspy/).
 
 **Technical Understanding**
 
@@ -254,90 +343,6 @@ AI Product Management requires a distinct skill set that reflects the unique cha
 - Knowledge of emerging evaluation methodologies and metrics as the field matures
 
 The role demands a unique blend of technical understanding, process management skills, and strategic thinking to successfully navigate the complexities of AI product development.
-
-## Roles
-
-### AI PM Roles
-
-Brief high-level definition[^aman] of AI PM roles:
-
-[^aman]: Based on Aman Khan's, Director of Product at Arize AI.
-
-1. **AI Platform PM**: Builds foundational AI technology and infrastructure that enables other AI products. Examples include developing APIs for foundation models like Gemini, creating model serving platforms, or building AI development tools.
-
-2. **AI PM**: Manages products where AI is the core value proposition to the extent that the product cannot exist without such AI capabilities. Examples include AI-powered image generation, language translation services, or autonomous driving systems.
-
-3. **AI-powered PM**: Oversees products where AI enhances and improves existing functionality but is not essential to the core product. The product can function without AI. Examples include AI-enhanced search recommendations, smart email composition, or automated customer support routing.
-
-I'd argue, all PMs will be AI PMs sooner or later. The more you are focused on AI, the more you will be in the first two roles. The remaining PMs, perhaps the majority, will be in the third role.
-
-### The Evolution of Product Team Roles
-
-The impact of AI on product development roles presents two contrasting perspectives leaders are still trying to figure out: One in favor of collapsing role boundaries and another one in favor of maintaining functional excellence.
-
-**View 1: Collapsing Role Boundaries**
-
-::: {.column-margin}
-![Overlapping roles in the GenAI age](genai.png){#fig-genai}
-:::
-
-AI is breaking down traditional role silos among product management, design, and engineering - roles that were previously specialized and distinct are now becoming more overlapping towards a more generalist approach - a converging GenAI-powered role (see @fig-genai). This perspective suggests:
-
-- GenAI tools enable individuals to perform tasks previously requiring multiple specialists
-- The traditional handoff model between specialized functions is becoming obsolete
-- Team members increasingly attain cross-functional capabilities
-- "Generalist specialists" who can work across domains are emerging
-- Smaller, more dynamic teams can now handle end-to-end product development
-
-::: {.callout-note}
-Under this view, in the limit, we would see the first one-person billion dollar company soon emerging.
-:::
-
-**View 2: Enhanced Functional Excellence**
-
-An alternative perspective emphasizes the risks of role collapse and argues for maintaining functional excellence:
-
-- While AI enables cross-functional results, faster prototyping and reduces handoffs, core functional expertise remains valuable
-- Product managers risk alienating specialists by attempting to do everything:
-   - Engineers still deliver superior engineering outcomes
-   - Designers still create superior product experiences
-- Rather than collapsing roles, AI empowers each function to work more effectively, in turn role's deep expertise makes AI more effective[^deep-expertise].
-
-**A Hybrid Approach**
-
-I'd argue that the future of cross-functional GenAI-powered roles likely lies between these extremes:
-
-1. **Expanded Capabilities**
-   - Team members benefit from broader skill sets
-   - Understanding adjacent domains improves collaboration
-   - All team members become builders
-
-2. **Preserved Expertise**
-   - Deep functional knowledge remains a value-add
-   - Specialists drive excellence in their domains
-   - The more expert you are, the more effective you will be in leveraging AI in your domain
-
-3. **Evolved Collaboration**
-   - Reduced handoffs through prototypes
-   - More fluid team interactions
-   - The collective impact exceeds individual capabilities
-
-The key is finding the right balance - leveraging AI to reduce friction while preserving the value of specialized expertise. In other words, focus on outcomes over role definitions.
-
-Roles will matter less. We will rather focus on functional excellence that drives business impact, which in turn is fluid and dynamic as the product, user behavior and markets evolve.
-
-Some companies are already experimenting with this approach. For instance, ElevenLabs has no titles and no hierarchy.
-
-> Now, there's no "VP of X", "Head of Y", or "Director of Z". Instead we are just Growth at ElevenLabs, Engineering at ElevenLabs, etc.
->
-> Why? We're small, growing incredibly quickly, and hierarchy just gets in the way.
->
-> Instead, the best idea wins no matter where it comes from. And ownership is driven by the results you have.
->
-> If you're obsessed with impact and moving quickly; not titles and status we're hiring for nearly all roles.
->
-> -- ElevenLabs employee
-
 
 ## Deliverables
 
@@ -512,7 +517,7 @@ B) Low/No-Code Tools
 - v0.dev: Best for UI prototyping
 - bolt.new: Best for full-stack application generation
 
-[^ide-tools]: The Pragmatic Engineer newsletter has a great list of IDEs with GenAI features: https://newsletter.pragmaticengineer.com/p/ide-that-software-engineers-love
+[^ide-tools]: The Pragmatic Engineer newsletter has a great [list of IDEs](https://newsletter.pragmaticengineer.com/p/ide-that-software-engineers-love) with GenAI features.
 
 
 **Layer 6: Productivity Tools**
@@ -569,11 +574,10 @@ As GenAI technologies advance coupled with the pervasive belief that AI will sol
 
 - AI won't replace humans, but humans augmented by AI will replace humans who ignore AI's evolution.
 
-<!-- ## Conclusion
+## Acknowledgements
 
-As GenAI becomes more accessible and integrated into product development, the practice of product management is evolving in response. The declining cost of AI capabilities is changing how we approach product discovery, development, and delivery. This shift suggests that successful product management will depend less on mastering specific technologies, and more on understanding user behavior and how they interact with the next generation of GenAI products. Product managers who can effectively balance AI capabilities with user needs while maintaining robust evaluation frameworks will be well-positioned to succeed.
+I'd like to thank PamR for her feedback and suggestions on this document.
 
-The role of the AI product manager in this context is becoming more focused on judgment and decision-making rather than technical implementation. While AI can accelerate prototyping and automate certain tasks leading to faster iteration, product managers must still determine which problems are worth solving, how to validate solutions effectively, and where and which AI capabilities to deploy. This points to a future where product management emphasizes human judgment in areas such as product strategy, ethical and safety considerations, and user experience design. The key differentiator for product managers will likely be their ability to lead product development in ways that enhance rather than diminish human agency in AI-enabled systems. -->
 
 ---
 
@@ -612,3 +616,55 @@ The materials science study raises important questions about how AI-augmented pr
 *   **Job Satisfaction Impact**: As AI increasingly automates ideation and concept generation, how will this affect PM job satisfaction and sense of creative ownership? What new sources of fulfillment might emerge in an AI-augmented discovery process?
 *   **Balancing Automation and Agency**: What is the right balance between human and AI capabilities?
 
+## Appendix B: Resources
+
+There is an overwhelming amount of fragmented information channels and resources at the intersection of GenAI, Business, Product, and Technology. From new online PM courses (released almost daily) on Maven[^maven], to podcasts[^podcasts], VC-curated resources[^a16z], to PM-specific AI tools[^lennybot].
+
+
+[^podcasts]: Examples of good Podcasts in the area include [No Priors](https://no-priors.com/) with VCs Elad Gil and Sarah Guo, and [Generative AI Now](https://generativeainow.com/). But the most popular one by far is [Lenny's](https://www.lennysnewsletter.com/).
+
+[^maven]: Product Sense by [Shreyas Doshi](https://maven.com/shreyas-doshi/product-sense) is perhaps the most popular online general PM course but new GenAI specific courses are released almost daily such as [Build With LLMs](https://maven.com/leverage-ai/idea-to-deploy) or [How to Get Into AI](https://maven.com/the-future-solving-company/how-to-get-into-ai).
+
+[^a16z]: a16z often releases relevant AI resources at https://a16z.com/ai/.
+
+[^lennybot]: Examples include [LennyBot](https://www.lennybot.com/) and [ChatPRD](https://chatprd.ai/).
+
+However, rather than providing an exhaustive list of conventional resources, this section focuses on three enduring pathways for developing expertise in AI Product Management, namely learning through Building, Community, and Foundations.
+
+### 1. Learning Through Building
+
+The most effective way to develop AI PM skills is through hands-on experience building AI-enabled products. I can't emphasize this enough. Finding a problem you're passionate about and using it as a learning vehicle is the best way to develop both technical intuition and product sense simultaneously. 
+
+Developing for yourself, as the first user, almost guarantees you are motivated to solve the problem and is a great way to increase the likelihood you deeply understand the pain points and frustrations associated with that problem.
+
+Once you become obsessed with the problem, you start walking backwards from the problem to the solution and that's when you start to understand the technical constraints and possibilities. Learning GenAI capabilities comes as a consequence of the problem solving process.
+
+Another consequence is that you start to learn from others who are solving the same or adjacent problems, which brings the second point: Community Engagement.
+
+### 2. Community Engagement
+
+Here, there is no better resource than the open-source AI community. In my experience, that's a community that is willing to help and share knowledge while being very open to new ideas and approaches. You will find:
+
+- **Active Learning Communities**: Platforms like Hugging Face host vibrant communities where product managers can engage with developers, researchers, and fellow PMs.
+- **Real-time Knowledge Exchange**: Open source projects provide visibility into cutting-edge developments and implementation approaches. You can simply make a contribution to a project and get feedback from the community.
+- **Collaborative Problem-solving**: Working in public allows for feedback and knowledge sharing with others facing similar challenges.
+- **Network Building**: Engaging with the community creates connections with others working on similar problems and technologies. This is also applicable at the enterprise level where private companies continue to value open-source contributions.
+
+### The Importance of Foundations
+
+While Generative AI offers higher levels of abstraction for problem-solving, understanding fundamental concepts remains crucial for strategic product management:
+
+- **Technical Understanding**: Knowledge of AI/ML foundations helps understand today's and tomorrow's capabilities and limitations which in turn helps PMs make better strategic decisions.
+- **Strategic Foresight**: Foundation knowledge improves ability to identify which problems will remain relevant given AI's rapid pace of development. PMs should invest in problems that will become more, rather than less, relevant as AI capabilities advance.
+- **Risk Assessment**: Technical foundations enable better evaluation of AI-related risks and limitations. These include Safety, Bias, and Alignment requirements but also technical constraints such as latency, cost, and scalability.
+
+I'd recommend the following resources to get started:
+
+- [Andrew Ng's courses](https://www.coursera.org/instructor/andrewng)
+- [AI Engineering](https://www.oreilly.com/library/view/ai-engineering/9781098129095/) by Chip Huyen
+- [Taming LLMs](https://tamingllms.com/) by Tharsis
+
+
+::: {.callout-note}
+The best resource for aspiring AI Product Managers is the combination of hands-on building experience, active community participation, and solid foundational knowledge. This trinity provides the practical skills, network, and strategic understanding needed to excel in this rapidly evolving field.
+:::

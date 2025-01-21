@@ -508,8 +508,8 @@ My current favorites:
 
 A) IDEs & Code Editors
 - Cursor: Best overall AI-powered IDE
-- WindSurf: Best for web development
-- GitHub Copilot: Most mature AI coding assistant
+- WindSurf: Main competitor to Cursor
+- GitHub Copilot: The first and most used AI coding assistant
 
 B) Low/No-Code Tools  
 - v0.dev: Best for UI prototyping

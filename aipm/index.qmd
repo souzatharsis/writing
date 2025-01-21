@@ -507,9 +507,11 @@ This layer focuses on tools that enhance the development experience through AI a
 My current favorites:
 
 A) IDEs & Code Editors
-- Cursor: Best overall AI-powered IDE
+- Cursor[^cursor]: Best overall AI-powered IDE
 - WindSurf: Main competitor to Cursor
 - GitHub Copilot: The first and most used AI coding assistant
+
+[^cursor]: Cursor has just [raised $105m](https://www.cursor.com/blog/series-b) in Series B funding.
 
 B) Low/No-Code Tools  
 - v0.dev: Best for UI prototyping

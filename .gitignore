@@ -3,6 +3,8 @@ test.md
 tmp/
 .pypirc
 
+.cursorrules
+
 _minted-main/
 svg-inkscape/
 

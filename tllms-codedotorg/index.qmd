@@ -1,0 +1,89 @@
+---
+title: "Taming LLMs"
+subtitle: "A Practical Guide to LLM Pitfalls with Open Source Software"
+description: | 
+  A Practical Guide to LLM Pitfalls with Open Source Software
+date: 01/28/2025
+author:
+  - name: Thársis Souza, Ph.D. 
+citation:
+  url: https://www.souzatharsis.com/writing/tllms-codedotorg
+website:
+  repo-url: https://github.com/souzatharsis/writing/
+  repo-actions: [source, issue]
+repo-actions: true
+reference-location: margin
+citation-location: margin
+highlight-style: pygments
+#cap-location: margin
+link-citations: true
+bibliography: ../references.bib
+editor:
+  render-on-save: false
+format:
+  revealjs: 
+    theme: dark
+    slide-number: true
+    logo: images/taming.ico
+    footer: '[tamingllms.com](tamingllms.com)'
+---
+
+## About Me{auto-animate=true auto-animate-easing="ease-in-out"}
+
+::: {.r-stack}
+::: {data-id="box1" style="background: #e83e8c; width: 350px; height: 350px; border-radius: 200px;"}
+CS
+:::
+::: {data-id="box2" style="background: #3fb618; width: 250px; height: 250px; border-radius: 200px;"}
+PM
+:::
+::: {data-id="box3" style="background: #2780e3; width: 150px; height: 150px; border-radius: 200px;"}
+Finance
+:::
+:::
+
+## About Me {auto-animate=true auto-animate-easing="ease-in-out"}
+
+::: {.r-hstack}
+::: {style="display: flex; flex-direction: column; align-items: center;"}
+::: {data-id="box1" auto-animate-delay="0" style="background: #e83e8c; width: 200px; height: 150px; margin: 10px; display: flex; justify-content: center; align-items: center;"}
+**CS**
+:::
+::: {style="width: 2px; height: 30px; background: #e83e8c;"}
+:::
+UCL
+:::
+
+::: {style="display: flex; flex-direction: column; align-items: center;"}
+::: {data-id="box2" auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px; display: flex; justify-content: center; align-items: center;"}
+**PM**
+:::
+::: {style="width: 2px; height: 30px; background: #3fb618;"}
+:::
+SF
+:::
+
+::: {style="display: flex; flex-direction: column; align-items: center;"}
+::: {data-id="box3" auto-animate-delay="0.2" style="background: #2780e3; width: 200px; height: 150px; margin: 10px; display: flex; justify-content: center; align-items: center;"}
+**Finance**
+:::
+::: {style="width: 2px; height: 30px; background: #2780e3;"}
+:::
+Ex-Two Sigma
+:::
+:::
+
+
+
+## Agenda
+
+1. Motivation
+2. Five Issues with LLMs
+3. Case Study: Safety & Alignment
+4. Discussion
+
+## Motivation
+
+
+
+

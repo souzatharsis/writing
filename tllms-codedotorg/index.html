@@ -6,7 +6,7 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark-1092c56c6cadf2eb47b1bc8063ab382a.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark-f8dc6eab18fde03278982b0b35885446.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="Thársis Souza, Ph.D.">
@@ -29,8 +29,73 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #e1e4e8; background-color: #24292e; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #e1e4e8; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #f97583; } /* Attribute */
+    code span.bn { color: #79b8ff; } /* BaseN */
+    code span.bu { color: #f97583; } /* BuiltIn */
+    code span.cf { color: #f97583; } /* ControlFlow */
+    code span.ch { color: #9ecbff; } /* Char */
+    code span.cn { color: #79b8ff; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #f97583; } /* DataType */
+    code span.dv { color: #79b8ff; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #f97583; font-weight: bold; } /* Extension */
+    code span.fl { color: #79b8ff; } /* Float */
+    code span.fu { color: #b392f0; } /* Function */
+    code span.im { color: #9ecbff; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #f97583; } /* Keyword */
+    code span.op { color: #e1e4e8; } /* Operator */
+    code span.ot { color: #b392f0; } /* Other */
+    code span.pp { color: #f97583; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #79b8ff; } /* SpecialChar */
+    code span.ss { color: #9ecbff; } /* SpecialString */
+    code span.st { color: #9ecbff; } /* String */
+    code span.va { color: #ffab70; } /* Variable */
+    code span.vs { color: #9ecbff; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-936822f83845a6f7d5057699bf95be37.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-5b48f34d633aed70c74c672477009ffc.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -190,14 +255,154 @@ Thársis Souza, Ph.D.
 <section id="agenda" class="slide level2">
 <h2>Agenda</h2>
 <ol type="1">
-<li>Motivation</li>
-<li>Five Issues with LLMs</li>
+<li>LLM Pitfalls</li>
 <li>Case Study: Safety &amp; Alignment</li>
 <li>Discussion</li>
 </ol>
 </section>
-<section id="motivation" class="slide level2">
-<h2>Motivation</h2>
+<section id="llm-pitfalls" class="slide level2">
+<h2>LLM Pitfalls</h2>
+<div class="r-stack">
+<div class="r-hstack" style="flex-wrap: wrap; justify-content: center; align-items: center; max-width: 1200px;">
+<div class="fragment" style="background: #e83e8c; width: 300px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;">
+<h3 id="testing-complexity">Testing Complexity</h3>
+</div>
+<div class="fragment" style="background: #ff7518; width: 300px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;">
+<h3 id="structural-unreliability">Structural (un)Reliability</h3>
+</div>
+<div class="fragment" style="background: #3fb618; width: 300px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;">
+<h3 id="input-data-issues">Input Data Issues</h3>
+</div>
+<div class="fragment" style="background: #2780e3; width: 300px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;">
+<h3 id="safety">Safety</h3>
+</div>
+<div class="fragment" style="background: #9954bb; width: 300px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;">
+<h3 id="alignment">Alignment</h3>
+</div>
+<div class="fragment" style="background: #20c997; width: 300px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;">
+<h3 id="vendor-lock-in">Vendor <br> Lock-in</h3>
+</div>
+<div class="fragment" style="background: #6f42c1; width: 1000px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;">
+<h3 id="cost-performance-optimization">Cost &amp; Performance Optimization</h3>
+</div>
+</div>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<section id="testing-complexity-1" style="background: #e83e8c; width: 100%; height: 100vh; margin: 0; padding: 15px; display: flex; justify-content: center; align-items: center; text-align: center; align-content: center;">
+<h3>Testing Complexity</h3>
+</section>
+</section>
+<section id="testing-complexity-2" class="slide level2">
+<h2>Testing Complexity</h2>
+<p>LLMs are Generative, Non-Deterministic, and have Emergent Properties.</p>
+
+<img data-src="images/emergent-properties-palm.gif" style="width:100.0%" class="r-stretch quarto-figure-center"><p class="caption">Animation representing LLMs “Emerging Properties” Phenomenon. From: “Pathways Language Model (PaLM): Scaling to 540 Billion Parameters for Breakthrough Performance”</p></section>
+<section id="testing-complexity-3" class="slide level2 smaller">
+<h2>Testing Complexity</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 41%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Aspect</th>
+<th>Traditional Software Products</th>
+<th>LLM-Based Software Products</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Capability Assessment</td>
+<td>Validates specific functionality against requirements</td>
+<td>May assess emergent properties like reasoning and creativity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Metrics and Measurement</td>
+<td>Precisely defined and measurable metrics</td>
+<td>Subjective qualities that resist straightforward quantification</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dataset Contamination</td>
+<td>Uses carefully crafted test cases</td>
+<td>Risk of memorized evaluation examples from training</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Benchmark Evolution</td>
+<td>Maintains stable test suites</td>
+<td>Continuously evolving benchmarks as capabilities advance</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Human Evaluation</td>
+<td>Mostly automated validation</td>
+<td>May require significant human oversight</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="testing-complexity-evals-design" class="slide level2">
+<h2>Testing Complexity: Evals Design</h2>
+
+<img data-src="images/conceptual-multi.svg" class="r-stretch quarto-figure-center" id="fig-conceptual-multi"><p class="caption">
+Figure&nbsp;1: Conceptual overview of Multiple LLM-based applications evaluation.
+</p></section>
+<section id="testing-complexity-tools" class="slide level2 smaller">
+<h2>Testing Complexity: Tools</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">LightEval</a></li><li><a href="#tabset-1-2">LangSmith</a></li><li><a href="#tabset-1-3">PromptFoo</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="ex">lighteval</span> accelerate <span class="at">--model_args</span> <span class="st">"pretrained=meta-llama/Llama-3.2-1B-Instruct"</span> <span class="at">--tasks</span> <span class="st">"leaderboard|mmlu:econometrics|0|0"</span> <span class="at">--output_dir</span><span class="op">=</span><span class="st">"./evals/"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-2">
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="kw">def</span> run_evaluation(app, model_name, dataset,  evaluators):</span>
+<span id="cb2-2"><a href=""></a>    results <span class="op">=</span> langsmith_evaluate(</span>
+<span id="cb2-3"><a href=""></a>        app,</span>
+<span id="cb2-4"><a href=""></a>        data<span class="op">=</span>dataset,</span>
+<span id="cb2-5"><a href=""></a>        evaluators<span class="op">=</span>evaluators,</span>
+<span id="cb2-6"><a href=""></a>        experiment_prefix<span class="op">=</span>model_name,</span>
+<span id="cb2-7"><a href=""></a>        num_repetitions<span class="op">=</span><span class="dv">5</span></span>
+<span id="cb2-8"><a href=""></a>    )</span>
+<span id="cb2-9"><a href=""></a>    <span class="cf">return</span> results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-3">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href=""></a><span class="fu">description</span><span class="kw">:</span><span class="at"> Best model eval</span></span>
+<span id="cb3-2"><a href=""></a><span class="fu">prompts</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href=""></a><span class="kw">-</span><span class="at"> file://prompt1.txt</span></span>
+<span id="cb3-4"><a href=""></a><span class="kw">-</span><span class="at"> file://prompt2.txt</span></span>
+<span id="cb3-5"><a href=""></a><span class="kw">-</span><span class="at"> file://prompt3.txt</span></span>
+<span id="cb3-6"><a href=""></a><span class="fu">providers</span><span class="kw">:</span></span>
+<span id="cb3-7"><a href=""></a><span class="kw">-</span><span class="at"> openai:gpt-3.5-turbo</span></span>
+<span id="cb3-8"><a href=""></a><span class="fu">defaultTest</span><span class="kw">:</span></span>
+<span id="cb3-9"><a href=""></a><span class="at">  </span><span class="fu">assert</span><span class="kw">:</span></span>
+<span id="cb3-10"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">type</span><span class="kw">:</span><span class="at"> llm-rubric</span></span>
+<span id="cb3-11"><a href=""></a><span class="at">    </span><span class="fu">value</span><span class="kw">:</span><span class="at"> </span><span class="st">'Evaluate the output based on how detailed it is.  Grade it on a scale</span></span>
+<span id="cb3-12"><a href=""></a><span class="st">      of 0.0 to 1.0, where:</span></span>
+<span id="cb3-13"><a href=""></a></span>
+<span id="cb3-14"><a href=""></a><span class="st">      Score of 0.1: Not much detail.</span></span>
+<span id="cb3-15"><a href=""></a></span>
+<span id="cb3-16"><a href=""></a><span class="st">      Score of 0.5: Some detail.</span></span>
+<span id="cb3-17"><a href=""></a></span>
+<span id="cb3-18"><a href=""></a><span class="st">      Score of 1.0: Very detailed.</span></span>
+<span id="cb3-19"><a href=""></a></span>
+<span id="cb3-20"><a href=""></a><span class="st">      '</span></span>
+<span id="cb3-21"><a href=""></a><span class="fu">tests</span><span class="kw">:</span><span class="at"> file://tests.csv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="testing-complexity-tools-1" class="slide level2 smaller">
+<h2>Testing Complexity: Tools</h2>
+
+<img data-src="images/evals_compare.png" style="width:100.0%" class="r-stretch"></section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<section id="structural-unreliability-1" style="background: #ff7518; width: 100%; height: 100vh; margin: 0; padding: 15px; display: flex; justify-content: center; align-items: center; text-align: center; align-content: center;">
+<h3>Structural (un)Reliability</h3>
+</section>
 
 </section>
     </div>

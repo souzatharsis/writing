@@ -14,7 +14,7 @@ website:
 repo-actions: true
 reference-location: margin
 citation-location: margin
-highlight-style: pygments
+highlight-style: github
 #cap-location: margin
 link-citations: true
 bibliography: ../references.bib
@@ -77,13 +77,129 @@ Ex-Two Sigma
 
 ## Agenda
 
-1. Motivation
-2. Five Issues with LLMs
-3. Case Study: Safety & Alignment
-4. Discussion
+1. LLM Pitfalls
+2. Case Study: Safety & Alignment
+3. Discussion
 
-## Motivation
+## LLM Pitfalls
+::: {.r-stack}
+::: {.r-hstack style="flex-wrap: wrap; justify-content: center; align-items: center; max-width: 1200px;"}
+::: {.fragment style="background: #e83e8c; width: 300px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;"}
+### Testing Complexity
+:::
+::: {.fragment style="background: #ff7518; width: 300px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;"}
+### Structural (un)Reliability
+:::
+::: {.fragment style="background: #3fb618; width: 300px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;"}
+### Input Data Issues
+:::
+::: {.fragment style="background: #2780e3; width: 300px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;"}
+### Safety
+:::
+::: {.fragment style="background: #9954bb; width: 300px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;"}
+### Alignment
+:::
+::: {.fragment style="background: #20c997; width: 300px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;"}
+### Vendor <br> Lock-in
+:::
+::: {.fragment style="background: #6f42c1; width: 1000px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;"}
+### Cost & Performance Optimization
+:::
+:::
+:::
+
+## 
+
+::: {.r-fit-text style="background: #e83e8c; width: 100%; height: 100vh; margin: 0; padding: 15px; display: flex; justify-content: center; align-items: center; text-align: center; align-content: center;"}
+### Testing Complexity
+:::
+
+
+## Testing Complexity
+
+LLMs are Generative, Non-Deterministic, and have Emergent Properties.
+
+![Animation representing LLMs "Emerging Properties" Phenomenon. From: "Pathways Language Model (PaLM): Scaling to 540 Billion Parameters for Breakthrough Performance"](images/emergent-properties-palm.gif){width="100%"}
 
 
 
+## Testing Complexity {.smaller}
 
+| Aspect | Traditional Software Products | LLM-Based Software Products |
+|:--------|-------------------|------------------|
+| Capability Assessment | Validates specific functionality against requirements | May assess emergent properties like reasoning and creativity |
+| Metrics and Measurement | Precisely defined and measurable metrics | Subjective qualities that resist straightforward quantification |
+| Dataset Contamination | Uses carefully crafted test cases | Risk of memorized evaluation examples from training |
+| Benchmark Evolution | Maintains stable test suites | Continuously evolving benchmarks as capabilities advance |
+| Human Evaluation | Mostly automated validation | May require significant human oversight |
+
+## Testing Complexity: Evals Design
+
+![Conceptual overview of Multiple LLM-based applications evaluation.](images/conceptual-multi.svg){#fig-conceptual-multi}
+
+
+## Testing Complexity: Tools {.smaller}
+
+::: panel-tabset
+
+### LightEval
+
+```bash
+lighteval accelerate --model_args "pretrained=meta-llama/Llama-3.2-1B-Instruct" --tasks "leaderboard|mmlu:econometrics|0|0" --output_dir="./evals/"
+```
+
+### LangSmith
+
+``` {.python}
+def run_evaluation(app, model_name, dataset,  evaluators):
+    results = langsmith_evaluate(
+        app,
+        data=dataset,
+        evaluators=evaluators,
+        experiment_prefix=model_name,
+        num_repetitions=5
+    )
+    return results
+```
+
+### PromptFoo
+
+```yaml
+description: Best model eval
+prompts:
+- file://prompt1.txt
+- file://prompt2.txt
+- file://prompt3.txt
+providers:
+- openai:gpt-3.5-turbo
+defaultTest:
+  assert:
+  - type: llm-rubric
+    value: 'Evaluate the output based on how detailed it is.  Grade it on a scale
+      of 0.0 to 1.0, where:
+
+      Score of 0.1: Not much detail.
+
+      Score of 0.5: Some detail.
+
+      Score of 1.0: Very detailed.
+
+      '
+tests: file://tests.csv
+```
+:::
+
+## Testing Complexity: Tools {.smaller}
+
+
+![](images/evals_compare.png){width="100%"}
+
+
+
+## 
+
+::: {.r-fit-text style="background: #ff7518; width: 100%; height: 100vh; margin: 0; padding: 15px; display: flex; justify-content: center; align-items: center; text-align: center; align-content: center;"}
+### Structural (un)Reliability
+:::
+
+## Structural (un)Reliability

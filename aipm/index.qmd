@@ -377,14 +377,14 @@ As AI transforms product development, it's driving several fundamental changes t
    - Evaluation frameworks define success criteria, testing protocols, and quality thresholds
    - The new PRD will be reshaped as a combination of evaluation frameworks and interactive prototypes
 
-3. **The End of Documentation as we know it**
-   - Arguably, nobody reads documentation anymore.
-   - Traditional documentation will be replaced by two key elements:
-     - For humans: Interactive Product Playgrounds
+3. **The End of User Documentation**
+   - Arguably, no user reads documentation anymore.
+   - Traditional user documentation will be replaced by two key components:
+     - For human users: Interactive Product Playgrounds
        - Hands-on environments for users to experiment with features
        - Real-time feedback and learning opportunities
        - Problems/asks/pain points are surfaced by the user through the product itself
-     - For AIs: LLMs.txt Specification[^llmstxt]
+     - For AI users: LLMs.txt Specification[^llmstxt]
        - Machine-readable documentation for AI systems
        - Standardizes communication between AI and your product
        - Other GenAI tools can automatically integrate with your product via a common LLM friendly specification. 
@@ -576,7 +576,7 @@ As GenAI technologies advance coupled with the pervasive belief that AI will sol
 
 ## Acknowledgements
 
-I'd like to thank PamR for her feedback and suggestions on this document.
+I'd like to thank PamR and SamS for their feedback and suggestions on this document.
 
 
 ---

@@ -24,7 +24,7 @@ format:
     #theme: darkly #lux #quartz
     toc: true
     toc-expand: 2
-    toc-location: body
+    toc-location: left
 ---
 
 ## Trends
@@ -515,7 +515,9 @@ A) IDEs & Code Editors
 
 B) Low/No-Code Tools  
 - v0.dev: Best for UI prototyping
-- bolt.new: Best for full-stack application generation
+- bolt.new[^bolt]: Best for full-stack application generation
+
+[^bolt]: bolt.new announced days ago a $105.5m [funding round](https://x.com/boltdotnew/status/1882106655258894390).
 
 [^ide-tools]: The Pragmatic Engineer newsletter has a great [list of IDEs](https://newsletter.pragmaticengineer.com/p/ide-that-software-engineers-love) with GenAI features.
 
@@ -574,9 +576,16 @@ As GenAI technologies advance coupled with the pervasive belief that AI will sol
 
 - AI won't replace humans, but humans augmented by AI will replace humans who ignore AI's evolution.
 
+## Open Questions
+
+- How might AI change how value is measured, attributed, and captured -- not to mention created?
+- At what point should AI PMs design products with LLMs as the intended users? 
+- How will the role change if LLMs formally take on some of the stakeholder roles (e.g. customer success)? 
+- What sort of advance, if it happened, would make this article's assumptions wrong or irrelevant?
+
 ## Acknowledgements
 
-I'd like to thank PamR and SamS for their feedback and suggestions on this document.
+I'd like to thank Pam, Sam and Jordan for their feedback and suggestions on this article.
 
 
 ---

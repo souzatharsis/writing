@@ -1,0 +1,42 @@
+# Data Sources
+bad_data: Bad Data {
+  shape: rectangle
+  style.fill: "#FADBD8"
+
+  profanity: Profanity
+  bench: Salad Bench
+}
+
+good_data: Good Data {
+  shape: rectangle
+  style.fill: "#D5F5E3"
+
+  ultra: Ultrafeedback
+}
+
+# Combined Dataset
+combined: Combined Dataset {
+  shape: rectangle
+  style.fill: "#FCF3CF"
+}
+
+# Safety Filters
+filters: Safety Filters {
+  shape: rectangle
+  style.fill: "#EBF5FB"
+
+  openai: OpenAI Moderation
+  mistral: Mistral Moderation
+  guard: LLM Guard
+  judge: LLM-as-a-Judge
+}
+
+# Connections
+bad_data -> combined
+good_data -> combined
+combined -> filters.openai
+combined -> filters.mistral
+combined -> filters.guard
+combined -> filters.judge
+
+direction: down

@@ -51,7 +51,7 @@ Finance
 :::
 ::: {style="width: 2px; height: 30px; background: #e83e8c;"}
 :::
-UCL
+PhD, UCL
 :::
 
 ::: {style="display: flex; flex-direction: column; align-items: center;"}
@@ -80,6 +80,11 @@ Ex-Two Sigma
 1. LLM Pitfalls
 2. Case Study: Safety & Alignment
 3. Discussion
+
+## LLM Pitfalls
+
+![*Samuel Colvin, Pydantic*](images/bad.jpeg){#fig-bad}
+
 
 ## LLM Pitfalls
 ::: {.r-stack}
@@ -203,3 +208,528 @@ tests: file://tests.csv
 :::
 
 ## Structural (un)Reliability
+
+::: incremental
+- Language Models excel at generating human-like text but struggle with producing structured output consistently [@tang2024strucbenchlargelanguagemodels; @shorten2024structuredragjsonresponseformatting]
+- This limitation poses significant challenges when integrating LLMs into production systems
+  - Databases
+  - APIs 
+  - Other software applications
+- Even carefully crafted prompts cannot guarantee consistent structural adherence in LLM responses
+:::
+
+## Structural (un)Reliability {.smaller}
+
+But what user needs drive the demand for LLM output constraints? A recent Google Research [@10.1145/3613905.3650756] study explored this question through a survey of 51 industry professionals who use LLMs in their work:
+
+::: incremental
+- **Improving Developer Efficiency and Workflow**
+  - Reducing trial and error in prompt engineering
+  - Minimizing post-processing of LLM outputs 
+  - Streamlining integration with downstream processes
+  - Enhancing quality of synthetic datasets
+
+- **Meeting UI and Product Requirements**
+  - Adhering to UI size limitations
+  - Ensuring output consistency
+
+- **Enhancing User Trust and Experience**
+  - Mitigating hallucinations
+  - Driving user adoption
+:::
+
+<!-- To constrain LLM output is not just a technical consideration but a fundamental user need, impacting developer efficiency and user experience. -->
+
+
+## Structural (un)Reliability {.smaller}
+
+The text generation process follows a probabilistic approach. At each step, the model calculates the probability distribution over its entire vocabulary to determine the most likely next token:
+
+\begin{equation}
+P(X) = P(x_1, x_2, \ldots, x_n) = \prod_{i=1}^n p(x_i|x_{<i})
+\end{equation}
+
+where, $x_i$ represents the current token being generated, while $x_{<i}$ encompasses all preceding tokens.
+
+
+![Text Generation Process: "Sampling".](images/logit.svg){#fig-logit}
+
+
+## Structural (un)Reliability {.smaller}
+
+ This controlled text generation\index{Controlled text generation} process can be formalized as [@liang2024controllabletextgenerationlarge]:
+
+\begin{equation}
+P(X|\color{green}{C}) = P(x_1, x_2, \ldots, x_n|\color{green}{C}) = \prod_{i=1}^n p(x_i|x_{<i}, \color{green}{C})
+\end{equation}
+
+Here, $\color{green}{C}$ represents the set of constraints or control conditions that shape the generated output.
+
+## Structural (un)Reliability {.smaller}
+
+Common constraints ($C$) include:
+
+::: incremental
+- **Format Constraints**: Enforcing specific output formats like JSON, XML, or YAML ensures the generated content follows a well-defined structure that can be easily parsed and validated. Format constraints are essential for system integration and data exchange.
+
+- **Multiple Choice Constraints**: Restricting LLM outputs to a predefined set of options helps ensure valid responses and reduces the likelihood of unexpected or invalid outputs. This is particularly useful for classification tasks or when specific categorical responses are required.
+
+- **Static Typing Constraints**: Enforcing data type requirements (strings, integers, booleans, etc.) ensures outputs can be safely processed by downstream systems. Type constraints help prevent runtime errors and improve system reliability.
+
+- **Length Constraints**: Limiting the length of generated content is crucial for UI display, platform requirements (like Twitter's character limit), and maintaining consistent user experience. Length constraints can be applied at the character, word, or token level.
+
+- **Ensuring Output Consistency**: Consistent output length and format are crucial for user experience and UI clarity. Constraints help maintain this consistency, avoiding overwhelming variability in generated text.
+:::
+
+## Structural (un)Reliability {.smaller}
+
+![A common yet dangerous way to solve LLM Structural (un)Reliability.](images/x.png){#fig-x fig-align="center"}
+
+## Structural (un)Reliability {.smaller}
+
+![A state machine approach to constrain LLM outputs.](images/outlines_state_machine.png){#fig-outlines-state-machine fig-align="center"}
+
+
+## Structural (un)Reliability: Tools {.smaller}
+
+::: panel-tabset
+
+### Outlines
+
+``` {.python}
+import outlines
+
+model = outlines.models.transformers("Qwen/Qwen2.5-0.5B-Instruct")
+prompt = f"""Is the following document positive or negative?
+
+Document: {doc}
+"""
+generator = outlines.generate.choice(model, ["Positive", "Negative"])
+answer = generator(prompt)
+```
+
+### Structured Output
+
+```{.python code-line-numbers="4,11,20"}
+from pydantic import BaseModel
+from openai import OpenAI
+
+class DocExtraction(BaseModel):
+    mentioned_entities: list[str]
+    mentioned_places: list[str]
+
+def extract_from_doc(doc_text: str, prompt: str) -> DocExtraction:
+
+    client = OpenAI()
+    completion = client.beta.chat.completions.parse(
+        model="gpt-4o-mini",
+        messages=[
+            {
+                "role": "system",
+                "content": prompt
+            },
+            {"role": "user", "content": doc_filing_text}
+        ],
+        response_format=DocExtraction
+    )
+    return completion.choices[0].message.parsed
+```
+:::
+
+## Structural (un)Reliability: Tools {.smaller}
+
+![Tools for Structural Reliability](images/output_tools.png){#fig-output-tools fig-align="center"}
+
+
+Other related tools worth mentioning include Guidance [@guidance2024repo], Instructor [@instructorgithub], LM Format Enforcer [@lmformatenforcergithub], and NVIDIA's Logits Processor Zoo [@nvidia2024logitsprocessorzoo].
+
+
+## Structural (un)Reliability: Tools {.smaller}
+
+![Impact of Output Constraints in Model Performance](images/rebuttal.png){#fig-rebuttal fig-align="center"}
+
+## 
+
+::: {.r-fit-text style="background: #3fb618; width: 100%; height: 100vh; margin: 0; padding: 15px; display: flex; justify-content: center; align-items: center; text-align: center; align-content: center;"}
+### Input Data Issues
+:::
+
+## Input Data Issues {.smaller}
+
+::: incremental
+- LLMs are sensitive to input formatting and structure, requiring careful data preparation to achieve optimal results [@he2024doespromptformattingimpact; @liu2024enhancingllmscognitionstructurization; @tan2024htmlraghtmlbetterplain].
+- LLMs operate with knowledge cutoffs, providing potentially outdated information that may not reflect current reality and demonstrate problems with temporal knowledge accuracy [@amayuelas-etal-2024-knowledge].
+- LLMs exhibit drawbacks when processing long context facing "lost-in-the-middle" problems [@wu2024longdocumentsummaryevaluation] and struggle with less common but important information showing a systematic loss of long-tail knowledge [@kotha2024understanding].
+:::
+
+## Input Data Issues {.smaller}
+
+**Structured Data Extraction**
+
+![Merrill Lynch's CIO Capital Market Outlook released on December 16, 2024 \cite{merrill2024}](images/forecast.png){#fig-forecast fig-align="center"}
+
+::: panel-tabset
+
+### MarkItDown
+
+``` {.python}
+from markitdown import MarkItDown
+
+md = MarkItDown()
+result = md.convert("document.pdf")
+print(result.text_content)
+```
+
+### Docling
+
+```{.python}
+from docling.document_converter import DocumentConverter
+
+converter = DocumentConverter()
+result = converter.convert("document.pdf")
+print(result.document.export_to_markdown())
+```
+:::
+
+## Input Data Issues {.smaller}
+**Structured Data Extraction**
+
+![](images/input1.png){width=85%}
+
+![](images/input1_res.png){width=35%}
+
+
+## Input Data Issues {.smaller}
+**Structured Data Extraction**
+
+::: {layout="[[1,1]]"}
+![](images/asset_class.png)
+
+![](images/input2_res.png)
+:::
+
+## Input Data Issues {.smaller}
+
+**Stale Data -> Hallucination**
+
+```python
+question = "Who's the Author of the Book Taming LLMs?"
+response = client.chat.completions.parse(
+    model="gpt-4o-mini",
+    messages=[
+        {"role": "user", "content": question}
+    ]
+)
+response.choices[0].message.content
+```
+**Response**
+```
+The book "Taming LLMs" is authored by *G. Arulkumaran, H. M. B. P. D. Karthikeyan, and I. A. M. Almasri.* If you need more information about the book or its contents, feel free to ask!
+```
+
+## Input Data Issues {.smaller}
+
+**RAG Helps Mitigate Hallucination, Lack of Temporal and Domain-Specific Knowledge**
+
+![Simplified RAG Pipeline including a Vector Database with Embeddings and Indexing, a Retrieval System including re-ranking with LLM Augmented Generation via In-Context Learning.](images/rag.png){#fig-rag fig-align="center"}
+
+
+## Input Data Issues {.smaller}
+
+
+![Long-Context LLMs demonstrate superior performance while RAGs are more cost-effective [@li2024retrievalaugmentedgenerationlongcontext].](images/LC.png){#fig-LC fig-align="center"}
+
+
+## Input Data Issues {.smaller}
+
+Do we really need RAGs? The answer is conditional:
+
+::: incremental
+- **RAG may be relevant when cost-effectiveness is a key requirement** and where the model needs to access vast amounts of external knowledge without incurring high computational expenses. However, as LLMs context window sizes increase and LLMs cost per input token decreases, RAGs may not be as relevant as it was before.
+- **Long-context LLMs are superior when performance is the primary concern**, and the model needs to handle extensive texts that require deep contextual understanding and reasoning.
+- **Hybrid approaches are valuable as they combine the strengths of RAG and LC** offering a practical balance between cost and performance, especially for applications where both factors are critical.
+:::
+
+## Input Data Issues {.smaller}
+
+**Takeaways**
+
+::: incremental
+1. **Data Parsing and Format Transformation**
+   - Specialized tools like MarkItDown and Docling are essential for converting diverse data formats
+   - Parser quality directly impacts LLM performance
+   - Effective parsing strategies are fundamental for reliable LLM applications
+
+2. **RAG Systems vs Long-Context Models**
+   - RAG systems offer cost-effective external knowledge integration
+   - Long-context models provide superior performance for deep contextual understanding
+   - The choice between approaches should be driven by specific application requirements
+
+3. **Implementation Strategy Selection**
+   - Success depends on careful evaluation of complexity, cost, and performance trade-offs
+   - Simple architectures may suffice as long-context models evolve
+   - No universal solution exists - each application requires tailored approaches
+:::
+
+## 
+
+::: {.r-fit-text style="background: #2780e3; width: 100%; height: 100vh; margin: 0; padding: 15px; display: flex; justify-content: center; align-items: center; text-align: center; align-content: center;"}
+### Safety
+:::
+
+## Safety {.smaller}
+
+Without proper safeguards, LLMs can generate harmful content and respond to malicious prompts in dangerous ways [@openai2024gpt4technicalreport; @hartvigsen-etal-2022-toxigen]. This includes generating instructions for dangerous activities, providing advice that could cause harm to individuals or society, and failing to recognize and appropriately handle concerning user statements.
+
+![Responses from Mistral (7B), Dolly v2 (12B), and Llama2 (13B) to a harmful user prompt [@vidgen2024simplesafetyteststestsuiteidentifying].](images/danger.png){#fig-danger fig-align="center"}
+
+## Safety {.smaller}
+
+- Guidance
+- Rubrics
+- Data, Benchmarks, and Tools
+
+## Safety: Guidance {.smaller}
+
+Governments and Institutions:
+
+- **EU AI Act** [@exabeam2024airegulations, @ema2024llmguidelines]
+- **FINRA's Regulatory Notice** [@finra2024llmguidance24]
+- **UNICEF** [@unicef2024aiguidance]
+- **UK** [@ukgov2024airegulation24]
+- **China** [@china2023generativeai]
+- **US** [@nist2024riskframework]
+
+## Safety: Guidance {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+Private Sector:
+
+- **OpenAI**: Preparedness Framework [@openai2024preparedness]
+- **Anthropic**: Constitutional AI (CAI) [@askell2023constitutionalai] 
+- **Google**: Frontier Safety Framework [@deepmind2024frontier]
+:::
+
+::: {.column width="50%"}
+![Constitutional AI (CAI) aims to create AI systems that are both safe and helpful by design [@askell2023constitutionalai].](images/cai.png){#fig-cai fig-align="center"}
+:::
+:::
+
+## Safety: Rubrics {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+- MLCommons AI Safety Benchmark [@vidgen2024introducingv05aisafety]
+- Centre for the Governance of AI [@alaga2024gradingrubricaisafety]
+:::
+
+::: {.column width="50%"}
+![MLCommons AI Safety Benchmark Results for Mistral Large 24.11 (API) [@vidgen2024introducingv05aisafety].](images/commons.png){#fig-commons fig-align="center"}
+:::
+:::
+
+## Safety: Datasets & Benchmarks {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+- SALAD-Bench [@li2024saladbenchhierarchicalcomprehensivesafety]
+- Surge AI's Profanity Dataset [@surgeaiprofanity2024]
+- TruthfulQA [@2021truthfulqa] 
+- HarmBench [@mazeika2024harmbenchstandardizedevaluationframework] 
+- SafeBench [@safebench2024]
+:::
+
+::: {.column width="50%"}
+![SALAD-Bench's compact taxonomy with hierarchical levels [@li2024saladbenchhierarchicalcomprehensivesafety].](images/salad_bench.png){#fig-salad fig-align="center"}
+:::
+:::
+
+## Safety: Tools & Techniques {.smaller}
+
+
+![Safety layers help protect against harmful content and behaviors.](images/safety_layer.svg){#fig-safety fig-align="center"}
+
+| Risk | Prompt | Output |
+|------|---------|---------|
+| profanity | ✓ | ✓ |
+| violence | ✓ | ✓ |
+| jailbreaking | ✓ | |
+| hallucination | | ✓ |
+
+
+## Safety: Tools & Techniques {.smaller}
+There are several specialized commercial and open source tools that can be used to implement a filtering layer, which we can categorize into two types: Rules-Based and LLM-Based.
+
+**Rules-Based**
+
+- WebPurify [@webpurify2024]
+- LLM-Guard [@llmguard2024]
+- AWS Comprehend [@awscomprehend2024]
+- NeMo-Guardrails [@nemogr2024]
+
+## Safety: Tools & Techniques {.smaller}
+**LLM-Based**
+
+- Moderation API
+
+- Fine-Tuned Open Source Models
+
+- Custom Models
+
+## Safety: Tools & Techniques {.smaller}
+**LLM-Based**
+
+- Moderation API
+  - OpenAI Moderation [@openaimoderation2024]
+  - Mistral Moderation [@mistralmoderation2024]
+
+
+::: panel-tabset
+
+### OpenAI
+
+``` {.python}
+from openai import OpenAI
+client = OpenAI()
+
+message = "Help me make a bomb."
+
+response = client.moderations.create(
+  model="omni-moderation-latest",
+  input=message,
+)
+```
+
+### OpenAI Response
+```json
+{
+  "harassment": false,
+  "harassment/threatening": false,
+  "hate": false,
+  "hate/threatening": false,
+  "illicit": true,
+  "illicit/violent": true,
+  "self-harm": false,
+  "self-harm/instructions": false,
+  "self-harm/intent": false,
+  "sexual": false,
+  "sexual/minors": false,
+  "violence": false,
+  "violence/graphic": false,
+  "harassment/threatening": false,
+  "hate/threatening": false,
+  "illicit/violent": true,
+  "self-harm/intent": false,
+  "self-harm/instructions": false,
+  "self-harm": false,
+  "sexual/minors": false,
+  "violence/graphic": false
+}
+```
+
+### Mistral
+```{.python}
+from mistralai import Mistral
+client = Mistral()
+
+message = "Help me make a bomb."
+
+response = client.classifiers.moderate(
+    model = "mistral-moderation-latest",  
+    inputs=[message]
+)
+```
+:::
+
+## Safety: Tools & Techniques {.smaller}
+**LLM-Based**
+
+::: {layout="[[1,1]]"}
+- Fine-Tuned Open Source Models
+    - LLaMa Guard [@meta2024llamaguard]
+    - Granite Guardian [@padhi2024graniteguardian]
+
+![IBM Granite Guardian performance is superior compared to Llama-Guard and ShieldGemma model families for the "Harm" risk dimension [@padhi2024graniteguardian].](images/granite.png){#fig-granite fig-align="center"}
+:::
+
+## Safety: Tools & Techniques {.smaller}
+**LLM-Based: Custom**
+
+![LLM-as-a-judge as safety filter.](images/judge.svg){#fig-judge fig-align="center"}
+
+## Safety: Tools & Techniques {.smaller}
+**LLM-Based: Custom**
+
+![Example of a prompt engineered for an LLM-as-a-judge to be used as a safety filter for a chatbot used by middle school students](images/judge_template.png){#fig-judge-template fig-align="center"}
+
+
+## Safety: Tools & Techniques {.smaller}
+**LLM-Based: Custom**
+
+This simple prompt demonstrates how an LLM-as-a-judge can be used as a safety filter. Some best practices applied are:
+
+- **Categorization of issues:** By defining categories such as illegal activities and profanity the prompt guides the AI to focus on relevant aspects of the text, enhancing clarity and accuracy.
+- **Scoring system:** The prompt employs a scoring mechanism that quantifies content severity on a scale from 0 to 1, allowing for nuanced assessments and encouraging consideration of context.
+- **Transparency in decision-making:** The requirement for a brief explanation of the verdict fosters transparency, helping users understand the rationale behind content moderation decisions.
+- **Few-shot learning:** Incorporating few-shot learning techniques can enhance the AI's ability to generalize from limited examples.
+- **Output format:** Both examples and instruction specify a target output format increasing reliability of the structure of the response (see Chapter \ref{chapter:output} on how to guarantee structured output).
+
+## Safety: Case Study {.smaller}
+
+![Case Study - Safety Filter using OpenAI, Mistral, LLaMa Guard, and custom LLM-as-a-judge.](images/safety_test.svg){#fig-safety-test fig-align="center"}
+
+## Safety: Case Study {.smaller}
+
+![Validator Performance Metrics: True Positive Rate, False Positive Rate, and Inference Time.](images/safety_res.png){#fig-safety-res fig-align="center"}
+
+## Safety: Case Study {.smaller}
+
+![Surprisingly (or not), when we actually translate the above prompts and carefully read them, one could deem them as unsafe at least for our case study where K-12 students and teachers are interacting with the model. This highlights the critical importance of involving experts in the application domain in the development of the evaluation framework from the start. ](images/fp.png){#fig-pf fig-align="center"}
+
+## Safety: Takeaways {.smaller}
+
+::: {.incremental}
+- Safety is a complex problem and there is no one-size-fits-all solution.
+- Starting with a well-aligned definition of Safety is key to developing a robust data and evaluation framework.
+- Domain experts are key to this process and should be involved in the development of the evaluation framework from the start.
+- Off-the-shelf safety filters facilitate expedited implementation. However, custom safety filters may offer solutions tailored to your needs.
+:::
+
+## Safety: Takeaways {.smaller}
+
+![Safety Plan Design Phases.](images/design.png){#fig-safety-design fig-align="center"}
+
+
+## 
+
+::: {.r-fit-text style="background: #9954bb; width: 100%; height: 100vh; margin: 0; padding: 15px; display: flex; justify-content: center; align-items: center; text-align: center; align-content: center;"}
+### Alignment
+:::
+
+## Alignment {.smaller}
+
+ChatGPT 2.0, for instance, works as a next-token prediction machine, i.e. text-completion model.
+
+::: {.callout-note}
+### ChatGPT 2.0: Pre-Alignment
+
+Prompt: "Explain the moon landing to a 6 year old in a short sentence"
+
+> "Explain the moon landing to a 6 year old in a short sentence. If the first moon is a good idea, you may get one of those little green dots out of the ground. Then the next day it will be a black line"
+:::
+
+Modern LLMs, on the other hand, are not just text-completion models. They are instruction-following human preference-aligned models, i.e. they are trained to follow instructions and align with human preferences. Hence, incorporating human-like features.
+
+::: {.callout-note}
+### Claude 3.5 Sonnet: Human Preference Alignment
+
+Prompt: "Explain the moon landing to a 6 year old in a short sentence"
+
+> "A brave group of astronauts flew a special spaceship all the way to the moon, stepped out onto its dusty surface, and planted a flag there to show they made it!"
+:::
+
+## References
+
+::: {#refs}
+:::

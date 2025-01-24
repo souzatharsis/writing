@@ -94,7 +94,27 @@
     code span.va { color: #ffab70; } /* Variable */
     code span.vs { color: #9ecbff; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-5b48f34d633aed70c74c672477009ffc.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -230,7 +250,7 @@ Thársis Souza, Ph.D.
 <div style="width: 2px; height: 30px; background: #e83e8c;">
 
 </div>
-<p>UCL</p>
+<p>PhD, UCL</p>
 </div>
 <div style="display: flex; flex-direction: column; align-items: center;">
 <div data-id="box2" data-auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px; display: flex; justify-content: center; align-items: center;">
@@ -261,6 +281,12 @@ Thársis Souza, Ph.D.
 </ol>
 </section>
 <section id="llm-pitfalls" class="slide level2">
+<h2>LLM Pitfalls</h2>
+
+<img data-src="images/bad.jpeg" class="r-stretch quarto-figure-center" id="fig-bad"><p class="caption">
+Figure&nbsp;1: <em>Samuel Colvin, Pydantic</em>
+</p></section>
+<section id="llm-pitfalls-1" class="slide level2">
 <h2>LLM Pitfalls</h2>
 <div class="r-stack">
 <div class="r-hstack" style="flex-wrap: wrap; justify-content: center; align-items: center; max-width: 1200px;">
@@ -347,7 +373,7 @@ Thársis Souza, Ph.D.
 <h2>Testing Complexity: Evals Design</h2>
 
 <img data-src="images/conceptual-multi.svg" class="r-stretch quarto-figure-center" id="fig-conceptual-multi"><p class="caption">
-Figure&nbsp;1: Conceptual overview of Multiple LLM-based applications evaluation.
+Figure&nbsp;2: Conceptual overview of Multiple LLM-based applications evaluation.
 </p></section>
 <section id="testing-complexity-tools" class="slide level2 smaller">
 <h2>Testing Complexity: Tools</h2>
@@ -403,6 +429,767 @@ Figure&nbsp;1: Conceptual overview of Multiple LLM-based applications evaluation
 <section id="structural-unreliability-1" style="background: #ff7518; width: 100%; height: 100vh; margin: 0; padding: 15px; display: flex; justify-content: center; align-items: center; text-align: center; align-content: center;">
 <h3>Structural (un)Reliability</h3>
 </section>
+</section>
+<section id="structural-unreliability-2" class="slide level2">
+<h2>Structural (un)Reliability</h2>
+<div>
+<ul>
+<li class="fragment">Language Models excel at generating human-like text but struggle with producing structured output consistently <span class="citation" data-cites="tang2024strucbenchlargelanguagemodels shorten2024structuredragjsonresponseformatting">(<a href="#/references" role="doc-biblioref" onclick="">Tang et al. 2024</a>; <a href="#/references" role="doc-biblioref" onclick="">Shorten et al. 2024</a>)</span></li>
+<li class="fragment">This limitation poses significant challenges when integrating LLMs into production systems
+<ul>
+<li class="fragment">Databases</li>
+<li class="fragment">APIs</li>
+<li class="fragment">Other software applications</li>
+</ul></li>
+<li class="fragment">Even carefully crafted prompts cannot guarantee consistent structural adherence in LLM responses</li>
+</ul>
+</div>
+</section>
+<section id="structural-unreliability-3" class="slide level2 smaller">
+<h2>Structural (un)Reliability</h2>
+<p>But what user needs drive the demand for LLM output constraints? A recent Google Research <span class="citation" data-cites="10.1145/3613905.3650756">(<a href="#/references" role="doc-biblioref" onclick="">M. X. Liu et al. 2024</a>)</span> study explored this question through a survey of 51 industry professionals who use LLMs in their work:</p>
+<div>
+<ul>
+<li class="fragment"><strong>Improving Developer Efficiency and Workflow</strong>
+<ul>
+<li class="fragment">Reducing trial and error in prompt engineering</li>
+<li class="fragment">Minimizing post-processing of LLM outputs</li>
+<li class="fragment">Streamlining integration with downstream processes</li>
+<li class="fragment">Enhancing quality of synthetic datasets</li>
+</ul></li>
+<li class="fragment"><strong>Meeting UI and Product Requirements</strong>
+<ul>
+<li class="fragment">Adhering to UI size limitations</li>
+<li class="fragment">Ensuring output consistency</li>
+</ul></li>
+<li class="fragment"><strong>Enhancing User Trust and Experience</strong>
+<ul>
+<li class="fragment">Mitigating hallucinations</li>
+<li class="fragment">Driving user adoption</li>
+</ul></li>
+</ul>
+</div>
+<!-- To constrain LLM output is not just a technical consideration but a fundamental user need, impacting developer efficiency and user experience. -->
+</section>
+<section id="structural-unreliability-4" class="slide level2 smaller">
+<h2>Structural (un)Reliability</h2>
+<p>The text generation process follows a probabilistic approach. At each step, the model calculates the probability distribution over its entire vocabulary to determine the most likely next token:</p>
+<p><span class="math display">\[\begin{equation}
+P(X) = P(x_1, x_2, \ldots, x_n) = \prod_{i=1}^n p(x_i|x_{&lt;i})
+\end{equation}\]</span></p>
+<p>where, <span class="math inline">\(x_i\)</span> represents the current token being generated, while <span class="math inline">\(x_{&lt;i}\)</span> encompasses all preceding tokens.</p>
+
+<img data-src="images/logit.svg" class="r-stretch quarto-figure-center" id="fig-logit"><p class="caption">
+Figure&nbsp;3: Text Generation Process: “Sampling”.
+</p></section>
+<section id="structural-unreliability-5" class="slide level2 smaller">
+<h2>Structural (un)Reliability</h2>
+<p>This controlled text generation process can be formalized as <span class="citation" data-cites="liang2024controllabletextgenerationlarge">(<a href="#/references" role="doc-biblioref" onclick="">Liang et al. 2024</a>)</span>:</p>
+<p><span class="math display">\[\begin{equation}
+P(X|\color{green}{C}) = P(x_1, x_2, \ldots, x_n|\color{green}{C}) = \prod_{i=1}^n p(x_i|x_{&lt;i}, \color{green}{C})
+\end{equation}\]</span></p>
+<p>Here, <span class="math inline">\(\color{green}{C}\)</span> represents the set of constraints or control conditions that shape the generated output.</p>
+</section>
+<section id="structural-unreliability-6" class="slide level2 smaller">
+<h2>Structural (un)Reliability</h2>
+<p>Common constraints (<span class="math inline">\(C\)</span>) include:</p>
+<div>
+<ul>
+<li class="fragment"><p><strong>Format Constraints</strong>: Enforcing specific output formats like JSON, XML, or YAML ensures the generated content follows a well-defined structure that can be easily parsed and validated. Format constraints are essential for system integration and data exchange.</p></li>
+<li class="fragment"><p><strong>Multiple Choice Constraints</strong>: Restricting LLM outputs to a predefined set of options helps ensure valid responses and reduces the likelihood of unexpected or invalid outputs. This is particularly useful for classification tasks or when specific categorical responses are required.</p></li>
+<li class="fragment"><p><strong>Static Typing Constraints</strong>: Enforcing data type requirements (strings, integers, booleans, etc.) ensures outputs can be safely processed by downstream systems. Type constraints help prevent runtime errors and improve system reliability.</p></li>
+<li class="fragment"><p><strong>Length Constraints</strong>: Limiting the length of generated content is crucial for UI display, platform requirements (like Twitter’s character limit), and maintaining consistent user experience. Length constraints can be applied at the character, word, or token level.</p></li>
+<li class="fragment"><p><strong>Ensuring Output Consistency</strong>: Consistent output length and format are crucial for user experience and UI clarity. Constraints help maintain this consistency, avoiding overwhelming variability in generated text.</p></li>
+</ul>
+</div>
+</section>
+<section id="structural-unreliability-7" class="slide level2 smaller">
+<h2>Structural (un)Reliability</h2>
+
+<img data-src="images/x.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-x"><p class="caption">
+Figure&nbsp;4: A common yet dangerous way to solve LLM Structural (un)Reliability.
+</p></section>
+<section id="structural-unreliability-8" class="slide level2 smaller">
+<h2>Structural (un)Reliability</h2>
+
+<img data-src="images/outlines_state_machine.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-outlines-state-machine"><p class="caption">
+Figure&nbsp;5: A state machine approach to constrain LLM outputs.
+</p></section>
+<section id="structural-unreliability-tools" class="slide level2 smaller">
+<h2>Structural (un)Reliability: Tools</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Outlines</a></li><li><a href="#tabset-2-2">Structured Output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> outlines</span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a>model <span class="op">=</span> outlines.models.transformers(<span class="st">"Qwen/Qwen2.5-0.5B-Instruct"</span>)</span>
+<span id="cb4-4"><a href=""></a>prompt <span class="op">=</span> <span class="ss">f"""Is the following document positive or negative?</span></span>
+<span id="cb4-5"><a href=""></a></span>
+<span id="cb4-6"><a href=""></a><span class="ss">Document: </span><span class="sc">{</span>doc<span class="sc">}</span></span>
+<span id="cb4-7"><a href=""></a><span class="ss">"""</span></span>
+<span id="cb4-8"><a href=""></a>generator <span class="op">=</span> outlines.generate.choice(model, [<span class="st">"Positive"</span>, <span class="st">"Negative"</span>])</span>
+<span id="cb4-9"><a href=""></a>answer <span class="op">=</span> generator(prompt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-2-2">
+<div class="sourceCode" id="cb5" data-code-line-numbers="4,11,20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="im">from</span> pydantic <span class="im">import</span> BaseModel</span>
+<span id="cb5-2"><a href=""></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
+<span id="cb5-3"><a href=""></a></span>
+<span id="cb5-4"><a href=""></a><span class="kw">class</span> DocExtraction(BaseModel):</span>
+<span id="cb5-5"><a href=""></a>    mentioned_entities: <span class="bu">list</span>[<span class="bu">str</span>]</span>
+<span id="cb5-6"><a href=""></a>    mentioned_places: <span class="bu">list</span>[<span class="bu">str</span>]</span>
+<span id="cb5-7"><a href=""></a></span>
+<span id="cb5-8"><a href=""></a><span class="kw">def</span> extract_from_doc(doc_text: <span class="bu">str</span>, prompt: <span class="bu">str</span>) <span class="op">-&gt;</span> DocExtraction:</span>
+<span id="cb5-9"><a href=""></a></span>
+<span id="cb5-10"><a href=""></a>    client <span class="op">=</span> OpenAI()</span>
+<span id="cb5-11"><a href=""></a>    completion <span class="op">=</span> client.beta.chat.completions.parse(</span>
+<span id="cb5-12"><a href=""></a>        model<span class="op">=</span><span class="st">"gpt-4o-mini"</span>,</span>
+<span id="cb5-13"><a href=""></a>        messages<span class="op">=</span>[</span>
+<span id="cb5-14"><a href=""></a>            {</span>
+<span id="cb5-15"><a href=""></a>                <span class="st">"role"</span>: <span class="st">"system"</span>,</span>
+<span id="cb5-16"><a href=""></a>                <span class="st">"content"</span>: prompt</span>
+<span id="cb5-17"><a href=""></a>            },</span>
+<span id="cb5-18"><a href=""></a>            {<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: doc_filing_text}</span>
+<span id="cb5-19"><a href=""></a>        ],</span>
+<span id="cb5-20"><a href=""></a>        response_format<span class="op">=</span>DocExtraction</span>
+<span id="cb5-21"><a href=""></a>    )</span>
+<span id="cb5-22"><a href=""></a>    <span class="cf">return</span> completion.choices[<span class="dv">0</span>].message.parsed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="structural-unreliability-tools-1" class="slide level2 smaller">
+<h2>Structural (un)Reliability: Tools</h2>
+
+<img data-src="images/output_tools.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-output-tools"><p class="caption">
+Figure&nbsp;6: Tools for Structural Reliability
+</p><p>Other related tools worth mentioning include Guidance <span class="citation" data-cites="guidance2024repo">(<a href="#/references" role="doc-biblioref" onclick="">Guidance AI 2024</a>)</span>, Instructor <span class="citation" data-cites="instructorgithub">(<a href="#/references" role="doc-biblioref" onclick="">instructor.ai 2024</a>)</span>, LM Format Enforcer <span class="citation" data-cites="lmformatenforcergithub">(<a href="#/references" role="doc-biblioref" onclick="">Noam Gat 2024</a>)</span>, and NVIDIA’s Logits Processor Zoo <span class="citation" data-cites="nvidia2024logitsprocessorzoo">(<a href="#/references" role="doc-biblioref" onclick="">NVIDIA 2024a</a>)</span>.</p>
+</section>
+<section id="structural-unreliability-tools-2" class="slide level2 smaller">
+<h2>Structural (un)Reliability: Tools</h2>
+
+<img data-src="images/rebuttal.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-rebuttal"><p class="caption">
+Figure&nbsp;7: Impact of Output Constraints in Model Performance
+</p></section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<section id="input-data-issues-1" style="background: #3fb618; width: 100%; height: 100vh; margin: 0; padding: 15px; display: flex; justify-content: center; align-items: center; text-align: center; align-content: center;">
+<h3>Input Data Issues</h3>
+</section>
+</section>
+<section id="input-data-issues-2" class="slide level2 smaller">
+<h2>Input Data Issues</h2>
+<div>
+<ul>
+<li class="fragment">LLMs are sensitive to input formatting and structure, requiring careful data preparation to achieve optimal results <span class="citation" data-cites="he2024doespromptformattingimpact liu2024enhancingllmscognitionstructurization tan2024htmlraghtmlbetterplain">(<a href="#/references" role="doc-biblioref" onclick="">He et al. 2024</a>; <a href="#/references" role="doc-biblioref" onclick="">K. Liu et al. 2024</a>; <a href="#/references" role="doc-biblioref" onclick="">Tan et al. 2024</a>)</span>.</li>
+<li class="fragment">LLMs operate with knowledge cutoffs, providing potentially outdated information that may not reflect current reality and demonstrate problems with temporal knowledge accuracy <span class="citation" data-cites="amayuelas-etal-2024-knowledge">(<a href="#/references" role="doc-biblioref" onclick="">Amayuelas et al. 2024</a>)</span>.</li>
+<li class="fragment">LLMs exhibit drawbacks when processing long context facing “lost-in-the-middle” problems <span class="citation" data-cites="wu2024longdocumentsummaryevaluation">(<a href="#/references" role="doc-biblioref" onclick="">Wu et al. 2024</a>)</span> and struggle with less common but important information showing a systematic loss of long-tail knowledge <span class="citation" data-cites="kotha2024understanding">(<a href="#/references" role="doc-biblioref" onclick="">Kotha, Springer, and Raghunathan 2024</a>)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="input-data-issues-3" class="slide level2 smaller">
+<h2>Input Data Issues</h2>
+<p><strong>Structured Data Extraction</strong></p>
+
+<img data-src="images/forecast.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-forecast"><p class="caption">
+Figure&nbsp;8: Merrill Lynch’s CIO Capital Market Outlook released on December 16, 2024
+</p><div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">MarkItDown</a></li><li><a href="#tabset-3-2">Docling</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="im">from</span> markitdown <span class="im">import</span> MarkItDown</span>
+<span id="cb6-2"><a href=""></a></span>
+<span id="cb6-3"><a href=""></a>md <span class="op">=</span> MarkItDown()</span>
+<span id="cb6-4"><a href=""></a>result <span class="op">=</span> md.convert(<span class="st">"document.pdf"</span>)</span>
+<span id="cb6-5"><a href=""></a><span class="bu">print</span>(result.text_content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-3-2">
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="im">from</span> docling.document_converter <span class="im">import</span> DocumentConverter</span>
+<span id="cb7-2"><a href=""></a></span>
+<span id="cb7-3"><a href=""></a>converter <span class="op">=</span> DocumentConverter()</span>
+<span id="cb7-4"><a href=""></a>result <span class="op">=</span> converter.convert(<span class="st">"document.pdf"</span>)</span>
+<span id="cb7-5"><a href=""></a><span class="bu">print</span>(result.document.export_to_markdown())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="input-data-issues-4" class="slide level2 smaller">
+<h2>Input Data Issues</h2>
+<p><strong>Structured Data Extraction</strong></p>
+<p><img data-src="images/input1.png" style="width:85.0%"></p>
+<p><img data-src="images/input1_res.png" style="width:35.0%"></p>
+</section>
+<section id="input-data-issues-5" class="slide level2 smaller">
+<h2>Input Data Issues</h2>
+<p><strong>Structured Data Extraction</strong></p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1,1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/asset_class.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/input2_res.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="input-data-issues-6" class="slide level2 smaller">
+<h2>Input Data Issues</h2>
+<p><strong>Stale Data -&gt; Hallucination</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>question <span class="op">=</span> <span class="st">"Who's the Author of the Book Taming LLMs?"</span></span>
+<span id="cb8-2"><a href=""></a>response <span class="op">=</span> client.chat.completions.parse(</span>
+<span id="cb8-3"><a href=""></a>    model<span class="op">=</span><span class="st">"gpt-4o-mini"</span>,</span>
+<span id="cb8-4"><a href=""></a>    messages<span class="op">=</span>[</span>
+<span id="cb8-5"><a href=""></a>        {<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: question}</span>
+<span id="cb8-6"><a href=""></a>    ]</span>
+<span id="cb8-7"><a href=""></a>)</span>
+<span id="cb8-8"><a href=""></a>response.choices[<span class="dv">0</span>].message.content</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Response</strong></p>
+<pre><code>The book "Taming LLMs" is authored by *G. Arulkumaran, H. M. B. P. D. Karthikeyan, and I. A. M. Almasri.* If you need more information about the book or its contents, feel free to ask!</code></pre>
+</section>
+<section id="input-data-issues-7" class="slide level2 smaller">
+<h2>Input Data Issues</h2>
+<p><strong>RAG Helps Mitigate Hallucination, Lack of Temporal and Domain-Specific Knowledge</strong></p>
+
+<img data-src="images/rag.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-rag"><p class="caption">
+Figure&nbsp;9: Simplified RAG Pipeline including a Vector Database with Embeddings and Indexing, a Retrieval System including re-ranking with LLM Augmented Generation via In-Context Learning.
+</p></section>
+<section id="input-data-issues-8" class="slide level2 smaller">
+<h2>Input Data Issues</h2>
+
+<img data-src="images/LC.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-LC"><p class="caption">
+Figure&nbsp;10: Long-Context LLMs demonstrate superior performance while RAGs are more cost-effective <span class="citation" data-cites="li2024retrievalaugmentedgenerationlongcontext">(<a href="#/references" role="doc-biblioref" onclick="">Z. Li et al. 2024</a>)</span>.
+</p></section>
+<section id="input-data-issues-9" class="slide level2 smaller">
+<h2>Input Data Issues</h2>
+<p>Do we really need RAGs? The answer is conditional:</p>
+<div>
+<ul>
+<li class="fragment"><strong>RAG may be relevant when cost-effectiveness is a key requirement</strong> and where the model needs to access vast amounts of external knowledge without incurring high computational expenses. However, as LLMs context window sizes increase and LLMs cost per input token decreases, RAGs may not be as relevant as it was before.</li>
+<li class="fragment"><strong>Long-context LLMs are superior when performance is the primary concern</strong>, and the model needs to handle extensive texts that require deep contextual understanding and reasoning.</li>
+<li class="fragment"><strong>Hybrid approaches are valuable as they combine the strengths of RAG and LC</strong> offering a practical balance between cost and performance, especially for applications where both factors are critical.</li>
+</ul>
+</div>
+</section>
+<section id="input-data-issues-10" class="slide level2 smaller">
+<h2>Input Data Issues</h2>
+<p><strong>Takeaways</strong></p>
+<div>
+<ol type="1">
+<li class="fragment"><strong>Data Parsing and Format Transformation</strong>
+<ul>
+<li class="fragment">Specialized tools like MarkItDown and Docling are essential for converting diverse data formats</li>
+<li class="fragment">Parser quality directly impacts LLM performance</li>
+<li class="fragment">Effective parsing strategies are fundamental for reliable LLM applications</li>
+</ul></li>
+<li class="fragment"><strong>RAG Systems vs Long-Context Models</strong>
+<ul>
+<li class="fragment">RAG systems offer cost-effective external knowledge integration</li>
+<li class="fragment">Long-context models provide superior performance for deep contextual understanding</li>
+<li class="fragment">The choice between approaches should be driven by specific application requirements</li>
+</ul></li>
+<li class="fragment"><strong>Implementation Strategy Selection</strong>
+<ul>
+<li class="fragment">Success depends on careful evaluation of complexity, cost, and performance trade-offs</li>
+<li class="fragment">Simple architectures may suffice as long-context models evolve</li>
+<li class="fragment">No universal solution exists - each application requires tailored approaches</li>
+</ul></li>
+</ol>
+</div>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<section id="safety-1" style="background: #2780e3; width: 100%; height: 100vh; margin: 0; padding: 15px; display: flex; justify-content: center; align-items: center; text-align: center; align-content: center;">
+<h3>Safety</h3>
+</section>
+</section>
+<section id="safety-2" class="slide level2 smaller">
+<h2>Safety</h2>
+<p>Without proper safeguards, LLMs can generate harmful content and respond to malicious prompts in dangerous ways <span class="citation" data-cites="openai2024gpt4technicalreport hartvigsen-etal-2022-toxigen">(<a href="#/references" role="doc-biblioref" onclick="">OpenAI et al. 2024</a>; <a href="#/references" role="doc-biblioref" onclick="">Hartvigsen et al. 2022</a>)</span>. This includes generating instructions for dangerous activities, providing advice that could cause harm to individuals or society, and failing to recognize and appropriately handle concerning user statements.</p>
+
+<img data-src="images/danger.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-danger"><p class="caption">
+Figure&nbsp;11: Responses from Mistral (7B), Dolly v2 (12B), and Llama2 (13B) to a harmful user prompt <span class="citation" data-cites="vidgen2024simplesafetyteststestsuiteidentifying">(<a href="#/references" role="doc-biblioref" onclick="">Vidgen, Scherrer, et al. 2024</a>)</span>.
+</p></section>
+<section id="safety-3" class="slide level2 smaller">
+<h2>Safety</h2>
+<ul>
+<li>Guidance</li>
+<li>Rubrics</li>
+<li>Data, Benchmarks, and Tools</li>
+</ul>
+</section>
+<section id="safety-guidance" class="slide level2 smaller">
+<h2>Safety: Guidance</h2>
+<p>Governments and Institutions:</p>
+<ul>
+<li><strong>EU AI Act</strong> <span class="citation" data-cites="exabeam2024airegulations">European Medicines Agency (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span></li>
+<li><strong>FINRA’s Regulatory Notice</strong> <span class="citation" data-cites="finra2024llmguidance24">(<a href="#/references" role="doc-biblioref" onclick="">Financial Industry Regulatory Authority 2024</a>)</span></li>
+<li><strong>UNICEF</strong> <span class="citation" data-cites="unicef2024aiguidance">(<a href="#/references" role="doc-biblioref" onclick="">UNICEF 2024</a>)</span></li>
+<li><strong>UK</strong> <span class="citation" data-cites="ukgov2024airegulation24">(<a href="#/references" role="doc-biblioref" onclick="">UK Government 2024</a>)</span></li>
+<li><strong>China</strong> <span class="citation" data-cites="china2023generativeai">(<a href="#/references" role="doc-biblioref" onclick="">Library of Congress 2023</a>)</span></li>
+<li><strong>US</strong> <span class="citation" data-cites="nist2024riskframework">(<a href="#/references" role="doc-biblioref" onclick="">National Institute of Standards and Technology 2024</a>)</span></li>
+</ul>
+</section>
+<section id="safety-guidance-1" class="slide level2 smaller">
+<h2>Safety: Guidance</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Private Sector:</p>
+<ul>
+<li><strong>OpenAI</strong>: Preparedness Framework <span class="citation" data-cites="openai2024preparedness">(<a href="#/references" role="doc-biblioref" onclick="">OpenAI 2024b</a>)</span></li>
+<li><strong>Anthropic</strong>: Constitutional AI (CAI) <span class="citation" data-cites="askell2023constitutionalai">(<a href="#/references" role="doc-biblioref" onclick="">Askell et al. 2023</a>)</span></li>
+<li><strong>Google</strong>: Frontier Safety Framework <span class="citation" data-cites="deepmind2024frontier">(<a href="#/references" role="doc-biblioref" onclick="">DeepMind 2024</a>)</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="fig-cai" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-cai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/cai.png" class="quarto-figure quarto-figure-center">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: Constitutional AI (CAI) aims to create AI systems that are both safe and helpful by design <span class="citation" data-cites="askell2023constitutionalai">(<a href="#/references" role="doc-biblioref" onclick="">Askell et al. 2023</a>)</span>.
+</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="safety-rubrics" class="slide level2 smaller">
+<h2>Safety: Rubrics</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>MLCommons AI Safety Benchmark <span class="citation" data-cites="vidgen2024introducingv05aisafety">(<a href="#/references" role="doc-biblioref" onclick="">Vidgen, Agrawal, et al. 2024</a>)</span></li>
+<li>Centre for the Governance of AI <span class="citation" data-cites="alaga2024gradingrubricaisafety">(<a href="#/references" role="doc-biblioref" onclick="">Alaga, Schuett, and Anderljung 2024</a>)</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="fig-commons" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-commons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/commons.png" class="quarto-figure quarto-figure-center">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-commons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: MLCommons AI Safety Benchmark Results for Mistral Large 24.11 (API) <span class="citation" data-cites="vidgen2024introducingv05aisafety">(<a href="#/references" role="doc-biblioref" onclick="">Vidgen, Agrawal, et al. 2024</a>)</span>.
+</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="safety-datasets-benchmarks" class="slide level2 smaller">
+<h2>Safety: Datasets &amp; Benchmarks</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>SALAD-Bench <span class="citation" data-cites="li2024saladbenchhierarchicalcomprehensivesafety">(<a href="#/references" role="doc-biblioref" onclick="">L. Li et al. 2024</a>)</span></li>
+<li>Surge AI’s Profanity Dataset <span class="citation" data-cites="surgeaiprofanity2024">(<a href="#/references" role="doc-biblioref" onclick="">Surge AI 2024</a>)</span></li>
+<li>TruthfulQA <span class="citation" data-cites="2021truthfulqa">(<a href="#/references" role="doc-biblioref" onclick="">Lin, Hilton, and Evans 2022</a>)</span></li>
+<li>HarmBench <span class="citation" data-cites="mazeika2024harmbenchstandardizedevaluationframework">(<a href="#/references" role="doc-biblioref" onclick="">Mazeika et al. 2024</a>)</span></li>
+<li>SafeBench <span class="citation" data-cites="safebench2024">(<a href="#/references" role="doc-biblioref" onclick="">ML Safety Team 2024</a>)</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="fig-salad" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-salad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/salad_bench.png" class="quarto-figure quarto-figure-center">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-salad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: SALAD-Bench’s compact taxonomy with hierarchical levels <span class="citation" data-cites="li2024saladbenchhierarchicalcomprehensivesafety">(<a href="#/references" role="doc-biblioref" onclick="">L. Li et al. 2024</a>)</span>.
+</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="safety-tools-techniques" class="slide level2 smaller">
+<h2>Safety: Tools &amp; Techniques</h2>
+
+<img data-src="images/safety_layer.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-safety"><p class="caption">
+Figure&nbsp;15: Safety layers help protect against harmful content and behaviors.
+</p><table class="caption-top">
+<thead>
+<tr class="header">
+<th>Risk</th>
+<th>Prompt</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>profanity</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="even">
+<td>violence</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="odd">
+<td>jailbreaking</td>
+<td>✓</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>hallucination</td>
+<td></td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="safety-tools-techniques-1" class="slide level2 smaller">
+<h2>Safety: Tools &amp; Techniques</h2>
+<p>There are several specialized commercial and open source tools that can be used to implement a filtering layer, which we can categorize into two types: Rules-Based and LLM-Based.</p>
+<p><strong>Rules-Based</strong></p>
+<ul>
+<li>WebPurify <span class="citation" data-cites="webpurify2024">(<a href="#/references" role="doc-biblioref" onclick="">WebPurify 2024</a>)</span></li>
+<li>LLM-Guard <span class="citation" data-cites="llmguard2024">(<a href="#/references" role="doc-biblioref" onclick="">ProtectAI 2024</a>)</span></li>
+<li>AWS Comprehend <span class="citation" data-cites="awscomprehend2024">(<a href="#/references" role="doc-biblioref" onclick="">Amazon Web Services 2024</a>)</span></li>
+<li>NeMo-Guardrails <span class="citation" data-cites="nemogr2024">(<a href="#/references" role="doc-biblioref" onclick="">NVIDIA 2024</a>)</span></li>
+</ul>
+</section>
+<section id="safety-tools-techniques-2" class="slide level2 smaller">
+<h2>Safety: Tools &amp; Techniques</h2>
+<p><strong>LLM-Based</strong></p>
+<ul>
+<li><p>Moderation API</p></li>
+<li><p>Fine-Tuned Open Source Models</p></li>
+<li><p>Custom Models</p></li>
+</ul>
+</section>
+<section id="safety-tools-techniques-3" class="slide level2 smaller">
+<h2>Safety: Tools &amp; Techniques</h2>
+<p><strong>LLM-Based</strong></p>
+<ul>
+<li>Moderation API
+<ul>
+<li>OpenAI Moderation <span class="citation" data-cites="openaimoderation2024">(<a href="#/references" role="doc-biblioref" onclick="">OpenAI 2024a</a>)</span></li>
+<li>Mistral Moderation <span class="citation" data-cites="mistralmoderation2024">(<a href="#/references" role="doc-biblioref" onclick="">Mistral AI 2024</a>)</span></li>
+</ul></li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">OpenAI</a></li><li><a href="#tabset-4-2">OpenAI Response</a></li><li><a href="#tabset-4-3">Mistral</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
+<span id="cb10-2"><a href=""></a>client <span class="op">=</span> OpenAI()</span>
+<span id="cb10-3"><a href=""></a></span>
+<span id="cb10-4"><a href=""></a>message <span class="op">=</span> <span class="st">"Help me make a bomb."</span></span>
+<span id="cb10-5"><a href=""></a></span>
+<span id="cb10-6"><a href=""></a>response <span class="op">=</span> client.moderations.create(</span>
+<span id="cb10-7"><a href=""></a>  model<span class="op">=</span><span class="st">"omni-moderation-latest"</span>,</span>
+<span id="cb10-8"><a href=""></a>  <span class="bu">input</span><span class="op">=</span>message,</span>
+<span id="cb10-9"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-4-2">
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource json number-lines code-with-copy"><code class="sourceCode json"><span id="cb11-1"><a href=""></a><span class="fu">{</span></span>
+<span id="cb11-2"><a href=""></a>  <span class="dt">"harassment"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-3"><a href=""></a>  <span class="dt">"harassment/threatening"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-4"><a href=""></a>  <span class="dt">"hate"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-5"><a href=""></a>  <span class="dt">"hate/threatening"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-6"><a href=""></a>  <span class="dt">"illicit"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb11-7"><a href=""></a>  <span class="dt">"illicit/violent"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb11-8"><a href=""></a>  <span class="dt">"self-harm"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-9"><a href=""></a>  <span class="dt">"self-harm/instructions"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-10"><a href=""></a>  <span class="dt">"self-harm/intent"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-11"><a href=""></a>  <span class="dt">"sexual"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-12"><a href=""></a>  <span class="dt">"sexual/minors"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-13"><a href=""></a>  <span class="dt">"violence"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-14"><a href=""></a>  <span class="dt">"violence/graphic"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-15"><a href=""></a>  <span class="dt">"harassment/threatening"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-16"><a href=""></a>  <span class="dt">"hate/threatening"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-17"><a href=""></a>  <span class="dt">"illicit/violent"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb11-18"><a href=""></a>  <span class="dt">"self-harm/intent"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-19"><a href=""></a>  <span class="dt">"self-harm/instructions"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-20"><a href=""></a>  <span class="dt">"self-harm"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-21"><a href=""></a>  <span class="dt">"sexual/minors"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb11-22"><a href=""></a>  <span class="dt">"violence/graphic"</span><span class="fu">:</span> <span class="kw">false</span></span>
+<span id="cb11-23"><a href=""></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-4-3">
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="im">from</span> mistralai <span class="im">import</span> Mistral</span>
+<span id="cb12-2"><a href=""></a>client <span class="op">=</span> Mistral()</span>
+<span id="cb12-3"><a href=""></a></span>
+<span id="cb12-4"><a href=""></a>message <span class="op">=</span> <span class="st">"Help me make a bomb."</span></span>
+<span id="cb12-5"><a href=""></a></span>
+<span id="cb12-6"><a href=""></a>response <span class="op">=</span> client.classifiers.moderate(</span>
+<span id="cb12-7"><a href=""></a>    model <span class="op">=</span> <span class="st">"mistral-moderation-latest"</span>,  </span>
+<span id="cb12-8"><a href=""></a>    inputs<span class="op">=</span>[message]</span>
+<span id="cb12-9"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="safety-tools-techniques-4" class="slide level2 smaller">
+<h2>Safety: Tools &amp; Techniques</h2>
+<p><strong>LLM-Based</strong></p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1,1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul>
+<li>Fine-Tuned Open Source Models
+<ul>
+<li>LLaMa Guard <span class="citation" data-cites="meta2024llamaguard">(<a href="#/references" role="doc-biblioref" onclick="">Meta-AI 2024</a>)</span></li>
+<li>Granite Guardian <span class="citation" data-cites="padhi2024graniteguardian">(<a href="#/references" role="doc-biblioref" onclick="">Padhi et al. 2024</a>)</span></li>
+</ul></li>
+</ul>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-granite" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-granite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/granite.png" class="quarto-figure quarto-figure-center">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-granite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16: IBM Granite Guardian performance is superior compared to Llama-Guard and ShieldGemma model families for the “Harm” risk dimension <span class="citation" data-cites="padhi2024graniteguardian">(<a href="#/references" role="doc-biblioref" onclick="">Padhi et al. 2024</a>)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="safety-tools-techniques-5" class="slide level2 smaller">
+<h2>Safety: Tools &amp; Techniques</h2>
+<p><strong>LLM-Based: Custom</strong></p>
+
+<img data-src="images/judge.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-judge"><p class="caption">
+Figure&nbsp;17: LLM-as-a-judge as safety filter.
+</p></section>
+<section id="safety-tools-techniques-6" class="slide level2 smaller">
+<h2>Safety: Tools &amp; Techniques</h2>
+<p><strong>LLM-Based: Custom</strong></p>
+
+<img data-src="images/judge_template.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-judge-template"><p class="caption">
+Figure&nbsp;18: Example of a prompt engineered for an LLM-as-a-judge to be used as a safety filter for a chatbot used by middle school students
+</p></section>
+<section id="safety-tools-techniques-7" class="slide level2 smaller">
+<h2>Safety: Tools &amp; Techniques</h2>
+<p><strong>LLM-Based: Custom</strong></p>
+<p>This simple prompt demonstrates how an LLM-as-a-judge can be used as a safety filter. Some best practices applied are:</p>
+<ul>
+<li><strong>Categorization of issues:</strong> By defining categories such as illegal activities and profanity the prompt guides the AI to focus on relevant aspects of the text, enhancing clarity and accuracy.</li>
+<li><strong>Scoring system:</strong> The prompt employs a scoring mechanism that quantifies content severity on a scale from 0 to 1, allowing for nuanced assessments and encouraging consideration of context.</li>
+<li><strong>Transparency in decision-making:</strong> The requirement for a brief explanation of the verdict fosters transparency, helping users understand the rationale behind content moderation decisions.</li>
+<li><strong>Few-shot learning:</strong> Incorporating few-shot learning techniques can enhance the AI’s ability to generalize from limited examples.</li>
+<li><strong>Output format:</strong> Both examples and instruction specify a target output format increasing reliability of the structure of the response (see Chapter <span class="math inline">\(\ref{chapter:output}\)</span> on how to guarantee structured output).</li>
+</ul>
+</section>
+<section id="safety-case-study" class="slide level2 smaller">
+<h2>Safety: Case Study</h2>
+
+<img data-src="images/safety_test.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-safety-test"><p class="caption">
+Figure&nbsp;19: Case Study - Safety Filter using OpenAI, Mistral, LLaMa Guard, and custom LLM-as-a-judge.
+</p></section>
+<section id="safety-case-study-1" class="slide level2 smaller">
+<h2>Safety: Case Study</h2>
+
+<img data-src="images/safety_res.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-safety-res"><p class="caption">
+Figure&nbsp;20: Validator Performance Metrics: True Positive Rate, False Positive Rate, and Inference Time.
+</p></section>
+<section id="safety-case-study-2" class="slide level2 smaller">
+<h2>Safety: Case Study</h2>
+
+<img data-src="images/fp.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-pf"><p class="caption">
+Figure&nbsp;21: Surprisingly (or not), when we actually translate the above prompts and carefully read them, one could deem them as unsafe at least for our case study where K-12 students and teachers are interacting with the model. This highlights the critical importance of involving experts in the application domain in the development of the evaluation framework from the start.
+</p></section>
+<section id="safety-takeaways" class="slide level2 smaller">
+<h2>Safety: Takeaways</h2>
+<div>
+<ul>
+<li class="fragment">Safety is a complex problem and there is no one-size-fits-all solution.</li>
+<li class="fragment">Starting with a well-aligned definition of Safety is key to developing a robust data and evaluation framework.</li>
+<li class="fragment">Domain experts are key to this process and should be involved in the development of the evaluation framework from the start.</li>
+<li class="fragment">Off-the-shelf safety filters facilitate expedited implementation. However, custom safety filters may offer solutions tailored to your needs.</li>
+</ul>
+</div>
+</section>
+<section id="safety-takeaways-1" class="slide level2 smaller">
+<h2>Safety: Takeaways</h2>
+
+<img data-src="images/design.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-safety-design"><p class="caption">
+Figure&nbsp;22: Safety Plan Design Phases.
+</p></section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<section id="alignment-1" style="background: #9954bb; width: 100%; height: 100vh; margin: 0; padding: 15px; display: flex; justify-content: center; align-items: center; text-align: center; align-content: center;">
+<h3>Alignment</h3>
+</section>
+</section>
+<section id="alignment-2" class="slide level2 smaller">
+<h2>Alignment</h2>
+<p>ChatGPT 2.0, for instance, works as a next-token prediction machine, i.e.&nbsp;text-completion model.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>ChatGPT 2.0: Pre-Alignment</strong></p>
+</div>
+<div class="callout-content">
+<p>Prompt: “Explain the moon landing to a 6 year old in a short sentence”</p>
+<blockquote>
+<p>“Explain the moon landing to a 6 year old in a short sentence. If the first moon is a good idea, you may get one of those little green dots out of the ground. Then the next day it will be a black line”</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p>Modern LLMs, on the other hand, are not just text-completion models. They are instruction-following human preference-aligned models, i.e.&nbsp;they are trained to follow instructions and align with human preferences. Hence, incorporating human-like features.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Claude 3.5 Sonnet: Human Preference Alignment</strong></p>
+</div>
+<div class="callout-content">
+<p>Prompt: “Explain the moon landing to a 6 year old in a short sentence”</p>
+<blockquote>
+<p>“A brave group of astronauts flew a special spaceship all the way to the moon, stepped out onto its dusty surface, and planted a flag there to show they made it!”</p>
+</blockquote>
+</div>
+</div>
+</div>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-alaga2024gradingrubricaisafety" class="csl-entry" role="listitem">
+Alaga, Jide, Jonas Schuett, and Markus Anderljung. 2024. <span>“A Grading Rubric for AI Safety Frameworks.”</span> <a href="https://arxiv.org/abs/2409.08751">https://arxiv.org/abs/2409.08751</a>.
+</div>
+<div id="ref-amayuelas-etal-2024-knowledge" class="csl-entry" role="listitem">
+Amayuelas, Alfonso, Kyle Wong, Liangming Pan, Wenhu Chen, and William Yang Wang. 2024. <span>“Knowledge of Knowledge: Exploring Known-Unknowns Uncertainty with Large Language Models.”</span> In <em>Findings of the Association for Computational Linguistics: ACL 2024</em>, edited by Lun-Wei Ku, Andre Martins, and Vivek Srikumar, 6416–32. Bangkok, Thailand: Association for Computational Linguistics. <a href="https://doi.org/10.18653/v1/2024.findings-acl.383">https://doi.org/10.18653/v1/2024.findings-acl.383</a>.
+</div>
+<div id="ref-awscomprehend2024" class="csl-entry" role="listitem">
+Amazon Web Services. 2024. <span>“Amazon Comprehend - Natural Language Processing Service.”</span> <a href="https://aws.amazon.com/comprehend/">https://aws.amazon.com/comprehend/</a>.
+</div>
+<div id="ref-askell2023constitutionalai" class="csl-entry" role="listitem">
+Askell, Amanda, Yuntao Bai, Anna Chen, Deep Ganguli, Danny Hernandez, Jared Kaplan, Jackson Kernion, Ben Mann, Catherine Olsson, and Paul Christiano. 2023. <span>“Constitutional AI: Harmlessness from AI Feedback.”</span> Anthropic. <a href="https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback">https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback</a>.
+</div>
+<div id="ref-deepmind2024frontier" class="csl-entry" role="listitem">
+DeepMind. 2024. <span>“The Frontier Safety Framework.”</span> Technical Report. DeepMind. <a href="https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/introducing-the-frontier-safety-framework/fsf-technical-report.pdf">https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/introducing-the-frontier-safety-framework/fsf-technical-report.pdf</a>.
+</div>
+<div id="ref-ema2024llmguidelines" class="csl-entry" role="listitem">
+European Medicines Agency. 2024. <span>“Guiding Principles for the Use of Large Language Models in Regulatory Science and Medicines Regulatory Activities.”</span> Guidance Document. European Medicines Agency. <a href="https://www.ema.europa.eu/en/documents/other/guiding-principles-use-large-language-models-regulatory-science-medicines-regulatory-activities_en.pdf">https://www.ema.europa.eu/en/documents/other/guiding-principles-use-large-language-models-regulatory-science-medicines-regulatory-activities_en.pdf</a>.
+</div>
+<div id="ref-exabeam2024airegulations" class="csl-entry" role="listitem">
+Exabeam. 2024. <span>“AI Regulations and LLM Regulations: Past, Present, and Future.”</span> Exabeam Blog. <a href="https://www.exabeam.com/explainers/ai-cyber-security/ai-regulations-and-llm-regulations-past-present-and-future/">https://www.exabeam.com/explainers/ai-cyber-security/ai-regulations-and-llm-regulations-past-present-and-future/</a>.
+</div>
+<div id="ref-finra2024llmguidance24" class="csl-entry" role="listitem">
+Financial Industry Regulatory Authority. 2024. <span>“Artificial Intelligence, Including Large Language Models and Generative AI.”</span> Regulatory Notice 24-09. FINRA. <a href="https://www.finra.org/rules-guidance/notices/24-09">https://www.finra.org/rules-guidance/notices/24-09</a>.
+</div>
+<div id="ref-guidance2024repo" class="csl-entry" role="listitem">
+Guidance AI. 2024. <span>“Guidance: Language Model Programming.”</span> GitHub Repository. <a href="https://github.com/guidance-ai/guidance">https://github.com/guidance-ai/guidance</a>.
+</div>
+<div id="ref-hartvigsen-etal-2022-toxigen" class="csl-entry" role="listitem">
+Hartvigsen, Thomas, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, and Ece Kamar. 2022. <span>“<span>T</span>oxi<span>G</span>en: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection.”</span> In <em>Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)</em>, edited by Smaranda Muresan, Preslav Nakov, and Aline Villavicencio, 3309–26. Dublin, Ireland: Association for Computational Linguistics. <a href="https://doi.org/10.18653/v1/2022.acl-long.234">https://doi.org/10.18653/v1/2022.acl-long.234</a>.
+</div>
+<div id="ref-he2024doespromptformattingimpact" class="csl-entry" role="listitem">
+He, Jia, Mukund Rungta, David Koleczek, Arshdeep Sekhon, Franklin X Wang, and Sadid Hasan. 2024. <span>“Does Prompt Formatting Have Any Impact on LLM Performance?”</span> <a href="https://arxiv.org/abs/2411.10541">https://arxiv.org/abs/2411.10541</a>.
+</div>
+<div id="ref-instructorgithub" class="csl-entry" role="listitem">
+instructor.ai. 2024. <span>“Instructor.”</span> GitHub Repository. <a href="https://github.com/instructor-ai/instructor">https://github.com/instructor-ai/instructor</a>.
+</div>
+<div id="ref-kotha2024understanding" class="csl-entry" role="listitem">
+Kotha, Suhas, Jacob Mitchell Springer, and Aditi Raghunathan. 2024. <span>“Understanding Catastrophic Forgetting in Language Models via Implicit Inference.”</span> In <em>The Twelfth International Conference on Learning Representations</em>. <a href="https://openreview.net/forum?id=VrHiF2hsrm">https://openreview.net/forum?id=VrHiF2hsrm</a>.
+</div>
+<div id="ref-li2024saladbenchhierarchicalcomprehensivesafety" class="csl-entry" role="listitem">
+Li, Lijun, Bowen Dong, Ruohui Wang, Xuhao Hu, Wangmeng Zuo, Dahua Lin, Yu Qiao, and Jing Shao. 2024. <span>“SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models.”</span> <a href="https://arxiv.org/abs/2402.05044">https://arxiv.org/abs/2402.05044</a>.
+</div>
+<div id="ref-li2024retrievalaugmentedgenerationlongcontext" class="csl-entry" role="listitem">
+Li, Zhuowan, Cheng Li, Mingyang Zhang, Qiaozhu Mei, and Michael Bendersky. 2024. <span>“Retrieval Augmented Generation or Long-Context LLMs? A Comprehensive Study and Hybrid Approach.”</span> <a href="https://arxiv.org/abs/2407.16833">https://arxiv.org/abs/2407.16833</a>.
+</div>
+<div id="ref-liang2024controllabletextgenerationlarge" class="csl-entry" role="listitem">
+Liang, Xun, Hanyu Wang, Yezhaohui Wang, Shichao Song, Jiawei Yang, Simin Niu, Jie Hu, et al. 2024. <span>“Controllable Text Generation for Large Language Models: A Survey.”</span> <a href="https://arxiv.org/abs/2408.12599">https://arxiv.org/abs/2408.12599</a>.
+</div>
+<div id="ref-china2023generativeai" class="csl-entry" role="listitem">
+Library of Congress. 2023. <span>“China: Generative AI Measures Finalized.”</span> Global Legal Monitor. Law Library of Congress. <a href="https://www.loc.gov/item/global-legal-monitor/2023-07-18/china-generative-ai-measures-finalized/">https://www.loc.gov/item/global-legal-monitor/2023-07-18/china-generative-ai-measures-finalized/</a>.
+</div>
+<div id="ref-2021truthfulqa" class="csl-entry" role="listitem">
+Lin, Stephanie, Jacob Hilton, and Owain Evans. 2022. <span>“TruthfulQA: Measuring How Models Mimic Human Falsehoods.”</span> <a href="https://arxiv.org/abs/2109.07958">https://arxiv.org/abs/2109.07958</a>.
+</div>
+<div id="ref-liu2024enhancingllmscognitionstructurization" class="csl-entry" role="listitem">
+Liu, Kai, Zhihang Fu, Chao Chen, Wei Zhang, Rongxin Jiang, Fan Zhou, Yaowu Chen, Yue Wu, and Jieping Ye. 2024. <span>“Enhancing LLM’s Cognition via Structurization.”</span> <a href="https://arxiv.org/abs/2407.16434">https://arxiv.org/abs/2407.16434</a>.
+</div>
+<div id="ref-10.1145/3613905.3650756" class="csl-entry" role="listitem">
+Liu, Michael Xieyang, Frederick Liu, Alexander J. Fiannaca, Terry Koo, Lucas Dixon, Michael Terry, and Carrie J. Cai. 2024. <span>“"We Need Structured Output": Towards User-Centered Constraints on Large Language Model Output.”</span> In <em>Extended Abstracts of the CHI Conference on Human Factors in Computing Systems</em>. CHI EA ’24. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/3613905.3650756">https://doi.org/10.1145/3613905.3650756</a>.
+</div>
+<div id="ref-mazeika2024harmbenchstandardizedevaluationframework" class="csl-entry" role="listitem">
+Mazeika, Mantas, Long Phan, Xuwang Yin, Andy Zou, Zifan Wang, Norman Mu, Elham Sakhaee, et al. 2024. <span>“HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal.”</span> <a href="https://arxiv.org/abs/2402.04249">https://arxiv.org/abs/2402.04249</a>.
+</div>
+<div id="ref-meta2024llamaguard" class="csl-entry" role="listitem">
+Meta-AI. 2024. <span>“LlamaGuard: LLM-Based Input-Output Safeguard for Human-AI Conversations.”</span> Meta AI Research Publications. <a href="https://ai.meta.com/research/publications/llama-guard-llm-based-input-output-safeguard-for-human-ai-conversations/">https://ai.meta.com/research/publications/llama-guard-llm-based-input-output-safeguard-for-human-ai-conversations/</a>.
+</div>
+<div id="ref-mistralmoderation2024" class="csl-entry" role="listitem">
+Mistral AI. 2024. <span>“Mistral Moderation: A Technical Report.”</span> <a href="https://mistral.ai/news/mistral-moderation/">https://mistral.ai/news/mistral-moderation/</a>.
+</div>
+<div id="ref-safebench2024" class="csl-entry" role="listitem">
+ML Safety Team. 2024. <span>“SafeBench: A Comprehensive Benchmark for LLM Safety Evaluation.”</span> ML Safety Website. <a href="https://www.mlsafety.org/safebench">https://www.mlsafety.org/safebench</a>.
+</div>
+<div id="ref-nist2024riskframework" class="csl-entry" role="listitem">
+National Institute of Standards and Technology. 2024. <span>“AI Risk Management Framework.”</span> Technical Report. National Institute of Standards; Technology. <a href="https://www.nist.gov/itl/ai-risk-management-framework">https://www.nist.gov/itl/ai-risk-management-framework</a>.
+</div>
+<div id="ref-lmformatenforcergithub" class="csl-entry" role="listitem">
+Noam Gat. 2024. <span>“LM Format Enforcer.”</span> GitHub Repository. <a href="https://github.com/noamgat/lm-format-enforcer">https://github.com/noamgat/lm-format-enforcer</a>.
+</div>
+<div id="ref-nvidia2024logitsprocessorzoo" class="csl-entry" role="listitem">
+NVIDIA. 2024a. <span>“Logits Processor Zoo.”</span> GitHub Repository. <a href="https://github.com/NVIDIA/logits-processor-zoo">https://github.com/NVIDIA/logits-processor-zoo</a>.
+</div>
+<div id="ref-nemogr2024" class="csl-entry" role="listitem">
+———. 2024. <span>“NeMo-Guardrails: An Open-Source Toolkit for Building Reliable and Safe LLM Applications.”</span> <a href="https://github.com/NVIDIA/NeMo-Guardrails">https://github.com/NVIDIA/NeMo-Guardrails</a>.
+</div>
+<div id="ref-openaimoderation2024" class="csl-entry" role="listitem">
+OpenAI. 2024a. <span>“OpenAI Moderation API.”</span> <a href="https://platform.openai.com/docs/guides/moderation">https://platform.openai.com/docs/guides/moderation</a>.
+</div>
+<div id="ref-openai2024preparedness" class="csl-entry" role="listitem">
+———. 2024b. <span>“OpenAI Preparedness Framework.”</span> Technical Report. OpenAI. <a href="https://cdn.openai.com/openai-preparedness-framework-beta.pdf">https://cdn.openai.com/openai-preparedness-framework-beta.pdf</a>.
+</div>
+<div id="ref-openai2024gpt4technicalreport" class="csl-entry" role="listitem">
+OpenAI, Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, et al. 2024. <span>“GPT-4 Technical Report.”</span> <a href="https://arxiv.org/abs/2303.08774">https://arxiv.org/abs/2303.08774</a>.
+</div>
+<div id="ref-padhi2024graniteguardian" class="csl-entry" role="listitem">
+Padhi, Inkit, Manish Nagireddy, Giandomenico Cornacchia, Subhajit Chaudhury, Tejaswini Pedapati, Pierre Dognin, Keerthiram Murugesan, et al. 2024. <span>“Granite Guardian.”</span> <a href="https://arxiv.org/abs/2412.07724">https://arxiv.org/abs/2412.07724</a>.
+</div>
+<div id="ref-llmguard2024" class="csl-entry" role="listitem">
+ProtectAI. 2024. <span>“LLM-Guard: Comprehensive Safety and Security Framework for Large Language Models.”</span> <a href="https://github.com/protectai/llm-guard">https://github.com/protectai/llm-guard</a>.
+</div>
+<div id="ref-shorten2024structuredragjsonresponseformatting" class="csl-entry" role="listitem">
+Shorten, Connor, Charles Pierse, Thomas Benjamin Smith, Erika Cardenas, Akanksha Sharma, John Trengrove, and Bob van Luijt. 2024. <span>“StructuredRAG: JSON Response Formatting with Large Language Models.”</span> <a href="https://arxiv.org/abs/2408.11061">https://arxiv.org/abs/2408.11061</a>.
+</div>
+<div id="ref-surgeaiprofanity2024" class="csl-entry" role="listitem">
+Surge AI. 2024. <span>“Surge AI Profanity Dataset.”</span> GitHub repository. <a href="https://github.com/surge-ai/profanity">https://github.com/surge-ai/profanity</a>.
+</div>
+<div id="ref-tan2024htmlraghtmlbetterplain" class="csl-entry" role="listitem">
+Tan, Jiejun, Zhicheng Dou, Wen Wang, Mang Wang, Weipeng Chen, and Ji-Rong Wen. 2024. <span>“HtmlRAG: HTML Is Better Than Plain Text for Modeling Retrieved Knowledge in RAG Systems.”</span> <a href="https://arxiv.org/abs/2411.02959">https://arxiv.org/abs/2411.02959</a>.
+</div>
+<div id="ref-tang2024strucbenchlargelanguagemodels" class="csl-entry" role="listitem">
+Tang, Xiangru, Yiming Zong, Jason Phang, Yilun Zhao, Wangchunshu Zhou, Arman Cohan, and Mark Gerstein. 2024. <span>“Struc-Bench: Are Large Language Models Really Good at Generating Complex Structured Data?”</span> <a href="https://arxiv.org/abs/2309.08963">https://arxiv.org/abs/2309.08963</a>.
+</div>
+<div id="ref-ukgov2024airegulation24" class="csl-entry" role="listitem">
+UK Government. 2024. <span>“AI Regulation: A Pro-Innovation Approach.”</span> White Paper. Department for Science, Innovation; Technology. <a href="https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach/white-paper">https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach/white-paper</a>.
+</div>
+<div id="ref-unicef2024aiguidance" class="csl-entry" role="listitem">
+UNICEF. 2024. <span>“Policy Guidance on AI for Children.”</span> Policy Report. UNICEF Office of Research - Innocenti. <a href="https://www.unicef.org/innocenti/reports/policy-guidance-ai-children">https://www.unicef.org/innocenti/reports/policy-guidance-ai-children</a>.
+</div>
+<div id="ref-vidgen2024introducingv05aisafety" class="csl-entry" role="listitem">
+Vidgen, Bertie, Adarsh Agrawal, Ahmed M. Ahmed, Victor Akinwande, Namir Al-Nuaimi, Najla Alfaraj, Elie Alhajjar, et al. 2024. <span>“Introducing V0.5 of the AI Safety Benchmark from MLCommons.”</span> <a href="https://arxiv.org/abs/2404.12241">https://arxiv.org/abs/2404.12241</a>.
+</div>
+<div id="ref-vidgen2024simplesafetyteststestsuiteidentifying" class="csl-entry" role="listitem">
+Vidgen, Bertie, Nino Scherrer, Hannah Rose Kirk, Rebecca Qian, Anand Kannappan, Scott A. Hale, and Paul Röttger. 2024. <span>“SimpleSafetyTests: A Test Suite for Identifying Critical Safety Risks in Large Language Models.”</span> <a href="https://arxiv.org/abs/2311.08370">https://arxiv.org/abs/2311.08370</a>.
+</div>
+<div id="ref-webpurify2024" class="csl-entry" role="listitem">
+WebPurify. 2024. <span>“WebPurify - Content Moderation API.”</span> <a href="https://www.webpurify.com/">https://www.webpurify.com/</a>.
+</div>
+<div id="ref-wu2024longdocumentsummaryevaluation" class="csl-entry" role="listitem">
+Wu, Yunshu, Hayate Iso, Pouya Pezeshkpour, Nikita Bhutani, and Estevam Hruschka. 2024. <span>“Less Is More for Long Document Summary Evaluation by LLMs.”</span> <a href="https://arxiv.org/abs/2309.07382">https://arxiv.org/abs/2309.07382</a>.
+</div>
+</div>
 
 </section>
     </div>

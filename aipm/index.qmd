@@ -2,7 +2,7 @@
 title: "The GenAI Product Manager"
 description: | 
   The Future of Product Management in the Age of Generative AI.
-date: 01/20/2025
+date: 01/23/2025
 author:
   - name: Thársis Souza 
 citation:
@@ -21,7 +21,7 @@ editor:
   render-on-save: false
 format: 
   html:
-    #theme: darkly #lux #quartz
+    #theme: #lux #darkly #lux #quartz
     toc: true
     toc-expand: 2
     toc-location: left
@@ -648,7 +648,9 @@ The most effective way to develop AI PM skills is through hands-on experience bu
 
 Developing for yourself, as the first user, almost guarantees you are motivated to solve the problem and is a great way to increase the likelihood you deeply understand the pain points and frustrations associated with that problem.
 
-Once you become obsessed with the problem, you start walking backwards from the problem to the solution and that's when you start to understand the technical constraints and possibilities. Learning GenAI capabilities comes as a consequence of the problem solving process.
+Once you become obsessed with the problem, you start walking backwards from the problem to the solution and that's when you start to understand the technical constraints and possibilities. Learning GenAI capabilities[^ms-course] comes as a consequence of the problem solving process.
+
+[^ms-course]: [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners) by Microsoft is a great resource for getting started with building with GenAI.
 
 Another consequence is that you start to learn from others who are solving the same or adjacent problems, which brings the second point: Community Engagement.
 

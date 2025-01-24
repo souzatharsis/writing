@@ -932,7 +932,7 @@ The scoring scale is:
 
 ## Acknowledgements
 
-Thanks to the Code.org team for providing the opportunity to collaborate during my garden leave. The experience was invaluable and enriched my understanding of building educational and safe AI products.
+Thanks to Simon and the Code.org team for providing me with the opportunity to collaborate during my garden leave. The experience was invaluable and enriched my understanding of building safe and educational AI products.
 
 
 ## References

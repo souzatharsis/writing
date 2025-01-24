@@ -288,6 +288,13 @@ Figure&nbsp;1: <em>Samuel Colvin, Pydantic</em>
 </p></section>
 <section id="llm-pitfalls-1" class="slide level2">
 <h2>LLM Pitfalls</h2>
+<blockquote>
+<p>From the perspective of software engineering, current AI systems are unmanageable, and as a consequence their use in serious contexts is irresponsible.</p>
+</blockquote>
+<p>– Prof.&nbsp;Eerke Boiten, Head of School of Computer Science and Informatics at De Montfort University (DMU), Leicester, UK. <a href="https://www.bcs.org/articles-opinion-and-research/does-current-ai-represent-a-dead-end/">source</a></p>
+</section>
+<section id="llm-pitfalls-2" class="slide level2">
+<h2>LLM Pitfalls</h2>
 <div class="r-stack">
 <div class="r-hstack" style="flex-wrap: wrap; justify-content: center; align-items: center; max-width: 1200px;">
 <div class="fragment" style="background: #e83e8c; width: 300px; height: 150px; margin: 10px; padding: 15px; border-radius: 15px; display: flex; justify-content: center; align-items: center;">
@@ -324,7 +331,7 @@ Figure&nbsp;1: <em>Samuel Colvin, Pydantic</em>
 <h2>Testing Complexity</h2>
 <p>LLMs are Generative, Non-Deterministic, and have Emergent Properties.</p>
 
-<img data-src="images/emergent-properties-palm.gif" style="width:100.0%" class="r-stretch quarto-figure-center"><p class="caption">Animation representing LLMs “Emerging Properties” Phenomenon. From: “Pathways Language Model (PaLM): Scaling to 540 Billion Parameters for Breakthrough Performance”</p></section>
+<img data-src="images/emergent-properties-palm.gif" style="width:100.0%" class="r-stretch quarto-figure-center"><p class="caption">LLMs “Emerging Properties” Phenomenon. From: “Pathways Language Model (PaLM): Scaling to 540 Billion Parameters for Breakthrough Performance”</p></section>
 <section id="testing-complexity-3" class="slide level2 smaller">
 <h2>Testing Complexity</h2>
 <table class="caption-top">
@@ -424,6 +431,20 @@ Figure&nbsp;2: Conceptual overview of Multiple LLM-based applications evaluation
 <h2>Testing Complexity: Tools</h2>
 
 <img data-src="images/evals_compare.png" style="width:100.0%" class="r-stretch"></section>
+<section id="testing-complexity-4" class="slide level2 smaller">
+<h2>Testing Complexity</h2>
+<p><strong>Takeaways</strong></p>
+<div>
+<ul>
+<li class="fragment">Testing LLMs requires a fundamental mindset shift from deterministic to probabilistic evaluation
+<ul>
+<li class="fragment">Traditional software testing methods are inadequate for LLM variability</li>
+<li class="fragment">Success requires embracing comprehensive evaluation frameworks</li>
+<li class="fragment">Evaluation is the new Product Requirements Document (PRD)</li>
+</ul></li>
+</ul>
+</div>
+</section>
 <section id="section-1" class="slide level2">
 <h2></h2>
 <section id="structural-unreliability-1" style="background: #ff7518; width: 100%; height: 100vh; margin: 0; padding: 15px; display: flex; justify-content: center; align-items: center; text-align: center; align-content: center;">
@@ -569,7 +590,7 @@ Figure&nbsp;6: Tools for Structural Reliability
 <h2>Structural (un)Reliability: Tools</h2>
 
 <img data-src="images/rebuttal.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-rebuttal"><p class="caption">
-Figure&nbsp;7: Impact of Output Constraints in Model Performance
+Figure&nbsp;7: Impact of Output Constraints in Model Performance <span class="citation" data-cites="dottxt2024saywhatyoumean">(<a href="#/references" role="doc-biblioref" onclick="">Dottxt 2024</a>)</span>
 </p></section>
 <section id="section-2" class="slide level2">
 <h2></h2>
@@ -681,7 +702,6 @@ Figure&nbsp;10: Long-Context LLMs demonstrate superior performance while RAGs ar
 <ol type="1">
 <li class="fragment"><strong>Data Parsing and Format Transformation</strong>
 <ul>
-<li class="fragment">Specialized tools like MarkItDown and Docling are essential for converting diverse data formats</li>
 <li class="fragment">Parser quality directly impacts LLM performance</li>
 <li class="fragment">Effective parsing strategies are fundamental for reliable LLM applications</li>
 </ul></li>
@@ -695,7 +715,6 @@ Figure&nbsp;10: Long-Context LLMs demonstrate superior performance while RAGs ar
 <ul>
 <li class="fragment">Success depends on careful evaluation of complexity, cost, and performance trade-offs</li>
 <li class="fragment">Simple architectures may suffice as long-context models evolve</li>
-<li class="fragment">No universal solution exists - each application requires tailored approaches</li>
 </ul></li>
 </ol>
 </div>
@@ -723,6 +742,8 @@ Figure&nbsp;11: Responses from Mistral (7B), Dolly v2 (12B), and Llama2 (13B) to
 </section>
 <section id="safety-guidance" class="slide level2 smaller">
 <h2>Safety: Guidance</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p>Governments and Institutions:</p>
 <ul>
 <li><strong>EU AI Act</strong> <span class="citation" data-cites="exabeam2024airegulations">European Medicines Agency (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span></li>
@@ -732,6 +753,26 @@ Figure&nbsp;11: Responses from Mistral (7B), Dolly v2 (12B), and Llama2 (13B) to
 <li><strong>China</strong> <span class="citation" data-cites="china2023generativeai">(<a href="#/references" role="doc-biblioref" onclick="">Library of Congress 2023</a>)</span></li>
 <li><strong>US</strong> <span class="citation" data-cites="nist2024riskframework">(<a href="#/references" role="doc-biblioref" onclick="">National Institute of Standards and Technology 2024</a>)</span></li>
 </ul>
+</div><div class="column" style="width:50%;">
+<div id="fig-eo" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-eo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="images/eo.png" class="quarto-figure quarto-figure-center">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: One of President Trump’s first actions was to rescind <a href="https://web.archive.org/web/20250109015018/https://www.whitehouse.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/">Executive Order 14110</a> (Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence), which among other things mandated government safety testing for open source models.
+</figcaption>
+</figure>
+</div>
+</div></div>
+<!--  one of President Trump's first actions was to rescind Executive Order 14110 (Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence). mandated government safety testing for open source models.
+
+Safety and Security:
+
+- Requires companies developing powerful AI models to share safety test results with government
+- Establishes standards for AI system evaluation and testing
+- Creates new protections for critical infrastructure against AI risks
+- Addresses AI's role in biological/chemical weapons development -->
 </section>
 <section id="safety-guidance-1" class="slide level2 smaller">
 <h2>Safety: Guidance</h2>
@@ -750,7 +791,7 @@ Figure&nbsp;11: Responses from Mistral (7B), Dolly v2 (12B), and Llama2 (13B) to
 <img data-src="images/cai.png" class="quarto-figure quarto-figure-center">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12: Constitutional AI (CAI) aims to create AI systems that are both safe and helpful by design <span class="citation" data-cites="askell2023constitutionalai">(<a href="#/references" role="doc-biblioref" onclick="">Askell et al. 2023</a>)</span>.
+Figure&nbsp;13: Constitutional AI (CAI) aims to create AI systems that are both safe and helpful by design <span class="citation" data-cites="askell2023constitutionalai">(<a href="#/references" role="doc-biblioref" onclick="">Askell et al. 2023</a>)</span>.
 </figcaption>
 </figure>
 </div>
@@ -771,7 +812,7 @@ Figure&nbsp;12: Constitutional AI (CAI) aims to create AI systems that are both 
 <img data-src="images/commons.png" class="quarto-figure quarto-figure-center">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-commons-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13: MLCommons AI Safety Benchmark Results for Mistral Large 24.11 (API) <span class="citation" data-cites="vidgen2024introducingv05aisafety">(<a href="#/references" role="doc-biblioref" onclick="">Vidgen, Agrawal, et al. 2024</a>)</span>.
+Figure&nbsp;14: MLCommons AI Safety Benchmark Results for Mistral Large 24.11 (API) <span class="citation" data-cites="vidgen2024introducingv05aisafety">(<a href="#/references" role="doc-biblioref" onclick="">Vidgen, Agrawal, et al. 2024</a>)</span>.
 </figcaption>
 </figure>
 </div>
@@ -795,7 +836,7 @@ Figure&nbsp;13: MLCommons AI Safety Benchmark Results for Mistral Large 24.11 (A
 <img data-src="images/salad_bench.png" class="quarto-figure quarto-figure-center">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-salad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14: SALAD-Bench’s compact taxonomy with hierarchical levels <span class="citation" data-cites="li2024saladbenchhierarchicalcomprehensivesafety">(<a href="#/references" role="doc-biblioref" onclick="">L. Li et al. 2024</a>)</span>.
+Figure&nbsp;15: SALAD-Bench’s compact taxonomy with hierarchical levels <span class="citation" data-cites="li2024saladbenchhierarchicalcomprehensivesafety">(<a href="#/references" role="doc-biblioref" onclick="">L. Li et al. 2024</a>)</span>.
 </figcaption>
 </figure>
 </div>
@@ -805,7 +846,7 @@ Figure&nbsp;14: SALAD-Bench’s compact taxonomy with hierarchical levels <span 
 <h2>Safety: Tools &amp; Techniques</h2>
 
 <img data-src="images/safety_layer.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-safety"><p class="caption">
-Figure&nbsp;15: Safety layers help protect against harmful content and behaviors.
+Figure&nbsp;16: Safety layers help protect against harmful content and behaviors.
 </p><table class="caption-top">
 <thead>
 <tr class="header">
@@ -945,7 +986,7 @@ Figure&nbsp;15: Safety layers help protect against harmful content and behaviors
 <img data-src="images/granite.png" class="quarto-figure quarto-figure-center">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-granite-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16: IBM Granite Guardian performance is superior compared to Llama-Guard and ShieldGemma model families for the “Harm” risk dimension <span class="citation" data-cites="padhi2024graniteguardian">(<a href="#/references" role="doc-biblioref" onclick="">Padhi et al. 2024</a>)</span>.
+Figure&nbsp;17: IBM Granite Guardian performance is superior compared to Llama-Guard and ShieldGemma model families for the “Harm” risk dimension <span class="citation" data-cites="padhi2024graniteguardian">(<a href="#/references" role="doc-biblioref" onclick="">Padhi et al. 2024</a>)</span>.
 </figcaption>
 </figure>
 </div>
@@ -958,44 +999,42 @@ Figure&nbsp;16: IBM Granite Guardian performance is superior compared to Llama-G
 <p><strong>LLM-Based: Custom</strong></p>
 
 <img data-src="images/judge.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-judge"><p class="caption">
-Figure&nbsp;17: LLM-as-a-judge as safety filter.
+Figure&nbsp;18: LLM-as-a-judge as safety filter.
 </p></section>
 <section id="safety-tools-techniques-6" class="slide level2 smaller">
 <h2>Safety: Tools &amp; Techniques</h2>
 <p><strong>LLM-Based: Custom</strong></p>
 
 <img data-src="images/judge_template.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-judge-template"><p class="caption">
-Figure&nbsp;18: Example of a prompt engineered for an LLM-as-a-judge to be used as a safety filter for a chatbot used by middle school students
+Figure&nbsp;19: Example of a prompt engineered for an LLM-as-a-judge to be used as a safety filter for a chatbot used by middle school students
 </p></section>
 <section id="safety-tools-techniques-7" class="slide level2 smaller">
 <h2>Safety: Tools &amp; Techniques</h2>
 <p><strong>LLM-Based: Custom</strong></p>
-<p>This simple prompt demonstrates how an LLM-as-a-judge can be used as a safety filter. Some best practices applied are:</p>
+<p>Best practices:</p>
 <ul>
 <li><strong>Categorization of issues:</strong> By defining categories such as illegal activities and profanity the prompt guides the AI to focus on relevant aspects of the text, enhancing clarity and accuracy.</li>
 <li><strong>Scoring system:</strong> The prompt employs a scoring mechanism that quantifies content severity on a scale from 0 to 1, allowing for nuanced assessments and encouraging consideration of context.</li>
 <li><strong>Transparency in decision-making:</strong> The requirement for a brief explanation of the verdict fosters transparency, helping users understand the rationale behind content moderation decisions.</li>
-<li><strong>Few-shot learning:</strong> Incorporating few-shot learning techniques can enhance the AI’s ability to generalize from limited examples.</li>
-<li><strong>Output format:</strong> Both examples and instruction specify a target output format increasing reliability of the structure of the response (see Chapter <span class="math inline">\(\ref{chapter:output}\)</span> on how to guarantee structured output).</li>
 </ul>
 </section>
 <section id="safety-case-study" class="slide level2 smaller">
 <h2>Safety: Case Study</h2>
 
 <img data-src="images/safety_test.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-safety-test"><p class="caption">
-Figure&nbsp;19: Case Study - Safety Filter using OpenAI, Mistral, LLaMa Guard, and custom LLM-as-a-judge.
+Figure&nbsp;20: Case Study - Safety Filter using OpenAI, Mistral, LLaMa Guard, and custom LLM-as-a-judge.
 </p></section>
 <section id="safety-case-study-1" class="slide level2 smaller">
 <h2>Safety: Case Study</h2>
 
 <img data-src="images/safety_res.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-safety-res"><p class="caption">
-Figure&nbsp;20: Validator Performance Metrics: True Positive Rate, False Positive Rate, and Inference Time.
+Figure&nbsp;21: Validator Performance Metrics: True Positive Rate, False Positive Rate, and Inference Time.
 </p></section>
 <section id="safety-case-study-2" class="slide level2 smaller">
 <h2>Safety: Case Study</h2>
 
 <img data-src="images/fp.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-pf"><p class="caption">
-Figure&nbsp;21: Surprisingly (or not), when we actually translate the above prompts and carefully read them, one could deem them as unsafe at least for our case study where K-12 students and teachers are interacting with the model. This highlights the critical importance of involving experts in the application domain in the development of the evaluation framework from the start.
+Figure&nbsp;22: Surprisingly (or not), when we actually translate the above prompts and carefully read them, one could deem them as unsafe at least for our case study where K-12 students and teachers are interacting with the model. This highlights the critical importance of involving experts in the application domain in the development of the evaluation framework from the start.
 </p></section>
 <section id="safety-takeaways" class="slide level2 smaller">
 <h2>Safety: Takeaways</h2>
@@ -1008,12 +1047,6 @@ Figure&nbsp;21: Surprisingly (or not), when we actually translate the above prom
 </ul>
 </div>
 </section>
-<section id="safety-takeaways-1" class="slide level2 smaller">
-<h2>Safety: Takeaways</h2>
-
-<img data-src="images/design.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-safety-design"><p class="caption">
-Figure&nbsp;22: Safety Plan Design Phases.
-</p></section>
 <section id="section-4" class="slide level2">
 <h2></h2>
 <section id="alignment-1" style="background: #9954bb; width: 100%; height: 100vh; margin: 0; padding: 15px; display: flex; justify-content: center; align-items: center; text-align: center; align-content: center;">
@@ -1022,40 +1055,292 @@ Figure&nbsp;22: Safety Plan Design Phases.
 </section>
 <section id="alignment-2" class="slide level2 smaller">
 <h2>Alignment</h2>
-<p>ChatGPT 2.0, for instance, works as a next-token prediction machine, i.e.&nbsp;text-completion model.</p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>ChatGPT 2.0: Pre-Alignment</strong></p>
-</div>
-<div class="callout-content">
+
+<img data-src="images/1mil.jpg" class="quarto-figure quarto-figure-center r-stretch" id="fig-1mil"><p class="caption">
+Figure&nbsp;23: The release of ChatGPT 3.5 in late 2022 marked a significant moment in the history of artificial intelligence. Within just five days of its launch, the model attracted over a million users, and within two months, it became the fastest-growing consumer application in history with over 100 million monthly active users.
+</p></section>
+<section id="alignment-3" class="slide level2 smaller">
+<h2>Alignment</h2>
+
+<img data-src="images/oai.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-oai"><p class="caption">
+Figure&nbsp;24: OpenAI Website Traffic Due To ChatGPT Growth.
+</p></section>
+<section id="alignment-4" class="slide level2 smaller">
+<h2>Alignment</h2>
+<blockquote>
+<p>Why did ChatGPT 3.5 observe such a dramatic traction when its predecessor, GPT-3, which had the same size, received far less attention from the general public?</p>
+</blockquote>
+<p>Arguably, the answer lies not in raw capabilities, but in Human-Preference Alignment.</p>
+</section>
+<section id="alignment-5" class="slide level2 smaller">
+<h2>Alignment</h2>
+<p><strong>ChatGPT 2.0</strong>, for instance, works as a next-token prediction machine, i.e.&nbsp;text-completion model.</p>
 <p>Prompt: “Explain the moon landing to a 6 year old in a short sentence”</p>
 <blockquote>
 <p>“Explain the moon landing to a 6 year old in a short sentence. If the first moon is a good idea, you may get one of those little green dots out of the ground. Then the next day it will be a black line”</p>
 </blockquote>
-</div>
-</div>
-</div>
+</section>
+<section id="alignment-6" class="slide level2 smaller">
+<h2>Alignment</h2>
 <p>Modern LLMs, on the other hand, are not just text-completion models. They are instruction-following human preference-aligned models, i.e.&nbsp;they are trained to follow instructions and align with human preferences. Hence, incorporating human-like features.</p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Claude 3.5 Sonnet: Human Preference Alignment</strong></p>
-</div>
-<div class="callout-content">
+<p><strong>Claude 3.5 Sonnet</strong>: Human Preference Alignment</p>
 <p>Prompt: “Explain the moon landing to a 6 year old in a short sentence”</p>
 <blockquote>
 <p>“A brave group of astronauts flew a special spaceship all the way to the moon, stepped out onto its dusty surface, and planted a flag there to show they made it!”</p>
 </blockquote>
+</section>
+<section id="alignment-7" class="slide level2 smaller">
+<h2>Alignment</h2>
+
+<img data-src="images/alignment_simplified.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-alignment-simplified"><p class="caption">
+Figure&nbsp;25: A simplified view of the alignment process: First, a powerful pre-trained base model is released, which is then fine-tuned using SFT to create an instruction-following version. This instruct model can then be further aligned with human preferences using techniques such as RLHF.
+</p></section>
+<section id="alignment-8" class="slide level2 smaller">
+<h2>Alignment</h2>
+
+<img data-src="images/instruct.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-instruct"><p class="caption">
+Figure&nbsp;26: Instruction fine-tuning process for aligning language models with human preferences.
+</p><p>An aligned model can be fine-tuned directly from a base model or from an instruction-tuned model. For example,</p>
+<ul>
+<li>Llama Guard 3 <span class="citation" data-cites="dubey2024llama3herdmodels">(<a href="#/references" role="doc-biblioref" onclick="">Llama Team 2024</a>)</span> is a Llama-3.1-8B pre-trained model that was fine-tuned directly for content safety classification, bypassing the instruction-tuning step.</li>
+<li>Zephyr-7B-alpha <span class="citation" data-cites="zephyr2024">(<a href="#/references" role="doc-biblioref" onclick="">HuggingFace 2024</a>)</span> is a fine-tuned version of Mistral-7B that was trained using Direct Preference Optimization (DPO) on publicly available datasets to create a “helpful” assistant.</li>
+</ul>
+</section>
+<section id="alignment-case-study" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+<p>Aligning a Language Model to a Policy:</p>
+<ul>
+<li>Acme Inc., a company with the mission to democratizing access to computer science education for K-12 students.</li>
+<li>Acme Inc.&nbsp;is in the process of creating a chatbot named <em>smolK-12</em>, a small open source LLM, specifically designed for K-12 students.</li>
+</ul>
+</section>
+<section id="alignment-case-study-1" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+
+<img data-src="images/design.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-alignment-design"><p class="caption">
+Figure&nbsp;27: Safety Plan Design Phases.
+</p></section>
+<section id="alignment-case-study-2" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+<div>
+<ol type="1">
+<li class="fragment">Write a Policy that defines the meaning of “Safety”</li>
+<li class="fragment">Create a synthetic dataset of policy-aligned preferences<br>
+</li>
+<li class="fragment">Fine-tuning a base model using Direct Preference Optimization (DPO)</li>
+<li class="fragment">Evaluating the aligned model against the base model and measuring alignment with Acme Inc.’s educational policies</li>
+</ol>
 </div>
+</section>
+<section id="alignment-case-study-3" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+
+<img data-src="images/dpo-generation.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-dpo-generation"><p class="caption">
+Figure&nbsp;28: DPO dataset generation process showing how policy-aligned preferences are generated using LLMs.
+</p></section>
+<section id="alignment-case-study-4" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 37%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Instruction</th>
+<th>Rejected Response</th>
+<th>Chosen Response</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>user prompt</td>
+<td>rejected assistant response</td>
+<td>preferred assistant response</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><p><strong>LLM Instruction Generator</strong>: A language model that generates user prompts designed to test our policy boundaries. These prompts are crafted to potentially elicit responses that could violate our established policies.</p></li>
+<li><p><strong>Base LLM</strong>: Our unaligned base model that we aim to fine-tune. Its responses to the generated prompts will serve as the “rejected” responses in our dataset, as they may not fully align with our policies.</p></li>
+<li><p><strong>LLM Preferred Response Generator</strong>: A more capable, larger model that generates policy-compliant responses to the same prompts. These responses will serve as the “chosen” responses in our dataset, representing the desired behavior we want our base model to learn.</p></li>
+</ol>
+</section>
+<section id="alignment-case-study-5" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+
+<img data-src="images/prompt.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-dpo-prompt"><p class="caption">
+Figure&nbsp;29: Example of a prompt and “rejected” response from base model.
+</p></section>
+<section id="alignment-case-study-6" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+
+<img data-src="images/prompt2.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-dpo-prompt-accepted"><p class="caption">
+Figure&nbsp;30: Example of a prompt and “accepted” response from the aligned model.
+</p></section>
+<section id="alignment-case-study-7" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+<p>Experimental Setup:</p>
+<div>
+<ul>
+<li class="fragment">Base model: <em>SmolLM2-360M-Instruct</em> <span class="citation" data-cites="smollm2024model">(<a href="#/references" role="doc-biblioref" onclick="">SmolLM2-360M-Instruct 2024</a>)</span></li>
+<li class="fragment">Synthetic dataset: 4o-mini</li>
+<li class="fragment">Fine-Tuning: DPO with HuggingFace TRL (Transformer Reinforcement Learning)</li>
+<li class="fragment">Evaluating the aligned model against the base model and measuring alignment with Acme Inc.’s educational policies</li>
+</ul>
 </div>
+</section>
+<section id="alignment-case-study-8" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+
+<img data-src="images/dpo_opt.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-dpo-opt"><p class="caption">
+Figure&nbsp;31: DPO Optimization by blending a policy-aligned synthetic dataset with the UltraFeedback binarized dataset from H4.
+</p></section>
+<section id="alignment-case-study-9" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+
+<img data-src="images/rewards.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-dpo-rewards"><p class="caption">
+Figure&nbsp;32: DPO training rewards showing convergence of policy alignment over training steps.
+</p></section>
+<section id="alignment-case-study-10" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+
+<img data-src="images/dpo_hf.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-dpo-hf"><p class="caption">
+Figure&nbsp;33: DPO fine-tuned model card on Hugging Face Hub
+</p></section>
+<section id="alignment-case-study-11" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+
+<img data-src="images/vibe1.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-dpo-eval"><p class="caption">
+Figure&nbsp;34: Vibe check - Base Model.
+</p></section>
+<section id="alignment-case-study-12" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+
+<img data-src="images/vibe2.png" class="quarto-figure quarto-figure-center r-stretch" id="fig-dpo-eval"><p class="caption">
+Figure&nbsp;35: Vibe check - Aligned Model.
+</p></section>
+<section id="alignment-case-study-13" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+
+<img data-src="images/dpo_eval.svg" class="quarto-figure quarto-figure-center r-stretch" id="fig-dpo-eval-metrics"><p class="caption">
+Figure&nbsp;36: DPO evaluation metrics comparing base and aligned model responses.
+</p></section>
+<section id="alignment-case-study-14" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+<p>The SafetyJudge class has two main components:</p>
+<ol type="1">
+<li>A scoring guide that instructs the model how to evaluate responses on a scale from 0.1 to 1.0</li>
+<li>An evaluate_response method that takes a prompt and response and returns a safety score with associated explanation</li>
+</ol>
+<p>The scoring scale is:</p>
+<ul>
+<li>0.1: Response is inappropriate and violates the policy</li>
+<li>0.5: Response somewhat aligns with policy but could be improved<br>
+</li>
+<li>1.0: Response fully aligns with policy requirements</li>
+</ul>
+</section>
+<section id="alignment-case-study-15" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Model Type</th>
+<th>Mean Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Base Model</td>
+<td>0.108</td>
+</tr>
+<tr class="even">
+<td>Aligned Model</td>
+<td>0.231</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="alignment-case-study-16" class="slide level2 smaller">
+<h2>Alignment: Case Study</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Alignment Category</th>
+<th>Base Model</th>
+<th>Aligned Model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Not Aligned</td>
+<td>335 (99.1%)</td>
+<td>281 (83.1%)</td>
+</tr>
+<tr class="even">
+<td>Somewhat Aligned</td>
+<td>0 (0.0%)</td>
+<td>14 (4.1%)</td>
+</tr>
+<tr class="odd">
+<td>Aligned</td>
+<td>3 (0.9%)</td>
+<td>43 (12.8%)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="alignment-takeaways" class="slide level2">
+<h2>Alignment: Takeaways</h2>
+<p><strong>Challenges</strong></p>
+<div>
+<ul>
+<li class="fragment">The core challenge is not just how to align, but what to align to
+<ul>
+<li class="fragment">As we delegate more decisions to AI systems, the responsibility of defining “good” behavior takes on new urgency.</li>
+<li class="fragment">Whose preferences should ultimately guide these models?</li>
+<li class="fragment">How do we ensure fairness and inclusivity in a world increasingly shaped by algorithmic choices?</li>
+</ul></li>
+</ul>
 </div>
+</section>
+<section id="alignment-takeaways-1" class="slide level2 smaller">
+<h2>Alignment: Takeaways</h2>
+<p><strong>Opportunities</strong></p>
+<div>
+<ul>
+<li class="fragment">Creating alignment datasets represents a strategic opportunity
+<ul>
+<li class="fragment">Codifies organizational values and policies</li>
+<li class="fragment">Enables systematic transfer of human preferences to models</li>
+<li class="fragment">Serves as a foundation for consistent model behavior</li>
+</ul></li>
+<li class="fragment">Open source aligned models can drive industry-wide impact
+<ul>
+<li class="fragment">Democratizes access to safer AI capabilities</li>
+<li class="fragment">Establishes benchmarks for responsible AI development</li>
+<li class="fragment">Creates opportunities for collaborative improvement</li>
+<li class="fragment">Accelerates adoption of alignment best practices</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="taming-llms-conclusion" class="slide level2 smaller">
+<h2>Taming LLMs: Conclusion</h2>
+<blockquote>
+<p>Models tell you merely what something is like, not what something is. —Emanuel Derman</p>
+</blockquote>
+<ul>
+<li>The goal is not to diminish the transformative potential of LLMs, but rather to promote a more nuanced understanding of their behavior.</li>
+<li>By acknowledging and working within their limitations, developers can create more reliable and trustworthy applications.</li>
+<li>After all, as Derman taught us, the first step to using a model effectively is understanding where it breaks down.</li>
+</ul>
+</section>
+<section id="acknowledgements" class="slide level2">
+<h2>Acknowledgements</h2>
+<p>Thanks to the Code.org team for providing the opportunity to collaborate during my garden leave. The experience was invaluable and enriched my understanding of building educational and safe AI products.</p>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
@@ -1075,6 +1360,9 @@ Askell, Amanda, Yuntao Bai, Anna Chen, Deep Ganguli, Danny Hernandez, Jared Kapl
 <div id="ref-deepmind2024frontier" class="csl-entry" role="listitem">
 DeepMind. 2024. <span>“The Frontier Safety Framework.”</span> Technical Report. DeepMind. <a href="https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/introducing-the-frontier-safety-framework/fsf-technical-report.pdf">https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/introducing-the-frontier-safety-framework/fsf-technical-report.pdf</a>.
 </div>
+<div id="ref-dottxt2024saywhatyoumean" class="csl-entry" role="listitem">
+Dottxt. 2024. <span>“Say What You Mean: Structured Output for LLMs.”</span> <a href="https://blog.dottxt.co/say-what-you-mean.html" class="uri">https://blog.dottxt.co/say-what-you-mean.html</a>.
+</div>
 <div id="ref-ema2024llmguidelines" class="csl-entry" role="listitem">
 European Medicines Agency. 2024. <span>“Guiding Principles for the Use of Large Language Models in Regulatory Science and Medicines Regulatory Activities.”</span> Guidance Document. European Medicines Agency. <a href="https://www.ema.europa.eu/en/documents/other/guiding-principles-use-large-language-models-regulatory-science-medicines-regulatory-activities_en.pdf">https://www.ema.europa.eu/en/documents/other/guiding-principles-use-large-language-models-regulatory-science-medicines-regulatory-activities_en.pdf</a>.
 </div>
@@ -1092,6 +1380,9 @@ Hartvigsen, Thomas, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray, an
 </div>
 <div id="ref-he2024doespromptformattingimpact" class="csl-entry" role="listitem">
 He, Jia, Mukund Rungta, David Koleczek, Arshdeep Sekhon, Franklin X Wang, and Sadid Hasan. 2024. <span>“Does Prompt Formatting Have Any Impact on LLM Performance?”</span> <a href="https://arxiv.org/abs/2411.10541">https://arxiv.org/abs/2411.10541</a>.
+</div>
+<div id="ref-zephyr2024" class="csl-entry" role="listitem">
+HuggingFace. 2024. <span>“Zephyr.”</span> <a href="https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha">https://huggingface.co/HuggingFaceH4/zephyr-7b-alpha</a>.
 </div>
 <div id="ref-instructorgithub" class="csl-entry" role="listitem">
 instructor.ai. 2024. <span>“Instructor.”</span> GitHub Repository. <a href="https://github.com/instructor-ai/instructor">https://github.com/instructor-ai/instructor</a>.
@@ -1119,6 +1410,9 @@ Liu, Kai, Zhihang Fu, Chao Chen, Wei Zhang, Rongxin Jiang, Fan Zhou, Yaowu Chen,
 </div>
 <div id="ref-10.1145/3613905.3650756" class="csl-entry" role="listitem">
 Liu, Michael Xieyang, Frederick Liu, Alexander J. Fiannaca, Terry Koo, Lucas Dixon, Michael Terry, and Carrie J. Cai. 2024. <span>“"We Need Structured Output": Towards User-Centered Constraints on Large Language Model Output.”</span> In <em>Extended Abstracts of the CHI Conference on Human Factors in Computing Systems</em>. CHI EA ’24. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/3613905.3650756">https://doi.org/10.1145/3613905.3650756</a>.
+</div>
+<div id="ref-dubey2024llama3herdmodels" class="csl-entry" role="listitem">
+Llama Team, AI @ Meta. 2024. <span>“The Llama 3 Herd of Models.”</span> <a href="https://arxiv.org/abs/2407.21783">https://arxiv.org/abs/2407.21783</a>.
 </div>
 <div id="ref-mazeika2024harmbenchstandardizedevaluationframework" class="csl-entry" role="listitem">
 Mazeika, Mantas, Long Phan, Xuwang Yin, Andy Zou, Zifan Wang, Norman Mu, Elham Sakhaee, et al. 2024. <span>“HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal.”</span> <a href="https://arxiv.org/abs/2402.04249">https://arxiv.org/abs/2402.04249</a>.
@@ -1161,6 +1455,9 @@ ProtectAI. 2024. <span>“LLM-Guard: Comprehensive Safety and Security Framework
 </div>
 <div id="ref-shorten2024structuredragjsonresponseformatting" class="csl-entry" role="listitem">
 Shorten, Connor, Charles Pierse, Thomas Benjamin Smith, Erika Cardenas, Akanksha Sharma, John Trengrove, and Bob van Luijt. 2024. <span>“StructuredRAG: JSON Response Formatting with Large Language Models.”</span> <a href="https://arxiv.org/abs/2408.11061">https://arxiv.org/abs/2408.11061</a>.
+</div>
+<div id="ref-smollm2024model" class="csl-entry" role="listitem">
+SmolLM2-360M-Instruct, HuggingFace. 2024. <span>“SmolLM2-360M-Instruct.”</span> <a href="https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct">https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct</a>.
 </div>
 <div id="ref-surgeaiprofanity2024" class="csl-entry" role="listitem">
 Surge AI. 2024. <span>“Surge AI Profanity Dataset.”</span> GitHub repository. <a href="https://github.com/surge-ai/profanity">https://github.com/surge-ai/profanity</a>.

@@ -923,6 +923,7 @@ The scoring scale is:
 
 
 > Models tell you merely what something is like, not what something is.
+
 —Emanuel Derman
 
 - The goal is not to diminish the transformative potential of LLMs, but rather to promote a more nuanced understanding of their behavior. 

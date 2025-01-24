@@ -1,1 +1,2 @@
 - [The GenAI Product Manager](https://www.souzatharsis.com/writing/aipm/), Jan 19, 2025
+- [Taming LLMs @ Code.org](https://www.souzatharsis.com/writing/tllms-codedotorg/), Jan 24, 2025

@@ -168,6 +168,13 @@
     "text": "Structural (un)Reliability: Tools\n\n\nFigure 7: Impact of Output Constraints in Model Performance (Dottxt 2024)"
   },
   {
+    "objectID": "index.html#structural-unreliability-takeaways",
+    "href": "index.html#structural-unreliability-takeaways",
+    "title": "Taming LLMs",
+    "section": "Structural (un)Reliability: Takeaways",
+    "text": "Structural (un)Reliability: Takeaways\n\nPrompt engineering and the use of fine-tuned models can help control the output of LLMs.\nHowever, when strong guarantees are needed, practitioners should consider techniques such as logit post-processing that provides formal guarantees for controlled output generation.\nThe impact of output constraints on model performance remains an open research question suggesting the need for evals to guide implementation decisions"
+  },
+  {
     "objectID": "index.html#section-2",
     "href": "index.html#section-2",
     "title": "Taming LLMs",

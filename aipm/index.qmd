@@ -208,12 +208,12 @@ AI is breaking down traditional role silos among product management, design, and
 - "Generalist specialists" who can work across domains are emerging
 - Smaller, more dynamic teams can now handle end-to-end product development
 
-[^datascience]: You may have noticed that @fig-genai does not include the data science function. That's intentional. I am not sure whether the data science function will exist in the future versus everyone becoming a data scientist through GenAI.
-
 
 ::: {.callout-note}
-Under this view, in the limit, we would see the first one-person billion dollar company soon emerging.
+Under this view, in the limit, we would see the first one-person billion dollar company soon emerging[^wef].
 :::
+
+[^wef]: 2025 World Economic Forum, [One-Person Enterprise](https://www.youtube.com/watch?v=vhXJr_zSJOc).
 
 **View 2: Enhanced Functional Excellence**
 

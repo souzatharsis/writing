@@ -364,6 +364,14 @@ Other related tools worth mentioning include Guidance [@guidance2024repo], Instr
 
 ![Impact of Output Constraints in Model Performance [@dottxt2024saywhatyoumean]](images/rebuttal.png){#fig-rebuttal fig-align="center"}
 
+## Structural (un)Reliability: Takeaways {.smaller}
+
+- Prompt engineering and the use of fine-tuned models can help control the output of LLMs.
+
+- However, when strong guarantees are needed, practitioners should consider techniques such as logit post-processing that provides formal guarantees for controlled output generation.
+
+- The impact of output constraints on model performance remains an open research question suggesting the need for evals to guide implementation decisions
+
 ## 
 
 ::: {.r-fit-text style="background: #3fb618; width: 100%; height: 100vh; margin: 0; padding: 15px; display: flex; justify-content: center; align-items: center; text-align: center; align-content: center;"}

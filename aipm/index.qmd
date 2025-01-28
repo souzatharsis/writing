@@ -58,10 +58,11 @@ This dramatic decline in cost stems from multiple compounding factors including:
 ![LLMflation - The cost of LLM inference is decreasing by approximately 10x every year [@a16z2024llmflation].](llmflation.png){#fig-llmflation}
 
 
+In fact, @fig-llmflation is already outdated since the release of China's DeepSeek V3 and R1 models in the weeks, which deliver performance on par with leading OpenAI and Anthropic models at a fraction of the cost causing a $1.5T market cap crash in the US market [@wsj2024deepseek].
+
 ::: {.callout-tip}
 ## Point in Favor of AI PM
-
-Writing software, especially prototypes, is becoming cheaper. This will lead to increased demand for people who can decide what to build rather than how to build it. 
+Writing software is becoming cheaper enabled by high-performant code generation LLM models. This will lead to increased demand for people who can decide what to build rather than how to build it. 
 :::
 
 The economic theory of complementary goods provides a compelling framework for understanding why the value of Product Management increases as software development becomes cheaper and more accessible [@deeplearningbatch284]:
@@ -147,7 +148,14 @@ Prompt: "Explain the moon landing to a 6 year old in a short sentence"
 > "A brave group of astronauts flew a special spaceship all the way to the moon, stepped out onto its dusty surface, and planted a flag there to show they made it!"
 :::
 
-Suddenly, AI's capabilities are no longer something far away from the user, hard to grasp. Instead, AI's potential can be leveraged by anyone through a simple "chat" interface. Arguably, this enhanced user experience provides the much needed bridge between AI's powerful capabilities and layman's users.
+As a consequence, technology products built with generative AI more and more present themselves as speaking, listening, and seeing like humans. 
+
+More recently, there is another dimension of anthropomorphism: "Reasoning". This is arguably, another emerging scaling law: Test-Time Compute, where LLM proposes a sequence of answers and revisions at inference time, hence simulating "reasoning" as illustrated in @fig-test-time-compute. In this example, DeepSeek's recent (market crashing) reasoning model is able to "rethink" the problem and propose a sequence of answers and revisions.
+
+![The model learns to "rethink" using an anthropomorphic tone. DeekSeek's technical paper [@deepseekai2025deepseekr1incentivizingreasoningcapability] reads:"This is also an aha moment for us, allowing us to witness the power and beauty of reinforcement learning."](aha.png){#fig-test-time-compute}
+
+
+Suddenly, AI's capabilities are no longer something far away from the user; hard to grasp. Instead, AI's potential can be leveraged by anyone through a simple anthropomorphic interface. Arguably, this enhanced user experience provides the much needed bridge between AI's powerful capabilities and layman's users. It is not just about the AI being capable but also being easy to use.
 
 As AI interfaces become more natural and human-like, users increasingly anthropomorphize these systems - attributing human characteristics, emotions, and mental states to them. This tendency has profound implications for product development and user experience:
 
@@ -642,6 +650,11 @@ There is an overwhelming amount of fragmented information channels and resources
 
 However, rather than providing an exhaustive list of conventional resources, this section focuses on three enduring pathways for developing expertise in AI Product Management, namely learning through Building, Community, and Foundations.
 
+::: {.callout-note}
+The best resource for aspiring AI Product Managers is the combination of hands-on building experience, active community participation, and solid foundational knowledge. This trinity provides the practical skills, network, and strategic understanding needed to excel in this rapidly evolving field.
+:::
+
+
 ### Learning Through Building
 
 The most effective way to develop AI PM skills is through hands-on experience building AI-enabled products. I can't emphasize this enough. Finding a problem you're passionate about and using it as a learning vehicle is the best way to develop both technical intuition and product sense simultaneously. 
@@ -674,9 +687,31 @@ I'd recommend the following resources to get started:
 
 - [Andrew Ng's courses](https://www.coursera.org/instructor/andrewng)
 - [AI Engineering](https://www.oreilly.com/library/view/ai-engineering/9781098129095/) by Chip Huyen
-- [Taming LLMs](https://tamingllms.com/) by Tharsis
+- [Taming LLMs](https://tamingllms.com/) by Thársis
 
+## Appendix C: DeepSeek-R1
 
-::: {.callout-note}
-The best resource for aspiring AI Product Managers is the combination of hands-on building experience, active community participation, and solid foundational knowledge. This trinity provides the practical skills, network, and strategic understanding needed to excel in this rapidly evolving field.
-:::
+Here's DeepSeek-R1's answer to the question: "Will Product Managers survive the Generative AI revolution?".
+
+The role of Product Managers (PMs) will evolve rather than disappear in the face of the Generative AI revolution. Here's a structured analysis of how PMs will adapt and thrive:
+
+### Augmentation, Not Replacement
+- **Data-Driven Insights**: Generative AI can process vast datasets to identify customer needs, market trends, and feature priorities, but PMs will interpret these insights within strategic and ethical contexts.
+- **Efficiency Gains**: Automating administrative tasks (e.g., report generation, documentation) allows PMs to focus on high-value activities like vision-setting and stakeholder collaboration.
+
+### Human-Centric Skills Remain Critical
+- **Strategic Vision**: Aligning product goals with business objectives requires creativity and intuition—areas where human judgment outperforms AI.
+- **Cross-Functional Leadership**: Building trust, negotiating priorities, and motivating teams rely on emotional intelligence, which AI cannot replicate.
+- **Ethical and Empathetic Decision-Making**: Navigating complex moral dilemmas and ensuring inclusivity demands human oversight.
+
+### Evolution of the PM Role
+- **AI Collaboration**: PMs will increasingly act as "translators" between AI outputs and actionable strategies, leveraging tools to enhance decision-making.
+- **New Opportunities**: Managing AI-driven products (e.g., generative models, ethical AI systems) will require PMs with technical literacy and market expertise.
+- **Focus on Innovation**: Freed from routine tasks, PMs can prioritize experimentation, long-term roadmaps, and disruptive ideas.
+
+### 4. Industry Parallels
+- **Job Transformation**: Like ATMs for bank tellers, AI will shift PM roles toward strategic advisory and creative problem-solving rather than eliminating them.
+- **Demand in AI-Centric Sectors**: As AI products proliferate, PMs with expertise in AI governance, user experience, and scalability will be in higher demand.
+
+### Conclusion
+Product Managers who embrace AI as a collaborative tool—while honing uniquely human skills like leadership, empathy, and strategic thinking—will not only survive but lead innovation. Adaptation is key: PMs must upskill in AI literacy, ethical oversight, and cross-functional collaboration to thrive in an AI-augmented future. Those resistant to change may struggle, but the role itself is poised to grow in significance as products become more complex and AI-dependent.

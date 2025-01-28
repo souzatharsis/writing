@@ -1,0 +1,310 @@
+---
+title: "DeepSeek: The Challenger"
+description: | 
+  A Review of What's New in DeepSeek
+date: 01/23/2025
+author:
+  - name: Thársis Souza 
+citation:
+  url: https://www.souzatharsis.com/writing/deepseek
+website:
+  repo-url: https://github.com/souzatharsis/writing/
+  repo-actions: [source, issue]
+repo-actions: true
+reference-location: margin
+citation-location: margin
+highlight-style: pygments
+#cap-location: margin
+link-citations: true
+bibliography: ../references.bib
+editor:
+  render-on-save: false
+format: 
+  html:
+    #theme: #lux #darkly #lux #quartz
+    toc: true
+    toc-expand: 2
+    toc-location: left
+---
+
+"𝑌𝑜𝑢 𝑐𝑎𝑛 𝑡𝑟𝑦 𝑡𝑜 𝑏𝑢𝑖𝑙𝑑 𝐴𝐼 𝑙𝑖𝑘𝑒 𝐶ℎ𝑎𝑡𝐺𝑃𝑇, 𝑏𝑢𝑡 𝑦𝑜𝑢 𝑤𝑖𝑙𝑙 𝑓𝑎𝑖𝑙." – SamA in 2023 to Indian tech companies.
+
+He later clarified: "𝑇ℎ𝑖𝑠 𝑖𝑠 𝑡𝑎𝑘𝑒𝑛 𝑜𝑢𝑡 𝑜𝑓 𝑐𝑜𝑛𝑡𝑒𝑥𝑡! 𝑇ℎ𝑒 𝑞𝑢𝑒𝑠𝑡𝑖𝑜𝑛 𝑤𝑎𝑠 𝑎𝑏𝑜𝑢𝑡 𝑐𝑜𝑚𝑝𝑒𝑡𝑖𝑛𝑔 𝑤𝑖𝑡ℎ 𝑢𝑠 𝑤𝑖𝑡ℎ $10 𝑚𝑖𝑙𝑙𝑖𝑜𝑛, 𝑤ℎ𝑖𝑐ℎ 𝐼 𝑑𝑜𝑛’𝑡 𝑡ℎ𝑖𝑛𝑘 𝑤𝑖𝑙𝑙 𝑤𝑜𝑟𝑘. 𝐵𝑢𝑡 𝐼 𝑠𝑡𝑖𝑙𝑙 𝑠𝑎𝑖𝑑 𝑡𝑟𝑦! 𝐼 𝑗𝑢𝑠𝑡 𝑡ℎ𝑖𝑛𝑘 𝑖𝑡’𝑠 𝑡ℎ𝑒 𝑤𝑟𝑜𝑛𝑔 𝑞𝑢𝑒𝑠𝑡𝑖𝑜𝑛."
+
+
+## Why It Matters
+
+
+This could be an extinction-level event for venture capital firms that went all-in on foundational model companies. Particularly if those companies haven't yet productized with wide distribution.
+
+"They duplicated OpenAI for $5M"
+
+"DeepSeek is doom's day for AI Infrastructure"
+
+Nvidia is down 12.7% today, ~$430B in market cap because of DeepSeek, close to the $500B committed to the Stargate project that they're a tech partner for.
+
+worst single-day market cap loss in history
+
+Apple Store: https://media.licdn.com/dms/image/v2/D4D22AQFnyhmI0uqVoA/feedshare-shrink_1280/B4DZSnbDqJH0Ak-/0/1737975676528?e=1740614400&v=beta&t=T2-lG26q-meOcalUnJ6xYsnOkoCkMZL3sv3hcnKuN3A
+
+Google Trends: https://pbs.twimg.com/media/GiVf85aXUAASgUp?format=png&name=medium
+
+
+## What's New
+
+1. It’s not just performing well – 
+2. it’s sitting at the top of app store charts
+
+
+What justifies the impact now since DeepSeek has been number 1 since last month?
+
+How is it that some technical result from a small Chinese AI company can send shudders through global stock markets?
+
+ DeepSeek-V3 is an open large language model that outperforms Llama 3.1 405B and GPT-4o on key benchmarks and achieves exceptional scores in coding and math.
+
+DeepSeek's latest model is so efficient that it required one-tenth the computing power of Meta's comparable Llama 3.1 model to train,
+ https://epoch.ai/gradient-updates/how-has-deepseek-improved-the-transformer-architecture
+
+## DeepSeek
+
+### The Company
+
+DeepSeek spun out of a Chinese hedge-fund firm two years ago, hired ambitious young AI scientists, and set them to figure out more efficient ways to develop models, per Wired, and they focused on basic research rather than consumer product development.
+
+Founded in 2015, the hedge fund quickly rose to prominence in China, becoming the first quant hedge fund to raise over 100 billion RMB (around $15 billion)
+
+https://github.com/deepseek-ai/DeepSeek-R1
+https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B
+
+PhD students from China’s top universities, including Peking University and Tsinghua University
+
+collaborative company culture where people were free to use ample computing
+
+### The CEO
+
+1. Studied electrical engineering
+2. Teamed up with brilliant classmates
+3. Got into quant trading
+4. Founded a quant firm in his 30s
+5. Generated ¥100B using AI/ML in trading
+6. Bought thousands of NVIDIA GPUs
+7. Built DeepSeek—as a side project!
+
+
+Liang told the Chinese tech publication 36Kr that the decision was driven by scientific curiosity rather than a desire to turn a profit. “I wouldn’t be able to find a commercial reason [for founding DeepSeek] even if you ask me to,” 
+
+His pitch to prospective hires is that DeepSeek was created to “solve the hardest questions in the world.”
+
+
+CEO Article
+
+
+### The Model(s)
+
+Presented with a complex challenge, it takes time to consider alternate approaches before picking the best solution — and it explains its chain of reasoning to users. These "reasoning" models are especially good at coding and math.
+
+The weights are open except for applications that involve military uses, harming minors, generating false information, and similar restrictions. You can download them here.
+
+https://huggingface.co/deepseek-ai/DeepSeek-R1
+
+### The GPUs
+
+
+https://www.axios.com/2025/01/27/deepseek-ai-model-china-openai-rival
+Axios: DeepSeek is said to have already amassed a training network of 10,000 Nvidia H100s by the time U.S. sanctions were introduced in 2022.
+
+https://www.wired.com/story/deepseek-china-model-ai/
+The firm had started out with a stockpile of 10,000 A100’s,
+
+### Performance
+
+Leaderboards
+
+In the wild
+
+
+llama.cpp
+https://x.com/ngxson/status/1883888970075107725/photo/1
+
+https://simonwillison.net/2025/Jan/27/llamacpp-pr/
+
+
+## How They Pull It Off
+
+- great software can compensate for hardware limitations
+
+
+ Instead of relying on the latest high-end GPUs like the NVIDIA H100, they optimized the hardware they had—likely the NVIDIA H800, which has lower chip-to-chip bandwidth
+
+
+### Technical Innovation
+
+
+### Compute
+
+### Cultural
+
+
+
+## Adoption
+
+- Groq:  Over 200 token/s with DeepSeek
+- Perplexity: https://x.com/testingcatalog/status/1883889711326085428
+All DeepSeek usage in Perplexity is through models hosted in data centers in the USA and Europe. DeepSeek is *open-source*. None of your data goes to China.
+
+- Unsloth Quantized 
+https://huggingface.co/unsloth/DeepSeek-R1-GGUF
+
+We quantized DeepSeek R1 to 1.58bit - 131GB so 80% smaller whilst being usable via dynamic quantization!
+140 toks/s on 2xH100 80GB
+
+
+
+## Downside
+
+### Risks
+
+- Privacy
+
+https://media.licdn.com/dms/image/v2/D4E22AQHiwiV7F7Jkdg/feedshare-shrink_1280/B4EZSoTW8yGwAw-/0/1737990435188?e=1740614400&v=beta&t=JCYa6y6aAKucJr03-jNJMAENhwfsylb75XRM6vauot0
+
+- License
+
+
+
+
+Synthetic Data Generation
+https://gist.github.com/davidberenstein1957/3f20046ce57395a6aba13f8b4e956b59
+
+
+CCP china government
+
+### False?
+
+
+- Somehow skeptical the DeepSeek rise to #1 in the App Store is organic. https://x.com/yuris
+
+Although it’s been a hot topic in tech circles for the past 72 hours, I haven’t seen it penetrate into my non tech circles at all…
+
+US Professor
+https://x.com/souzatharsis/status/1883664053694054861
+
+BLOOMBERG:
+BREAKING : Deepseek restricts registration to mainland china mobile phone numbers
+As per news this is due to cyber attack
+
+## Implications 
+
+
+### Inference vs. Training
+
+
+
+
+Training a model might be a one-time expense, but inference determines how sustainably AI can be deployed at scale. 
+Because the world runs on real-time AI—think instant translations, fraud detection, and self-driving cars. 
+
+
+### Dependency on NVIDIA
+
+Gone are the days when AI deployment was shackled to NVIDIA’s CUDA ecosystem. DeepSeek’s models, designed without specialized operators, thrive on diverse hardware—from AMD GPUs to emerging inference chips.
+
+This flexibility is a lifeline in regions facing hardware restrictions and a win for businesses seeking to avoid vendor lock-in. The future of AI infrastructure is decentralized, and inference is leading the charge.
+
+
+### Open Source
+
+Yann LeCun quote
+
+developing open source models is the only way to play catch-up with their Western counterparts, because it attracts more users and contributors, which in turn help the models grow.
+
+### Competition 
+
+Hugging Face replication
+https://github.com/huggingface/open-r1
+
+what about Gemini?
+https://x.com/daniel_mac8/status/1883855502553252234
+
+Other Chinese Models
+https://x.com/zerohedge/status/1883717148830585057
+
+### Bear Case
+
+Key takeaway: They didn’t bypass restrictions; they simply made their existing resources work smarter.
+
+If they can be replicated, DeepSeek’s results have significant implications for the economics of training foundation models. If indeed it now costs around $5 million to build a GPT-4o-level model, more teams will be able to train such models, and the cost of competing with the AI giants could fall dramatically.
+
+Yoshua Bengio: AI models are part of geopolitics. And having your own AI models as a nation is of strategic importance. 
+
+Ramifications in other AI-enabled industries:
+- If DeepSeek is able to reduce the cost of o1 by 95% what's to stop a Chinese robotics company drastically undercutting Tesla Optimus?
+
+### Bull Case
+
+
+
+If we can train this model for $5m, imagine what we could get for $500m or $50bn?
+
+The threat to AGI's development was always that scaling just gets too expensive at some point. This development only shows that the price of getting intelligence is lower and if something as flexible and useful as intelligence is cheap, why wouldn't we just want more of it? 
+
+cheaper intelligence will not reduce the need for compute, but increase demand for inteligence
+
+AI is not a zero-sum game. Open-source AI is the tide that lifts all boats!
+Clem Delangue 🤗Clem Delangue 🤗
+  • Following • Following
+Co-founder & CEO at Hugging Face
+
+
+The secular trend is not changing.
+
+Javons Paradox more demand. Drive EPS expansion.
+Satya Nadella: https://media.licdn.com/dms/image/v2/D5622AQH2N1-6hVIxmw/feedshare-shrink_1280/B56ZSmb2akHsAk-/0/1737959107016?e=1740614400&v=beta&t=FnJRPX0TFZ-njvZZYJ8CP_Apqaem4ZamhL1k4S8ifK8
+
+Cost in semiconductors has been dropping 2x per year for the last 10 years. It's been a good thing for the industry. Not a bad thing for the industry.
+
+
+Gary Tan:
+Nah this is an exponential event for vertical SaaS
+
+More startups than ever are going from zero to $10M per year in recurring revenue with less than 10 people
+
+The next years will be IPO class companies getting to $100M to $1B/yr. 
+
+A thousand flowers will bloom
+
+
+3) Turning for a second to whether the narrative makes sense: It would, if society was already at the steady state of AI adoption, i.e., if AI was already doing everything that it could do or needed to do, then having a cheaper way of doing 90% of that would be a solution to the cost problem. Since AI is nowhere near doing what it can do, it's hard to understand how more efficient software would obviate the need for better hardware.
+
+
+Investments allocated to AI:
+1. Training bigger/better models on existing compute. o1 is not perfectly accurate - it has a limited context window, still makes a bunch of mistakes on certain tasks (including PDF parsing), etc. etc. 
+
+OR even more importantly
+
+2. Inference and mass adoption: using DeepSeek-equivalent models in more places. o1 is expensive and slow which prevents mass adoption. Faster/cheaper models incentivize people to use it way more in agent reasoning loops, to power more apps autonomously and at scale, and to expand to more sophisticated agent applications.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Meta's CAPEX:
+Mark Zuckerberg Announces :
+- 1 Billion People will be using Meta AI Assistant.
+- Llama 4 will become the leading State-of-theArt model.
+- They will build an AI Engineer to write code and aid R&D efforts.
+- Building a 2GW+ Data Center that is as big as Manhattan
+- 1GW of compute will come online by 2025. 
+- 1.3 Million GPU will be online by the end of 2025.
+- $60B-$65B of Capex will be done in 2025.
+- With similar amount of continued investment in the coming years ahead.
+
+

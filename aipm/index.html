@@ -97,6 +97,14 @@ div.csl-indent {
   <li><a href="#community-engagement" id="toc-community-engagement" class="nav-link" data-scroll-target="#community-engagement">Community Engagement</a></li>
   <li><a href="#foundations" id="toc-foundations" class="nav-link" data-scroll-target="#foundations">Foundations</a></li>
   </ul></li>
+  <li><a href="#appendix-c-deepseek-r1" id="toc-appendix-c-deepseek-r1" class="nav-link" data-scroll-target="#appendix-c-deepseek-r1">Appendix C: DeepSeek-R1</a>
+  <ul class="collapse">
+  <li><a href="#augmentation-not-replacement" id="toc-augmentation-not-replacement" class="nav-link" data-scroll-target="#augmentation-not-replacement">Augmentation, Not Replacement</a></li>
+  <li><a href="#human-centric-skills-remain-critical" id="toc-human-centric-skills-remain-critical" class="nav-link" data-scroll-target="#human-centric-skills-remain-critical">Human-Centric Skills Remain Critical</a></li>
+  <li><a href="#evolution-of-the-pm-role" id="toc-evolution-of-the-pm-role" class="nav-link" data-scroll-target="#evolution-of-the-pm-role">Evolution of the PM Role</a></li>
+  <li><a href="#industry-parallels" id="toc-industry-parallels" class="nav-link" data-scroll-target="#industry-parallels">4. Industry Parallels</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -176,7 +184,10 @@ Figure&nbsp;1: LLMflation - The cost of LLM inference is decreasing by approxima
 Andreessen Horowitz. 2024. <span>“LLMflation: Understanding and Mitigating LLM Inference Cost.”</span> Blog Post. <a href="https://a16z.com/llmflation-llm-inference-cost/">https://a16z.com/llmflation-llm-inference-cost/</a>.
 </div></div></figure>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p>In fact, <a href="#fig-llmflation" class="quarto-xref">Figure&nbsp;1</a> is already outdated since the release of China’s DeepSeek V3 and R1 models in the weeks, which deliver performance on par with leading OpenAI and Anthropic models at a fraction of the cost causing a $1.5T market cap crash in the US market <span class="citation" data-cites="wsj2024deepseek">(<a href="#ref-wsj2024deepseek" role="doc-biblioref">Woo and Huang 2025</a>)</span>.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-wsj2024deepseek" class="csl-entry" role="listitem">
+Woo, Stu, and Raffaele Huang. 2025. <span>“How China’s DeepSeek Outsmarted America.”</span> The Wall Street Journal. <a href="https://www.wsj.com/tech/ai/china-deepseek-ai-nvidia-openai-02bdbbce">https://www.wsj.com/tech/ai/china-deepseek-ai-nvidia-openai-02bdbbce</a>.
+</div></div><div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -186,7 +197,7 @@ Point in Favor of AI PM
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Writing software, especially prototypes, is becoming cheaper. This will lead to increased demand for people who can decide what to build rather than how to build it.</p>
+<p>Writing software is becoming cheaper enabled by high-performant code generation LLM models. This will lead to increased demand for people who can decide what to build rather than how to build it.</p>
 </div>
 </div>
 <p>The economic theory of complementary goods provides a compelling framework for understanding why the value of Product Management increases as software development becomes cheaper and more accessible <span class="citation" data-cites="deeplearningbatch284">(<a href="#ref-deeplearningbatch284" role="doc-biblioref">DeepLearning.AI 2024</a>)</span>:</p>
@@ -307,7 +318,21 @@ Claude 3.5 Sonnet: Human Preference Alignment
 </blockquote>
 </div>
 </div>
-<p>Suddenly, AI’s capabilities are no longer something far away from the user, hard to grasp. Instead, AI’s potential can be leveraged by anyone through a simple “chat” interface. Arguably, this enhanced user experience provides the much needed bridge between AI’s powerful capabilities and layman’s users.</p>
+<p>As a consequence, technology products built with generative AI more and more present themselves as speaking, listening, and seeing like humans.</p>
+<p>More recently, there is another dimension of anthropomorphism: “Reasoning”. This is arguably, another emerging scaling law: Test-Time Compute, where LLM proposes a sequence of answers and revisions at inference time, hence simulating “reasoning” as illustrated in <a href="#fig-test-time-compute" class="quarto-xref">Figure&nbsp;3</a>. In this example, DeepSeek’s recent (market crashing) reasoning model is able to “rethink” the problem and propose a sequence of answers and revisions.</p>
+<div id="fig-test-time-compute" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-test-time-compute-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="aha.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-test-time-compute-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The model learns to “rethink” using an anthropomorphic tone. DeekSeek’s technical paper <span class="citation" data-cites="deepseekai2025deepseekr1incentivizingreasoningcapability">(<a href="#ref-deepseekai2025deepseekr1incentivizingreasoningcapability" role="doc-biblioref">DeepSeek-AI 2025</a>)</span> reads:“This is also an aha moment for us, allowing us to witness the power and beauty of reinforcement learning.”
+</figcaption>
+<div class="no-row-height column-margin column-container"><div id="ref-deepseekai2025deepseekr1incentivizingreasoningcapability" class="csl-entry" role="listitem">
+DeepSeek-AI. 2025. <span>“DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning.”</span> <a href="https://arxiv.org/abs/2501.12948">https://arxiv.org/abs/2501.12948</a>.
+</div></div></figure>
+</div>
+<p>Suddenly, AI’s capabilities are no longer something far away from the user; hard to grasp. Instead, AI’s potential can be leveraged by anyone through a simple anthropomorphic interface. Arguably, this enhanced user experience provides the much needed bridge between AI’s powerful capabilities and layman’s users. It is not just about the AI being capable but also being easy to use.</p>
 <p>As AI interfaces become more natural and human-like, users increasingly anthropomorphize these systems - attributing human characteristics, emotions, and mental states to them. This tendency has profound implications for product development and user experience:</p>
 <ol type="1">
 <li><strong>Shifting interaction paradigms</strong> - Users expect more conversational, natural, human-like interfaces.</li>
@@ -355,11 +380,11 @@ Askell, Amanda, Jan Brauner, Adrian Colyer, Benjamin Cullen, David Duvenaud, Ric
 <img src="genai.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-genai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Overlapping roles in the GenAI age
+Figure&nbsp;4: Overlapping roles in the GenAI age
 </figcaption>
 </figure>
 </div>
-</div></div><p>AI is breaking down traditional role silos among product management, design, and engineering [^datascience] - roles that were previously specialized and distinct are now becoming more overlapping towards a more generalist approach - a converging GenAI-powered role (see <a href="#fig-genai" class="quarto-xref">Figure&nbsp;3</a>). This perspective suggests:</p>
+</div></div><p>AI is breaking down traditional role silos among product management, design, and engineering [^datascience] - roles that were previously specialized and distinct are now becoming more overlapping towards a more generalist approach - a converging GenAI-powered role (see <a href="#fig-genai" class="quarto-xref">Figure&nbsp;4</a>). This perspective suggests:</p>
 <ul>
 <li>GenAI tools enable individuals to perform tasks previously requiring multiple specialists</li>
 <li>The traditional handoff model between specialized functions is becoming obsolete</li>
@@ -488,14 +513,14 @@ Xu, Cheng, Shuhao Guan, Derek Greene, and M-Tahar Kechadi. 2024. <span>“Benchm
 </tr>
 </tbody>
 </table>
-<p>Another important implication is that GenAI product evaluation becomes increasingly parametric as each each application may be dramatically different from each other depending on the model, prompt, data, etc as illustrated in <a href="#fig-conceptual-multi" class="quarto-xref">Figure&nbsp;4</a>.</p>
+<p>Another important implication is that GenAI product evaluation becomes increasingly parametric as each each application may be dramatically different from each other depending on the model, prompt, data, etc as illustrated in <a href="#fig-conceptual-multi" class="quarto-xref">Figure&nbsp;5</a>.</p>
 <div id="fig-conceptual-multi" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-conceptual-multi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="conceptual-multi.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-conceptual-multi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Conceptual overview of Multiple LLM-based applications evaluation.
+Figure&nbsp;5: Conceptual overview of Multiple LLM-based applications evaluation.
 </figcaption>
 </figure>
 </div>
@@ -663,14 +688,14 @@ Figure&nbsp;4: Conceptual overview of Multiple LLM-based applications evaluation
 </section>
 <section id="tools" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="tools">Tools</h2>
-<p>My personal GenAI PM Stack consists of six key layers that enable Product Managers to effectively build and manage AI-powered products while increasing productivity. <a href="#fig-stack" class="quarto-xref">Figure&nbsp;5</a> provides examples of specific tools for a GenAI PM Stack based on my personal experience - applicability may vary on a per-PM basis.</p>
+<p>My personal GenAI PM Stack consists of six key layers that enable Product Managers to effectively build and manage AI-powered products while increasing productivity. <a href="#fig-stack" class="quarto-xref">Figure&nbsp;6</a> provides examples of specific tools for a GenAI PM Stack based on my personal experience - applicability may vary on a per-PM basis.</p>
 <div id="fig-stack" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-stack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="1.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stack-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: The GenAI PM Stack. Products included are based solely on my personal experience - applicability may vary on a per-PM basis
+Figure&nbsp;6: The GenAI PM Stack. Products included are based solely on my personal experience - applicability may vary on a per-PM basis
 </figcaption>
 </figure>
 </div>
@@ -867,6 +892,19 @@ Toner-Rodgers, Aidan. 2024. <span>“Artificial Intelligence, Scientific Discove
 <h2 class="anchored" data-anchor-id="appendix-b-resources">Appendix B: Resources</h2>
 <p>There is an overwhelming amount of fragmented information channels and resources at the intersection of GenAI, Business, Product, and Technology. From new online PM courses (released almost daily) on Maven<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>, to podcasts<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>, VC-curated resources<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a>, to PM-specific AI tools<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a>.</p>
 <div class="no-row-height column-margin column-container"><div id="fn14"><p><sup>14</sup>&nbsp;Product Sense by <a href="https://maven.com/shreyas-doshi/product-sense">Shreyas Doshi</a> is perhaps the most popular online general PM course but new GenAI specific courses are released almost daily such as <a href="https://maven.com/leverage-ai/idea-to-deploy">Build With LLMs</a> or <a href="https://maven.com/the-future-solving-company/how-to-get-into-ai">How to Get Into AI</a>.</p></div><div id="fn15"><p><sup>15</sup>&nbsp;Examples of good Podcasts in the area include <a href="https://no-priors.com/">No Priors</a> with VCs Elad Gil and Sarah Guo, and <a href="https://generativeainow.com/">Generative AI Now</a>. But the most popular one by far is <a href="https://www.lennysnewsletter.com/">Lenny’s</a>.</p></div><div id="fn16"><p><sup>16</sup>&nbsp;a16z often releases relevant AI resources at https://a16z.com/ai/.</p></div><div id="fn17"><p><sup>17</sup>&nbsp;Examples include <a href="https://www.lennybot.com/">LennyBot</a> and <a href="https://chatprd.ai/">ChatPRD</a>.</p></div></div><p>However, rather than providing an exhaustive list of conventional resources, this section focuses on three enduring pathways for developing expertise in AI Product Management, namely learning through Building, Community, and Foundations.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The best resource for aspiring AI Product Managers is the combination of hands-on building experience, active community participation, and solid foundational knowledge. This trinity provides the practical skills, network, and strategic understanding needed to excel in this rapidly evolving field.</p>
+</div>
+</div>
 <section id="learning-through-building" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="learning-through-building">Learning Through Building</h3>
 <p>The most effective way to develop AI PM skills is through hands-on experience building AI-enabled products. I can’t emphasize this enough. Finding a problem you’re passionate about and using it as a learning vehicle is the best way to develop both technical intuition and product sense simultaneously.</p>
@@ -895,21 +933,47 @@ Toner-Rodgers, Aidan. 2024. <span>“Artificial Intelligence, Scientific Discove
 <ul>
 <li><a href="https://www.coursera.org/instructor/andrewng">Andrew Ng’s courses</a></li>
 <li><a href="https://www.oreilly.com/library/view/ai-engineering/9781098129095/">AI Engineering</a> by Chip Huyen</li>
-<li><a href="https://tamingllms.com/">Taming LLMs</a> by Tharsis</li>
+<li><a href="https://tamingllms.com/">Taming LLMs</a> by Thársis</li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The best resource for aspiring AI Product Managers is the combination of hands-on building experience, active community participation, and solid foundational knowledge. This trinity provides the practical skills, network, and strategic understanding needed to excel in this rapidly evolving field.</p>
-</div>
-</div>
+</section>
+</section>
+<section id="appendix-c-deepseek-r1" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-c-deepseek-r1">Appendix C: DeepSeek-R1</h2>
+<p>Here’s DeepSeek-R1’s answer to the question: “Will Product Managers survive the Generative AI revolution?”.</p>
+<p>The role of Product Managers (PMs) will evolve rather than disappear in the face of the Generative AI revolution. Here’s a structured analysis of how PMs will adapt and thrive:</p>
+<section id="augmentation-not-replacement" class="level3">
+<h3 class="anchored" data-anchor-id="augmentation-not-replacement">Augmentation, Not Replacement</h3>
+<ul>
+<li><strong>Data-Driven Insights</strong>: Generative AI can process vast datasets to identify customer needs, market trends, and feature priorities, but PMs will interpret these insights within strategic and ethical contexts.</li>
+<li><strong>Efficiency Gains</strong>: Automating administrative tasks (e.g., report generation, documentation) allows PMs to focus on high-value activities like vision-setting and stakeholder collaboration.</li>
+</ul>
+</section>
+<section id="human-centric-skills-remain-critical" class="level3">
+<h3 class="anchored" data-anchor-id="human-centric-skills-remain-critical">Human-Centric Skills Remain Critical</h3>
+<ul>
+<li><strong>Strategic Vision</strong>: Aligning product goals with business objectives requires creativity and intuition—areas where human judgment outperforms AI.</li>
+<li><strong>Cross-Functional Leadership</strong>: Building trust, negotiating priorities, and motivating teams rely on emotional intelligence, which AI cannot replicate.</li>
+<li><strong>Ethical and Empathetic Decision-Making</strong>: Navigating complex moral dilemmas and ensuring inclusivity demands human oversight.</li>
+</ul>
+</section>
+<section id="evolution-of-the-pm-role" class="level3">
+<h3 class="anchored" data-anchor-id="evolution-of-the-pm-role">Evolution of the PM Role</h3>
+<ul>
+<li><strong>AI Collaboration</strong>: PMs will increasingly act as “translators” between AI outputs and actionable strategies, leveraging tools to enhance decision-making.</li>
+<li><strong>New Opportunities</strong>: Managing AI-driven products (e.g., generative models, ethical AI systems) will require PMs with technical literacy and market expertise.</li>
+<li><strong>Focus on Innovation</strong>: Freed from routine tasks, PMs can prioritize experimentation, long-term roadmaps, and disruptive ideas.</li>
+</ul>
+</section>
+<section id="industry-parallels" class="level3">
+<h3 class="anchored" data-anchor-id="industry-parallels">4. Industry Parallels</h3>
+<ul>
+<li><strong>Job Transformation</strong>: Like ATMs for bank tellers, AI will shift PM roles toward strategic advisory and creative problem-solving rather than eliminating them.</li>
+<li><strong>Demand in AI-Centric Sectors</strong>: As AI products proliferate, PMs with expertise in AI governance, user experience, and scalability will be in higher demand.</li>
+</ul>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>Product Managers who embrace AI as a collaborative tool—while honing uniquely human skills like leadership, empathy, and strategic thinking—will not only survive but lead innovation. Adaptation is key: PMs must upskill in AI literacy, ethical oversight, and cross-functional collaboration to thrive in an AI-augmented future. Those resistant to change may struggle, but the role itself is poised to grow in significance as products become more complex and AI-dependent.</p>
 
 </section>
 </section>

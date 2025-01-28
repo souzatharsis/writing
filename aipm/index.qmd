@@ -152,7 +152,9 @@ As a consequence, technology products built with generative AI more and more pre
 
 More recently, there is another dimension of anthropomorphism: "Reasoning". This is arguably, another emerging scaling law: Test-Time Compute, where LLM proposes a sequence of answers and revisions at inference time, hence simulating "reasoning" as illustrated in @fig-test-time-compute. In this example, DeepSeek's recent (market crashing) reasoning model is able to "rethink" the problem and propose a sequence of answers and revisions.
 
+::: {.column-margin}
 ![The model learns to "rethink" using an anthropomorphic tone. DeekSeek's technical paper [@deepseekai2025deepseekr1incentivizingreasoningcapability] reads:"This is also an aha moment for us, allowing us to witness the power and beauty of reinforcement learning."](aha.png){#fig-test-time-compute}
+:::
 
 
 Suddenly, AI's capabilities are no longer something far away from the user; hard to grasp. Instead, AI's potential can be leveraged by anyone through a simple anthropomorphic interface. Arguably, this enhanced user experience provides the much needed bridge between AI's powerful capabilities and layman's users. It is not just about the AI being capable but also being easy to use.

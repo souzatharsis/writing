@@ -210,7 +210,7 @@ The impact of AI on product development roles presents two contrasting perspecti
 ![Overlapping roles in the GenAI age](genai.png){#fig-genai}
 :::
 
-AI is breaking down traditional role silos among product management, design, and engineering [^datascience] - roles that were previously specialized and distinct are now becoming more overlapping towards a more generalist approach - a converging GenAI-powered role (see @fig-genai). This perspective suggests:
+AI is breaking down traditional role silos among product management, design, and engineering - roles that were previously specialized and distinct are now becoming more overlapping towards a more generalist approach - a converging GenAI-powered role (see @fig-genai). This perspective suggests:
 
 - GenAI tools enable individuals to perform tasks previously requiring multiple specialists
 - The traditional handoff model between specialized functions is becoming obsolete

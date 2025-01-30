@@ -58,7 +58,7 @@ This dramatic decline in cost stems from multiple compounding factors including:
 ![LLMflation - The cost of LLM inference is decreasing by approximately 10x every year [@a16z2024llmflation].](llmflation.png){#fig-llmflation}
 
 
-In fact, @fig-llmflation is already outdated since the release of China's DeepSeek V3 and R1 models in the weeks, which deliver performance on par with leading OpenAI and Anthropic models at a fraction of the cost causing a $1.5T market cap crash in the US market [@wsj2024deepseek].
+In fact, @fig-llmflation is already outdated since the release of China's DeepSeek V3 and R1 models in past weeks, which deliver performance on par with leading OpenAI and Anthropic models at a fraction of the cost causing a $1.5T market cap crash in the US market [@wsj2024deepseek].
 
 ::: {.callout-tip}
 ## Point in Favor of AI PM
@@ -209,6 +209,7 @@ The impact of AI on product development roles presents two contrasting perspecti
 ::: {.column-margin}
 ![Overlapping roles in the GenAI age](genai.png){#fig-genai}
 :::
+
 
 AI is breaking down traditional role silos among product management, design, and engineering - roles that were previously specialized and distinct are now becoming more overlapping towards a more generalist approach - a converging GenAI-powered role (see @fig-genai). This perspective suggests:
 
